@@ -1,0 +1,16 @@
+//...
+if(<cond>)
+{
+    <comandA1>;
+    <comandA2>;
+    //...
+    <comandAN>;
+}
+else
+{
+    <comandB1>;
+    <comandB2>;
+    //...
+    <comandBM>;
+}
+//...

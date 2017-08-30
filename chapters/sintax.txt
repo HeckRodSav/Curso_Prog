@@ -1,0 +1,9 @@
+\chapter{Sintaxe}
+
+\begin{center}
+    \noindent\lstinline[basicstyle={\Huge\ttfamily}]|{;}|
+\end{center}
+
+\begin{center}
+    \noindent\lstinline[basicstyle={\Huge\ttfamily},mathescape]|a$\neq$A|
+\end{center}
