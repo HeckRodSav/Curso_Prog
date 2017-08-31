@@ -1,0 +1,35 @@
+\begin{tikzpicture}[scale=1]
+	\node [coord]  (c1)   {}; \cmark{1};
+	\node [dotx, join=by dott]{\basicCode{...}};
+	\node [test, join]  (t1)  {\basicCode{<cond>}?};
+
+	\node [coord, right=of t1] (c2) {}; \cmark{2};
+	\node [coord] (c3) {}; \cmark{3};
+	\node [proc]  (p1)      {\basicCode{<comandA1>}};
+	\node [proc, join]      {\basicCode{<comandA2>}};
+	\node [dotx, join]      {\basicCode{...}};
+	\node [proc, join] (p2) {\basicCode{<comandAN>}};
+	\node [coord] (c4) {}; \cmark{4};
+
+	\node [coord, left=of t1] (c5) {}; \cmark{5};
+	\node [coord] (c6) {}; \cmark{6};
+	\node [proc] (p3)       {\basicCode{<comandB1>}};
+	\node [proc, join]      {\basicCode{<comandB2>}};
+	\node [dotx, join]      {\basicCode{...}};
+	\node [proc, join] (p4) {\basicCode{<comandBN>}};
+	\node [coord] (c7) {}; \cmark{7};
+
+	\node [coord, left=of p2] (c8) {}; \cmark{8};
+	\node [proc] (p5) {\basicCode{...}};% \cmark{6}
+	\node [dotx, join] {\basicCode{...}};
+	\node [coord, join=by dott] (c9) {}; \cmark{9};
+
+	\path (t1.east) to node [near start, xshift=0em, yshift=1em] {V} (c2);
+	\draw [->,norm] (t1.east) -| (c2) -- (p1.north);
+	\draw [->,norm] (p2.south) -| (c4) -- (p5.east);
+
+	\path (t1.west) to node [near start, xshift=0em, yshift=1em] {F} (c5);
+	\draw [->,norm] (t1.west) -| (c5) -- (p3.north);
+	\draw [->,norm] (p4.south) -| (c7) -- (p5.west);
+
+\end{tikzpicture}

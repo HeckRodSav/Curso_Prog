@@ -1,0 +1,53 @@
+\usepackage{xcolor}%Define cores
+	\definecolor{0DF}{HTML}{00DDFF}
+	\definecolor{0FD}{HTML}{00FFDD}
+	\definecolor{DF0}{HTML}{DDFF00}
+	\definecolor{FD0}{HTML}{FFDD00}
+	\definecolor{F0D}{HTML}{FF00DD}
+	\definecolor{D0F}{HTML}{DD00FF}
+	
+	\definecolor{0BD}{HTML}{00BBDD}
+	\definecolor{0DB}{HTML}{00DDBB}
+	\definecolor{BD0}{HTML}{BBDD00}
+	\definecolor{DB0}{HTML}{DDBB00}
+	\definecolor{D0B}{HTML}{DD00BB}
+	\definecolor{B0D}{HTML}{BB00DD}
+	
+	\definecolor{09B}{HTML}{0099BB}
+	\definecolor{0B9}{HTML}{00BB99}
+	\definecolor{9B0}{HTML}{99BB00}
+	\definecolor{B90}{HTML}{BB9900}
+	\definecolor{B09}{HTML}{BB0099}
+	\definecolor{90B}{HTML}{9900BB}
+	
+	\definecolor{079}{HTML}{007799}
+	\definecolor{097}{HTML}{009977}
+	\definecolor{790}{HTML}{779900}
+	\definecolor{970}{HTML}{997700}
+	\definecolor{907}{HTML}{990077}
+	\definecolor{709}{HTML}{770099}
+	
+	\definecolor{057}{HTML}{005577}
+	\definecolor{075}{HTML}{007755}
+	\definecolor{570}{HTML}{557700}
+	\definecolor{750}{HTML}{775500}
+	\definecolor{705}{HTML}{770055}
+	\definecolor{507}{HTML}{550077}
+	
+	\definecolor{035}{HTML}{003355}
+	\definecolor{053}{HTML}{005533}
+	\definecolor{350}{HTML}{335500}
+	\definecolor{530}{HTML}{553300}
+	\definecolor{503}{HTML}{550033}
+	\definecolor{305}{HTML}{330055}
+	
+	\definecolor{013}{HTML}{001133}
+	\definecolor{031}{HTML}{003311}
+	\definecolor{130}{HTML}{113300}
+	\definecolor{310}{HTML}{331100}
+	\definecolor{301}{HTML}{330011}
+	\definecolor{103}{HTML}{110033}
+	
+	\definecolor{strs}		{rgb}{0.9,	0.2,	0	}
+	\definecolor{coments}	{rgb}{0,	0.5,	0	}
+	\definecolor{backcode}	{rgb}{0.3,	0,		0.2	}

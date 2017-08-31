@@ -10,3 +10,4 @@ Este é o código mais simples que um compilador C++ aceitará sem erros ou nota
 \input{../chapters/sintax.txt}
 \input{../chapters/variables.txt}
 \input{../chapters/aritimetic.txt}
+\input{../chapters/flow.txt}

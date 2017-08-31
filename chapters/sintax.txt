@@ -5,5 +5,13 @@
 \end{center}
 
 \begin{center}
-    \noindent\lstinline[basicstyle={\Huge\ttfamily},mathescape]|a$\neq$A|
+    \noindent\lstinline[basicstyle={\Huge\ttfamily},mathescape]|A$\neq$a|
+\end{center}
+
+\begin{center}
+    \noindent\lstinline[commentstyle={\Huge\ttfamily}]|//Comentario linear|
+\end{center}
+
+\begin{center}
+    \noindent\lstinline[commentstyle={\Huge\ttfamily}]|/*Comentario de bloco*/|
 \end{center}

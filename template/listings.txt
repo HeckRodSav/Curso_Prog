@@ -1,0 +1,37 @@
+\usepackage{listings}%Configura layout para mostrar codigos a partir de arquivo								
+	\AtBeginDocument{\renewcommand{\lstlistingname}{Código}}%Troca "Listing " por "Código"
+	\AtBeginDocument{\renewcommand{\lstlistlistingname}{Códigos}}%Troca "Listings " por "Códigos"
+	\lstset
+	{% Configurando layout para mostrar codigos C++
+		language=[11]C++,
+		basicstyle={\ttfamily\normalsize},
+		backgroundcolor=\color{backcode!5},
+		stringstyle={\color{strs}}, 
+		commentstyle={\color{coments}\itshape},
+		numbers=left,
+		numberstyle={\ttfamily\tiny\color{backcode!75}},
+		keywordstyle={[1]\color{079}},
+		keywordstyle={[2]\color{907}},
+		keywordstyle={[3]\color{097}},
+		keywordstyle={[4]\color{790}},
+		morekeywords=[1]{},
+		morekeywords=[2]{},
+		morekeywords=[3]{},
+		morekeywords=[4]{},
+		showspaces=false,
+		tabsize=4,
+		showtabs=false,
+		% tab=\rightarrowfill,
+		extendedchars=true, 
+		showstringspaces=false,
+		numberbychapter=true,
+		emptylines=1,
+		frame=L,
+		% firstnumber=last,
+		breaklines=true,
+		breakautoindent=true, 
+		captionpos=b,
+		xleftmargin=2em
+	}
+
+	\newcommand{\basicCode}[1]{\lstinline[basicstyle={\ttfamily}]|#1|}

@@ -1,0 +1,36 @@
+\chapter{Controladores de Fluxo}
+
+\lstinputlisting[caption={\textit{if} simples linear}, label=code.if.line]{../code/if.line.cpp}
+\begin{figure}[h]
+\centering
+\input{../flowchart/if.line.txt}
+\caption{Fluxograma de \textit{if} simples linear}
+\label{fig.if.line}
+\end{figure}
+
+
+\lstinputlisting[caption={\textit{if} simples blocular}, label=code.if.block]{../code/if.block.cpp}
+\begin{figure}[h]
+\centering
+\input{../flowchart/if.block.txt}
+\caption{Fluxograma de \textit{if} simples blocular}
+\label{fig.if.block}
+\end{figure}
+
+
+\lstinputlisting[caption={\textit{if} composto linear}, label=code.ifelse.line]{../code/ifelse.line.cpp}
+\begin{figure}[h]
+\centering
+\input{../flowchart/ifelse.line.txt}
+\caption{Fluxograma de \textit{if} composto linear}
+\label{fig.ifelse.line}
+\end{figure}
+
+
+\lstinputlisting[caption={\textit{if} composto blocular}, label=code.ifelse.block]{../code/ifelse.block.cpp}
+\begin{figure}[h]
+\centering
+\input{../flowchart/ifelse.block.txt}
+\caption{Fluxograma de \textit{if} composto blocular}
+\label{fig.ifelse.block}
+\end{figure}
