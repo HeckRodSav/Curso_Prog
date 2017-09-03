@@ -1,36 +1,66 @@
 \chapter{Controladores de Fluxo}
 
-\lstinputlisting[caption={\textit{if} simples linear}, label=code.if.line]{../code/if.line.cpp}
 \begin{figure}[h]
-\centering
-\input{../flowchart/if.line.txt}
-\caption{Fluxograma de \textit{if} simples linear}
-\label{fig.if.line}
+	\centering
+	\input{../flowchart/flow.simple.txt}
+	\caption{Fluxograma de fluxo simples}
+	\label{fig.flow.simple}
 \end{figure}
 
+\section{Decisões na direção do fluxo}
+
+\begin{figure}[h]
+	\centering
+	\input{../flowchart/flow.double.txt}
+	\caption{Fluxograma de fluxo ambíguo}
+	\label{fig.flow.double}
+\end{figure}
+
+\section{O \textit{if} e a estrutura básica de decisão}
+\lstinputlisting[caption={\textit{if} simples linear}, label=code.if.line]{../code/if.line.cpp}
+
+\begin{figure}[h]
+	\centering
+	\input{../flowchart/if.line.txt}
+	\caption{Fluxograma de \textit{if} simples linear}
+	\label{fig.flow.if.line}
+\end{figure}
 
 \lstinputlisting[caption={\textit{if} simples blocular}, label=code.if.block]{../code/if.block.cpp}
+
 \begin{figure}[h]
-\centering
-\input{../flowchart/if.block.txt}
-\caption{Fluxograma de \textit{if} simples blocular}
-\label{fig.if.block}
+	\centering
+	\input{../flowchart/if.block.txt}
+	\caption{Fluxograma de \textit{if} simples blocular}
+	\label{fig.flow.if.block}
 \end{figure}
 
-
+\section{O \textit{else} e as estruturas duplas}
 \lstinputlisting[caption={\textit{if} composto linear}, label=code.ifelse.line]{../code/ifelse.line.cpp}
+
 \begin{figure}[h]
-\centering
-\input{../flowchart/ifelse.line.txt}
-\caption{Fluxograma de \textit{if} composto linear}
-\label{fig.ifelse.line}
+	\centering
+	\input{../flowchart/ifelse.line.txt}
+	\caption{Fluxograma de \textit{if} composto linear}
+	\label{fig.flow.ifelse.line}
 \end{figure}
 
 
 \lstinputlisting[caption={\textit{if} composto blocular}, label=code.ifelse.block]{../code/ifelse.block.cpp}
+
 \begin{figure}[h]
-\centering
-\input{../flowchart/ifelse.block.txt}
-\caption{Fluxograma de \textit{if} composto blocular}
-\label{fig.ifelse.block}
+	\centering
+	\input{../flowchart/ifelse.block.txt}
+	\caption{Fluxograma de \textit{if} composto blocular}
+	\label{fig.flow.ifelse.block}
+\end{figure}
+
+
+\lstinputlisting[caption={\textit{if} aninhado}, label=code.ifelse.nested]{../code/ifelse.nested.cpp}
+
+\begin{figure}[h]
+	\centering
+	\input{../flowchart/ifelse.nested.txt}
+	\caption{Fluxograma de \textit{if} aninhado}
+	\label{fig.ifelse.nested}
 \end{figure}

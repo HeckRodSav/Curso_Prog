@@ -1,0 +1,32 @@
+\chapter{Tabela ASCII}\label{ASCII}
+
+A tabela \ref{table.ASCII} apresenta a codificação ASCII extendida, dividida em duas partes, na superio os tipos padrão, na inferior os tipos especiais.
+
+A divisão da tabela é devida à codificação em bytes com um bit de paridade, o que diminui pela metade a capacidade de codificação de um byte.
+
+\begin{table}[h]
+	\centering
+	\caption{Codificação ASCII extendida incompleta$^1$.}
+	\label{table.ASCII}
+	\begin{tabular}{c|cccccccccccccccc}
+	\verb|xX| & \verb|x0|   & \verb|x1|  & \verb|x2|  & \verb|x3|  & \verb|x4|  & \verb|x5|  & \verb|x6|  & \verb|x7|  & \verb|x8|  & \verb|x9| & \verb|xA|  & \verb|xB|  & \verb|xC| & \verb|xD| & \verb|xE| & \verb|xF|   \\\hline
+	\verb|0X| & \verb|NULL| & \verb|SOH| & \verb|STX| & \verb|ETX| & \verb|EOT| & \verb|ENQ| & \verb|ACK| & \verb|BEL| & \verb|BS|  & \verb|HT| & \verb|LF|  & \verb|VT|  & \verb|FF| & \verb|CR| & \verb|SO| & \verb|SI|   \\
+	\verb|1X| & \verb|DLE|  & \verb|DC1| & \verb|DC2| & \verb|DC3| & \verb|DC4| & \verb|NAK| & \verb|SYN| & \verb|ETB| & \verb|CAN| & \verb|EM| & \verb|SUB| & \verb|ESC| & \verb|FS| & \verb|GS| & \verb|RS| & \verb|US|   \\
+	\verb|2X| & \verb| |    & \verb|!|   & \verb|"|   & \verb|#|   & \verb|$|   & \verb|%|   & \verb|&|   & \verb|'|   & \verb|(|   & \verb|)|  & \verb|*|   & \verb|+|   & \verb|,|  & \verb|-|  & \verb|.|  & \verb|/|    \\
+	\verb|3X| & \verb|0|    & \verb|1|   & \verb|2|   & \verb|3|   & \verb|4|   & \verb|5|   & \verb|6|   & \verb|7|   & \verb|8|   & \verb|9|  & \verb|:|   & \verb|;|   & \verb|<|  & \verb|=|  & \verb|>|  & \verb|?|    \\
+	\verb|4X| & \verb|@|    & \verb|A|   & \verb|B|   & \verb|C|   & \verb|D|   & \verb|E|   & \verb|F|   & \verb|G|   & \verb|H|   & \verb|I|  & \verb|J|   & \verb|K|   & \verb|L|  & \verb|M|  & \verb|N|  & \verb|O|    \\
+	\verb|5X| & \verb|P|    & \verb|Q|   & \verb|R|   & \verb|S|   & \verb|T|   & \verb|U|   & \verb|V|   & \verb|W|   & \verb|X|   & \verb|Y|  & \verb|Z|   & \verb|[|   & \verb|\|  & \verb|]|  & \verb|^|  & \verb|_|    \\
+	\verb|6X| & \verb|`|    & \verb|a|   & \verb|b|   & \verb|c|   & \verb|d|   & \verb|e|   & \verb|f|   & \verb|g|   & \verb|h|   & \verb|i|  & \verb|j|   & \verb|k|   & \verb|l|  & \verb|m|  & \verb|n|  & \verb|o|    \\
+	\verb|7X| & \verb|p|    & \verb|q|   & \verb|r|   & \verb|s|   & \verb|t|   & \verb|u|   & \verb|v|   & \verb|w|   & \verb|x|   & \verb|y|  & \verb|z|   & \verb|{|   & \verb|||  & \verb|}|  & \verb|~|  & \verb|DEL|  \\\hline\hline
+	\verb|8X| & \verb|Ç|    & \verb|ü|   & \verb|é|   & \verb|â|   & \verb|ä|   & \verb|à|   & \verb|å|   & \verb|ç|   & \verb|ê|   & \verb|ë|  & \verb|è|   & \verb|ï|   & \verb|î|  & \verb|ì|  & \verb|Ä|  & \verb|Å|    \\
+	\verb|9X| & \verb|É|    & \verb|æ|   & \verb|Æ|   & \verb|ô|   & \verb|ö|   & \verb|ò|   & \verb|û|   & \verb|ù|   & \verb|ÿ|   & \verb|Ö|  & \verb|Ü|   & \verb|ø|   & \verb| |  & \verb|Ø|  & \verb|×|  & \verb|ƒ|    \\
+	\verb|AX| & \verb|á|    & \verb|í|   & \verb|ó|   & \verb|ú|   & \verb|ñ|   & \verb|Ñ|   & \verb|ª|   & \verb|º|   & \verb|¿|   & \verb|®|  & \verb|¬|   & \verb|½|   & \verb|¼|  & \verb|¡|  & \verb| |  & \verb| |    \\
+	\verb|BX| & \verb|░|    & \verb|▒|   & \verb|▓|   & \verb|│|   & \verb|┤|   & \verb|Á|   & \verb|Â|   & \verb|À|   & \verb|©|   & \verb|╣|  & \verb|║|   & \verb|╗|   & \verb|╝|  & \verb|¢|  & \verb|¥|  & \verb|┐|    \\
+	\verb|CX| & \verb|└|    & \verb|┴|   & \verb|┬|   & \verb|├|   & \verb|─|   & \verb|┼|   & \verb|ã|   & \verb|Ã|   & \verb|╚|   & \verb|╔|  & \verb|╩|   & \verb|╦|   & \verb|╠|  & \verb|═|  & \verb|╬|  & \verb|¤|    \\
+	\verb|DX| & \verb| |    & \verb| |   & \verb|Ê|   & \verb|Ë|   & \verb|È|   & \verb|ı|   & \verb|Í|   & \verb|Î|   & \verb|Ï|   & \verb|┘|  & \verb|┌|   & \verb|█|   & \verb|▄|  & \verb|¦|  & \verb|Ì|  & \verb|▀|    \\
+	\verb|EX| & \verb|Ó|    & \verb|ß|   & \verb|Ô|   & \verb|Ò|   & \verb|õ|   & \verb|Õ|   & \verb|µ|   & \verb| |   & \verb| |   & \verb|Ú|  & \verb|Û|   & \verb|Ù|   & \verb|ý|  & \verb|Ý|  & \verb|¯|  & \verb|´|    \\
+	\verb|FX| & \verb| |    & \verb|±|   & \verb| |   & \verb|¾|   & \verb|¶|   & \verb| |   & \verb|÷|   & \verb|¸|   & \verb|°|   & \verb|¨|  & \verb|·|   & \verb|¹|   & \verb|³|  & \verb|²|  & \verb| |  & \verb|nbsp|
+	\end{tabular}
+	\end{table}
+
+	\footnotetext[1]{Problemas na codificação de caracteres impediram a renderização de alguns tipos, os espaços em branco na parte inferior são os destes tipos. Uma busca na internet pode localizar facilmente uma tabela completa.}

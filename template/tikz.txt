@@ -3,17 +3,39 @@
 	\pgfdeclarelayer{marx}
 	\pgfsetlayers{main,marx}
 	% A macro for marking coordinates (specific to the coordinate naming scheme used here). Swap the following 2 definitions to deactivate marks.
-	\providecommand{\cmark}[2][]{%
-		\begin{pgfonlayer}{marx}
-			\node [nmark] at (c#2#1) {#2};
-		\end{pgfonlayer}{marx}
+	
+	\ifthenelse{\equal{\DEBUG}{1}}%
+	{%
+		\providecommand{\cmark}[2][]%
+		{%
+			\begin{pgfonlayer}{marx}
+				\node [nmarkA] at (c#2#1) {#2};
+			\end{pgfonlayer}{marx}
+		}
+	}%
+	{%
+		\providecommand{\cmark}[2][]{\relax}
+	}%
+	
+	\ifthenelse{\equal{\DEBUG}{1}}%
+	{%
+	\providecommand{\pmark}[2][]%
+	{%
+	\begin{pgfonlayer}{marx}
+		\node [nmarkB] at (p#2#1) {#2};
+	\end{pgfonlayer}{marx}
 	} 
-	\providecommand{\cmark}[2][]{\relax} 
+	}%
+	{%
+		\providecommand{\pmark}[2][]{\relax}
+	}%
+	
+
 
 \tikzset{
-	>=triangle 45,% Nice arrows; your taste may be different
+	>=stealth,% Nice arrows; your taste may be different
 	start chain=going below,% General flow is top-to-bottom
-	node distance=5ex and 25ex,% Global setup of box spacing
+	node distance=4ex and 16ex,% Global setup of box spacing
 	every join/.style={norm},% Default linetype for connecting boxes
 	% -------------------------------------------------
 	base/.style={draw, on chain, on grid, align=center, minimum height=4ex},
@@ -22,12 +44,14 @@
 	test/.style={base, diamond, aspect=2, text width=5em},
 	term/.style={proc, rounded corners},% coord node style is used for placing corners of connecting lines
 	coord/.style={coordinate, on chain, on grid},% nmark node style is used for coordinate debugging marks
-	nmark/.style={draw, cyan, circle, font={\sffamily\bfseries}},
+	nmarkA/.style={draw, cyan, circle, font={\sffamily\bfseries}},
+	nmarkB/.style={draw, magenta, circle, font={\sffamily\bfseries}},
 	% -------------------------------------------------
 	% Connector line styles for different parts of the diagram
-	norm/.style={->, draw, B0D},
-	free/.style={->, draw, 907},
-	cong/.style={->, draw, 970},
+	norm/.style={->, draw, black},
+	true/.style={norm, blue},
+	false/.style={norm, orange},
+	thick/.style={norm, line width = .5mm},
 	dott/.style={-, draw, dotted, black},
 	it/.style={font={\small\itshape}}
 }

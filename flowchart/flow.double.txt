@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+	\node [coord] (c1) {}; \cmark{1};
+	\node [proc, join=by dott] (p0) {\basicCode{...}}; \pmark{0}
+
+
+	\node [coord, right=of p0] (ca2) {}; \cmark{a2};
+	\node [proc] (pa1) {\basicCode{...}}; \pmark{a1};
+	\node [proc, join]{\basicCode{...}};
+	\node [proc, join]{\basicCode{...}};
+	\node [coord, join=by dott] (ca3) {};\cmark{a3}
+
+	
+	\node [coord, left=of p0] (cb2) {}; \cmark{b2};
+	\node [proc] (pb1) {\basicCode{...}}; \pmark{b1};
+	\node [proc, join]{\basicCode{...}};
+	\node [proc, join]{\basicCode{...}};
+	\node [coord, join=by dott] (cb3) {}; \cmark{b3}
+
+	\draw [->,norm] (p0.east) -- (ca2) -- (pa1.north);
+	\draw [->,norm] (p0.west) -- (cb2) -- (pb1.north);
+\end{tikzpicture}

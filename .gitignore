@@ -5,3 +5,7 @@
 *.log
 *.lol
 *.toc
+*.lof
+*.lot
+*.bbl
+*.blg

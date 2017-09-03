@@ -34,4 +34,4 @@
 		xleftmargin=2em
 	}
 
-	\newcommand{\basicCode}[1]{\lstinline[basicstyle={\ttfamily}]|#1|}
+	\newcommand{\basicCode}[2][\ttfamily]{\lstinline[basicstyle={#1}]|#2|}

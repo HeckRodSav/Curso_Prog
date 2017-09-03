@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\node [coord] (c1) {}; \cmark{1};
+	\node [proc, join=by dott] {\basicCode{...}};
+	\node [proc, join] {\basicCode{...}};
+	\node [proc, join] {\basicCode{...}};
+	\node [coord, join=by dott] (c2) {}; \cmark{2};
+
+	\node [coord, right=of c1] (c3) {}; \cmark{3};
+	\node [coord, right=of c2] (c4) {}; \cmark{4};
+
+	\node [coord, left=of c1] (c5) {}; \cmark{5};
+	\node [coord, left=of c2] (c6) {}; \cmark{6};
+
+	\path (c3) to node [midway, above, sloped] {\basicCode[\itshape\ttfamily\Large]{Fluxo}} (c4);
+	\draw [->, thick] (c3) -- (c4);
+	\path (c5) to node [midway, below, sloped, white!0] {\basicCode[\itshape\ttfamily\Large]{Fluxo}} (c6);
+	\draw [->, thick, white!0] (c5) -- (c6);
+\end{tikzpicture}

@@ -2,16 +2,19 @@
 	\node [coord]  (c1)   {}; \cmark{1};
 	\node [dotx, join=by dott]{\basicCode{...}};
 	\node [test, join]  (t1)  {\basicCode{<cond>}?};
-	\node [proc, join]  (p1)  {\basicCode{<comand>}};
-	\node [proc, join]  (p2)  {\basicCode{...}};
+	\node [proc, join]  (p1)  {\basicCode{<comand>}}; \pmark{1};
+	\node [proc, join]  (p2)  {\basicCode{...}}; \pmark{2};
 	\node [dotx, join]        {\basicCode{...}};
 	\node [coord, join=by dott] (c4) {}; \cmark{4};
 
 	\node [coord, right=of t1] (c2)  {}; \cmark{2};
 	\node [coord, right=of p2] (c3)  {}; \cmark{3};
+	\node [coord, left=of t1] (c5)  {}; \cmark{5};
+	\node [coord, left=of p2] (c6)  {}; \cmark{6};
 
 	\path (t1.south) to node [near start, xshift=1em, yshift=0em] {V} (p1.north);
 
 	\path (t1.east) to node [near start, xshift=0em, yshift=1em] {F} (c2);
 	\draw [->,norm] (t1.east) -| (c2) -| (c3) -- (p2.east);
+	\draw [->,norm, white!0] (t1.west) -| (c5) -| (c6) -- (p2.west);
 \end{tikzpicture}

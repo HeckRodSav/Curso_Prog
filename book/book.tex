@@ -1,10 +1,21 @@
 \documentclass{report}
 
+\usepackage[margin=2cm]{geometry}
+
 \usepackage{ae}%Al­most Euro­pean T1 coded fonts
-\usepackage[T1]{fontenc}%Caracteres especiais
 \usepackage[utf8]{inputenc}%Caracteres especiais
+\usepackage[T1]{fontenc}%Caracteres especiais
 \usepackage[brazil]{babel}
 \usepackage{indentfirst}
+
+\usepackage{pmboxdraw}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{wasysym}
+
+\usepackage{ifthen}
+
+\newcommand{\DEBUG}{1}
 
 \input{../template/xcolor.txt}
 \input{../template/listings.txt}
@@ -13,5 +24,11 @@
 \begin{document}
 	\tableofcontents
 	\input{../parts/intro.txt}
+	\listoffigures
+%	\listoftables
 	\lstlistoflistings
-\end{document}
+	\bibliographystyle{../bib/IEEEtran}
+	\bibliography{../bib/bibliografia}
+	\appendix
+	\input{../appendix/ASCII.txt}
+\end{document} 
