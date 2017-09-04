@@ -1,3 +1,4 @@
+\usepackage{transparent}
 \usepackage{xcolor}%Define cores
 	\definecolor{0DF}{HTML}{00DDFF}
 	\definecolor{0FD}{HTML}{00FFDD}

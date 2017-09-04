@@ -5,7 +5,8 @@
 	{% Configurando layout para mostrar codigos C++
 		language=[11]C++,
 		basicstyle={\ttfamily\normalsize},
-		backgroundcolor=\color{backcode!5},
+		%backgroundcolor=\color{backcode!5},
+		backgroundcolor=\transparent{.05}\color{backcode},
 		stringstyle={\color{strs}}, 
 		commentstyle={\color{coments}\itshape},
 		numbers=left,

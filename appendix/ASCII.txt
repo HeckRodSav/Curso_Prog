@@ -4,6 +4,8 @@ A tabela \ref{table.ASCII} apresenta a codificação ASCII extendida, dividida e
 
 A divisão da tabela é devida à codificação em bytes com um bit de paridade, o que diminui pela metade a capacidade de codificação de um byte.
 
+A interpretação da tabela é feita a partir das coordenadas do caractere escolhido, por exemplo, o caracter \verb|C| está na linha \verb|4X| e na coluna \verb|x3|, portanto seu código é \verb|0x43|, ou seja, o número \verb|43| em hexadecimal, corresponde a \verb|67| na base decimal.
+
 \begin{table}[h]
 	\centering
 	\caption{Codificação ASCII extendida incompleta$^1$.}

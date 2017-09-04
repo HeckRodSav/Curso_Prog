@@ -9,3 +9,5 @@
 *.lot
 *.bbl
 *.blg
+*.out
+*.xwm
