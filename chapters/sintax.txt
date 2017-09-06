@@ -1,4 +1,4 @@
-\chapter{Sintaxe básica}
+\chapter{Sintaxe básica}\label{cap.sintax}
 \section{O que é sintaxe}
 
 Sintaxe é o \textquotedblleft{componente do sistema linguístico que determina as relações formais que interligam os constituintes da sentença, atribuindo-lhe uma estrutura}\textquotedblright \cite{houaiss2009dicio}.

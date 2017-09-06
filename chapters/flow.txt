@@ -1,4 +1,4 @@
-\chapter{Controladores de Fluxo}
+\chapter{Controladores de Fluxo}\label{cap.flow}
 
 \begin{figure}[h]
 	\centering

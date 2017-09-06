@@ -1,0 +1,147 @@
+\chapter{Tipos de dados}\label{cap.types}
+
+Uma das primeiras necessidades dentro de programação, e de construção de software no geral, é o armazenamento de dados.
+Valores numéricos, condições lógicas, caracteres e até mesmo frases podem ser armazenadas dentro dos tipos do C++.
+Uma tipo é dito primitiva quando é definido na base da linguagem.
+
+\section{Valores lógicos}
+
+\subsection{Booleanos}
+O tipo \basicCode{bool} armazena valores de estado lógico, ou seja, \basicCode{verdadeiro} e \basicCode{falso}.
+Seu nome deriva do termo \textit{boolean}.
+
+Em C++, um \basicCode{bool} pode receber os estados lógicos utilizando os valores numéricos \basicCode{1} e \basicCode{0}, respectivamente para verdadeiro e falso, ou as palavras-chave \basicCode{true} e \basicCode{false}.
+Um detalhe herdado da linguagem C é que qualquer valor diferente de \basicCode{0} será considerado verdadeiro, então um número como \basicCode{54} será considerado verdadeiro.
+
+O espaço de memória ocupado pelo tipo \basicCode{bool} depende do compilador utilizado.
+Normalmente ocupa um byte, porém alguns compiladores otimizados podem fazer ocupar apenas um bit.
+
+\section{Números}
+
+\subsection{Números inteiros}
+
+O tipo \basicCode{int} é o utilizado para números inteiros de uma maneira geral.
+Seu nome deriva do termo \basicCode{integer}.
+
+Pode receber números diretamente em sua forma decimal, como \basicCode{28}, ou na forma hexadecimal, como \basicCode{1C}.
+
+O espaço ocupado depende da arquitetura do sistema, em geral ocupa 2 bytes em arquiteturas 32 bits, e 8 bytes em arquitetura 64 bits.
+
+\subsection{Números flutuante}
+
+Existem dois tipos para armazenamento de números flutuantes, eles apenas diferem em precisão.
+O número fluante é o equivalente computacional ao número real na matemática, porém apenas um número finito de valores podem ser representada de maneira exata, decorrente ao limite da máquina.
+
+O primeiro é o tipo \basicCode{float}, seu nome deriva do termo \textit{floating}, que significa flutuante, a escolha do termo é decorrente ao sistema de codificação de número flutuante, onde o ponto decimal troca de lugar, como a diferença entre $3.14$ e $31.4$.
+O segundo é o tipo \basicCode{double}, que tem o dobro da precisão da anterior.
+
+A precisão dos números flutuantes é relativa à quantidade de bits reservado para armazenar cada parte do dado.
+Basicamente um número flutuante pode ser representado pela equação \ref{equation.float}.
+\begin{equation}\label{equation.float}
+	\pm M\!\cdot\!B^{\pm e}
+\end{equation}
+Onde $M$ é a mantissa e representa o número em sua forma fracionária reduzido em sua própria base até que seja menor que $1$, por exemplo, $3.1415$ será dividido por $10$ até que tome o formato $0.31415$.
+$B$ representa a base numérica escolhida.
+E $e$ o expoente, que equivale a quantidade de divisões pela necessárias para que o número tome o formato correto.
+É equivalente à notação científica, então $ 3.1415 = +0.31415\cdot10^{+10} $.
+
+Estes valores são salvos na memória de forma binária, logo a base $B=2$.
+O primeiro bit está reservado para o sinal da mantissa, logo em seguida seu valor reduzido, então o sinal e o valor do expoente.
+A precisão do número flutuante é associada a estes valores.
+
+Um \basicCode{float} tem precisão de $38$ casas decimais e ocupa 4 bytes.
+Um \basicCode{double} tem precisão de $308$ casas decimais e ocupa 8 bytes.
+Pode ser comum achar que o maior é melhor que o outro, porém ele torna as operações mais lentas.
+
+Podem receber valores diretamente na forma decimal caso os valores sejam inteiros, como \basicCode{28}, com marcação de ponto decimal, como \basicCode{3.141592}, ou em notação científica, como \basicCode{1.6e-19}, onde \basicCode{e-19} é o mesmo que $ 10^{-19} $.
+
+Vale ressaltar que o sinal de demarcação decimal utilizado no C++ é o ponto (\basicCode{.}), a vírgula é utiliza para outras coisas na linguagem.
+
+\begin{center}
+    \noindent\lstinline[basicstyle={\Huge\ttfamily},mathescape]|.${}_{\neq}$,|
+\end{center}
+
+\section{Caracteres}
+
+\subsection{Símbolos ASCII}
+
+O tipo \basicCode{char} é o padrão para armazenamento de informações de texto de apenas um caractere definido na tabela ASCII.
+Seu nome deriva do termo \textit{character}.
+
+Em C++, um \basicCode{char} pode receber qualquer caracter ASCII de três maneiras:
+\begin{itemize}
+	\item Através do simbolo diretamente, utilizando-o entre aspas simples (\lstinline[stringstyle={}]{'}), por exemplo \lstinline[stringstyle={}]{'M'}.
+	\item Através do código hexadecimal do símbolo, por exemplo, \basicCode{0x4D} para \lstinline[stringstyle={}]{'M'}.
+	\item Através do código decimal do simbolo, convertido através do hexadecimal, por exemplo, \basicCode{77} para \lstinline[stringstyle={}]{'M'}.
+\end{itemize}
+Os itens estão em ordem de usualidade, o mais comum e mais prático para o programador é utilizar os simbolos do teclado, sem consultar tabelas.
+O uso da tabela é necessário quando símbolos não presentes no teclado são necessários ao longo do programa.
+
+O espaço ocupado pelo tipo \basicCode{char} é de um byte.
+Como a codificação ASCII é baseada em valore numéricos para codificação dos simbolos, o tipo \basicCode{char} também é considerado armazenamento de número inteiro.
+
+Uma regra de sintaxe importante está na diferença entre aspas simples (\lstinline[stringstyle={}]{'}) e aspas duplas (\lstinline[stringstyle={}]{"}), onde a primeira é utilizada para notação de caracteres únicos, já a segunda para sequências de caracteres.
+
+\begin{center}
+    \noindent\lstinline[basicstyle={\Huge\ttfamily},stringstyle={},mathescape]|'a'$\neq$"a"|
+\end{center}
+
+\section{Vazios}
+
+O tipo \basicCode{void} é diferente dos demais, ele não armazena valore, portanto não ocupa espaço definido em memória.
+Basicamente, ele é utilizado para dar nome a algo de valor vazio, que é o significado de seu nome.
+A utilização dos tipo \basicCode{void} será exemplificada no capítulo \ref{cap.functions}.
+
+\section{Modificadores de faixa}
+
+Todo tipo primitivo tem uma faixa de atuação padrão, porém esta faixa pode ser alterada com o uso de certas palavras-chave.
+A tabela \ref{table.sign.range} apresenta os valores de intervalos dos tipos primitivos puros e os com modificações de faixa, repare que alguns tipos não sofrem alteração.
+
+\subsection{Localização da faixa}
+
+As palavras-chave \basicCode{signed} e \basicCode{unsigned} definem, respectivamente, se a declaração de um é tipo com sinal e sem sinal, tipos sem sinal são sempre maiores ou iguais a zero.
+Estas palavras-chave não alteram o espaço ocupado pelo tipo em memória, porém mudam a faixa de valores registráveis.
+
+Apenas os tipos de armazenamento de inteiros podem receber estes modificadores.
+
+\subsection{Comprimento da faixa}
+
+As palavras-chave \basicCode{short} e \basicCode{long} definem, respectivamente, se a declaração de um tipo é encurtada e extendida.
+Estas palavras-chave alteram o espaço ocupado pelo tipo de memória extendendo a faixa de valores registráveis, porém não talveram o sinal base do tipo.
+
+Nem todas os tipos podem receber este modificador.
+
+É muito comum encontrar estes modificadores definidos de forma que o tipo fique implícito, então, ao invés de utilizar \basicCode{long int}, utiliza-se apenas \basicCode{long}.
+Esta forma também se aplica a \basicCode{short} e o tipo implícito é sempre \basicCode{int}.
+
+\begin{table}[h]
+	\centering
+	\caption{Relação de faixa e tamanhos de memória para tipos primitivos com modificadores de faixa}
+	\label{table.sign.range}
+	\begin{tabular}{rccc}
+		\multicolumn{1}{c}{código}	& tamanho (B) & valor mínimo & valor máximo \\\hline
+
+		\basicCode{bool}				& 1  & 0 & 1 \\\hline
+
+		\basicCode{signed char}			& 1  & -127 & 126 \\
+		\basicCode{char}				& 1  & -127 & 126 \\
+		\basicCode{unsigned char}		& 1  & 0 & 255\\\hline
+
+		\basicCode{signed short int}	& 2  & -32768 & 32767 \\
+		\basicCode{short int}			& 2  & -32768 & 32767 \\
+		\basicCode{unsigned short int}	& 2  & 0 & 64535\\\hline
+
+		\basicCode{signed int}			& 4  & -2147483648 & 2147483647 \\
+		\basicCode{int}					& 4  & -2147483648 & 2147483647 \\
+		\basicCode{unsigned int}		& 4  & 0 & 4294967295\\\hline
+
+		\basicCode{signed long int}		& 8  & -9223372036854775808 & 9223372036854775807 \\
+		\basicCode{long int}			& 8  & -9223372036854775808 & 9223372036854775807 \\
+		\basicCode{unsigned long int}	& 8  & 0 & 18446744073709551616\\\hline
+
+		\basicCode{float}				& 4  & $1.2\cdot10^{-38}$ & $3.4\cdot10^{+38}$\\\hline
+
+		\basicCode{double}				& 8  & $1.73\cdot10^{-308}$ & $1.7\cdot10^{+308}$ \\
+		\basicCode{long double}			& 16 & $3.4\cdot10^{-4932}$ & $3.4\cdot10^{+4932}$ 
+	\end{tabular}
+\end{table}

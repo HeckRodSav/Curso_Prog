@@ -1,1 +1,1 @@
-\chapter{Operadores Aritiméticos}
+\chapter{Operadores Aritiméticos}\label{cap.aritimetic}
