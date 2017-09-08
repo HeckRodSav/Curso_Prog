@@ -2,7 +2,7 @@
 
 Uma das primeiras necessidades dentro de programação, e de construção de software no geral, é o armazenamento de dados.
 Valores numéricos, condições lógicas, caracteres e até mesmo frases podem ser armazenadas dentro dos tipos do C++.
-Uma tipo é dito primitiva quando é definido na base da linguagem.
+Uma tipo é dito primitiva quando é definido na base da linguagem e é apenas um molde para um armazenamento de dados.
 
 \section{Valores lógicos}
 

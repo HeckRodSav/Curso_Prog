@@ -14,10 +14,12 @@ Todo comando, que também pode ser denominado como \emph{instrução}, e precisa
 Na criação da linguagem, foi escolhido o ponto-e-vírgula (\basicCode{;}), provavelmente pelo lado poético de terminar uma oração delimitada sem finalizar a frase, o que é coerente, tendo em vista que o programa é uma série de comandos bem delimitadas que montam uma instrução mais complexa.
 É importante lembrar sempre: todo comando deve apresentar um ponto-e-vírgula (\basicCode{;}) em sequência.
 
-Em qualquer lugar é possível criar regiões de código com algumas propriedades especiais, estar regiões são denominadas \emph{blocos de código}.
+Em qualquer lugar é possível criar regiões de código com algumas propriedades especiais, estas regiões são denominadas \emph{blocos de código}.
 Sua principal função é agrupar comandos, de tal forma que juntos formem uma instrução mais complexa.
 Pode-se dizer que os comando são as instruções passo-a-passo para a confecção de um bolo, e o bloco de código seja a própria expressão \emph{faça um bolo}.
 Um bloco de código é delimitado pelos caracteres de chave esquerda (\basicCode{\{}) e direita (\basicCode{\}}).
+Um bloco de código pode ser criado dentro de outro.
+
 \begin{center}
     \noindent\lstinline[basicstyle={\Huge\ttfamily}]|{;}|
 \end{center}
