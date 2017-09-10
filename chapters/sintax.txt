@@ -18,7 +18,10 @@ Em qualquer lugar é possível criar regiões de código com algumas propriedade
 Sua principal função é agrupar comandos, de tal forma que juntos formem uma instrução mais complexa.
 Pode-se dizer que os comando são as instruções passo-a-passo para a confecção de um bolo, e o bloco de código seja a própria expressão \emph{faça um bolo}.
 Um bloco de código é delimitado pelos caracteres de chave esquerda (\basicCode{\{}) e direita (\basicCode{\}}).
+
 Um bloco de código pode ser criado dentro de outro.
+É recomendado que, a cada novo bloco, um aumento no recuo da margem do programa seja feito, mantendo todo comando dentro do bloco alinhado, permitindo a fácil visualização do iniício e fim do bloco de código.
+Normalmente utiliza-se um caractere de tabulação, e este é o nome do processor de formatação visual do código.
 
 \begin{center}
     \noindent\lstinline[basicstyle={\Huge\ttfamily}]|{;}|

@@ -7,20 +7,20 @@
 		basicstyle={\ttfamily\normalsize},
 		%backgroundcolor=\color{backcode!5},
 		backgroundcolor=\transparent{.05}\color{backcode},
-		stringstyle={\color{strs}}, 
-		commentstyle={\color{coments}\itshape},
+		stringstyle={\color{str}}, 
+		commentstyle={\color{comment}\itshape},
 		numbers=left,
 		numberstyle={\ttfamily\tiny\color{backcode!75}},
-		keywordstyle={[1]\color{079}},
-		keywordstyle={[2]\color{907}},
-		keywordstyle={[3]\color{097}},
-		keywordstyle={[4]\color{790}},
+		keywordstyle=[1]{\color{079}},
+		keywordstyle=[2]{\color{907}},
+		keywordstyle=[3]{\color{097}},
+		keywordstyle=[4]{\color{790}},
 		morekeywords=[1]{},
 		morekeywords=[2]{},
 		morekeywords=[3]{},
 		morekeywords=[4]{},
 		showspaces=false,
-		tabsize=4,
+		tabsize=2,
 		showtabs=false,
 		% tab=\rightarrowfill,
 		extendedchars=true, 
@@ -32,7 +32,37 @@
 		breaklines=true,
 		breakautoindent=true, 
 		captionpos=b,
-		xleftmargin=2em
+		xleftmargin=2em,
+		inputencoding=utf8,
+		texcl=true,
+		literate=%
+			{á}{{\'a}}1
+			{à}{{\`a}}1
+			{ã}{{\~a}}1
+			{é}{{\'e}}1
+			{è}{{\`e}}1
+			{í}{{\'i}}1
+			{ì}{{\`i}}1
+			{ó}{{\'o}}1
+			{ò}{{\`o}}1
+			{õ}{{\~o}}1
+			{ú}{{\'u}}1
+			{ù}{{\`u}}1
+			{ü}{{\"u}}1
+			{Á}{{\'A}}1
+			{À}{{\`A}}1
+			{Ã}{{\~A}}1
+			{É}{{\'E}}1
+			{È}{{\`E}}1
+			{Í}{{\'I}}1
+			{Ì}{{\`I}}1
+			{Ó}{{\'O}}1
+			{Ò}{{\`O}}1
+			{Õ}{{\~O}}1
+			{Ú}{{\'U}}1
+			{Ù}{{\`U}}1
+			{Ü}{{\"U}}1
+			{ç}{{\c{c}}}1
 	}
 
 	\newcommand{\basicCode}[2][\ttfamily]{\lstinline[basicstyle={#1}]|#2|}

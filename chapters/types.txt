@@ -121,27 +121,53 @@ Esta forma também se aplica a \basicCode{short} e o tipo implícito é sempre \
 	\begin{tabular}{rccc}
 		\multicolumn{1}{c}{código}	& tamanho (B) & valor mínimo & valor máximo \\\hline
 
-		\basicCode{bool}				& 1  & 0 & 1 \\\hline
+		\basicCode{bool}								& 1  & 0 & 1 \\\hline
 
-		\basicCode{signed char}			& 1  & -127 & 126 \\
-		\basicCode{char}				& 1  & -127 & 126 \\
-		\basicCode{unsigned char}		& 1  & 0 & 255\\\hline
+		\basicCode{signed char}					& 1  & -127 & 126 \\
+		\basicCode{char}								& 1  & -127 & 126 \\
+		\basicCode{unsigned char}				& 1  & 0 & 255\\\hline
 
-		\basicCode{signed short int}	& 2  & -32768 & 32767 \\
-		\basicCode{short int}			& 2  & -32768 & 32767 \\
+		\basicCode{signed short int}		& 2  & -32768 & 32767 \\
+		\basicCode{short int}						& 2  & -32768 & 32767 \\
 		\basicCode{unsigned short int}	& 2  & 0 & 64535\\\hline
 
-		\basicCode{signed int}			& 4  & -2147483648 & 2147483647 \\
-		\basicCode{int}					& 4  & -2147483648 & 2147483647 \\
-		\basicCode{unsigned int}		& 4  & 0 & 4294967295\\\hline
+		\basicCode{signed int}					& 4  & -2147483648 & 2147483647 \\
+		\basicCode{int}									& 4  & -2147483648 & 2147483647 \\
+		\basicCode{unsigned int}				& 4  & 0 & 4294967295\\\hline
 
-		\basicCode{signed long int}		& 8  & -9223372036854775808 & 9223372036854775807 \\
-		\basicCode{long int}			& 8  & -9223372036854775808 & 9223372036854775807 \\
-		\basicCode{unsigned long int}	& 8  & 0 & 18446744073709551616\\\hline
+		\basicCode{signed long int}			& 8  & -9223372036854775808 & 9223372036854775807 \\
+		\basicCode{long int}						& 8  & -9223372036854775808 & 9223372036854775807 \\
+		\basicCode{unsigned long int}		& 8  & 0 & 18446744073709551616\\\hline
 
-		\basicCode{float}				& 4  & $1.2\cdot10^{-38}$ & $3.4\cdot10^{+38}$\\\hline
+		\basicCode{float}								& 4  & $1.2\cdot10^{-38}$ & $3.4\cdot10^{+38}$\\\hline
 
-		\basicCode{double}				& 8  & $1.73\cdot10^{-308}$ & $1.7\cdot10^{+308}$ \\
-		\basicCode{long double}			& 16 & $3.4\cdot10^{-4932}$ & $3.4\cdot10^{+4932}$ 
+		\basicCode{double}							& 8  & $1.73\cdot10^{-308}$ & $1.7\cdot10^{+308}$ \\
+		\basicCode{long double}					& 16 & $3.4\cdot10^{-4932}$ & $3.4\cdot10^{+4932}$ 
 	\end{tabular}
 \end{table}
+
+\section{Literais}
+
+Literais são os valores digitados de maneira direta no código, sem o uso de variáveis.
+O tipo do literal é definido com caracteres específicos junto a eles, que deixam explicito o tipo de um dado, deixar claro para o compilador como ele deve ser processado.
+Este tipo de definição é importante, por exemplo, para operações matemáticas, já que a precisão de um \basicCode{float} é diferente da de um \basicCode{double}, o que pode levar à erros de processamento.
+
+\subsection{Inteiro}
+
+Se um número é definido sem qualquer adicional, é considerado \basicCode{int}, como em \basicCode{29}.
+Também é possível escrever o número em hexadecimal, como já foi apresentado, utilizando o prefixo \basicCode{0x} ou \basicCode{0X}, como em \basicCode{0x1D}, que também pode ser apresentado como \basicCode{0X1D}, \basicCode{0x1d} ou \basicCode{0X1d}.
+Ainda é possível escrever o número em forma binária, utilizando-se do prefixo \basicCode{0b} ou \basicCode{0B}, como em \basicCode{0x00011101}.
+
+\subsection{Flutuante}
+
+Quando um leteral flutuante é definido, será considerado \basicCode{double} pelo compilador, a menos que conte com o sufixo \basicCode{f} ou \basicCode{F} que o tornará \basicCode{float}, como em \basicCode{0.114f}.
+
+\subsection{Caracteres}
+
+Os caracteres, quando utilizando a tabela ASCII, são considerados números.
+Quando utilizamos as aspas simples (\lstinline[stringstyle={}]{'}), o caracter é convertido para o número que o representa.
+Por exemplo, \lstinline[stringstyle={}]{'M'} é convertido para \basicCode{77}.
+
+\subsection{Faixa}
+
+Há ainda a opção de definição de faixa em literal, utilizando o sufixo \basicCode{l} ou \basicCode{L}, como em \basicCode{199930L}.

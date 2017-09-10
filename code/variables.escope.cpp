@@ -1,13 +1,12 @@
 //...
-int A; //Somente A pode ser acessado aqui
+int A;			//Somente A pode ser acessado aqui
 {
-	int B; //Aqui A sera global e B local, C e D sao inexistentes
+	int B; 		//Aqui A será global e B local, C e D são inexistentes
 	{
-		int C; //Aqui A e B sao globais e C local, D nao existe
+		int C;	//Aqui A e B são globais, C local e D inexistente
 	}
-	//...
 	{
-		int D; //Aqui A e B sao globais e D local, C nao existe
+		int D;	//Aqui A e B são globais, D local e C inexistente
 	}
 }
 //...
