@@ -1,4 +1,4 @@
-\part{Introdução}
+\part*{Introdução}
 
 \section*{Breve histórico}
 O C++ é ...
@@ -6,10 +6,3 @@ O C++ é ...
 O mínimo código em C++ é apresentado no código \ref{code.minimal}.
 \lstinputlisting[caption={Código mínimo}, label=code.minimal]{../code/minimal.cpp}
 Este é o código mais simples que um compilador C++ aceitará sem erros ou notas de atenção.
-
-\input{../chapters/sintax.txt}
-\input{../chapters/types.txt}
-\input{../chapters/variables.txt}
-\input{../chapters/aritimetic.txt}
-\input{../chapters/flow.txt}
-\input{../chapters/functions.txt}

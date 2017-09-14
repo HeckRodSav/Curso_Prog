@@ -1,0 +1,3 @@
+\part{Intermediário}
+\input{../chapters/functions.txt}
+\input{../chapters/moreOperators.txt}

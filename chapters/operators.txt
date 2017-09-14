@@ -1,0 +1,75 @@
+\chapter{Operadores}\label{cap.operators}
+
+Operadores são as entidades de código capazes de alterar as variáveis, utilizando-as em contas, comparações, etc.
+Toda utilização de uma variável será por meio de algum operador, alterando seu dado em consulta ou em memória.
+A alteração em consulta implica que o valor armazenada em memória não sofre alteração, como se uma cópia fosse criada e esta cópia sofresse a alteração em memória.
+A alteração em memória é a que muda o valor armazenado pela variável, sem possibilidade de recuperação.
+O operador retorna o valor final da operação, então, se ele soma dois números, devolve a soma como um dado de um tipo, normalmente o tipo maior de dados (ou o mais preciso).
+
+Um operador pode realizar ações sobre uma, duas ou até três variáveis, sendo respectivamente chamado de unário, binário e ternário.
+
+Existem mais operadores além dos descritos aqui, porém seu uso requer domínio de outras técnicas, portante serão apresentados na capítulo \ref{cap.moreOperators}.
+
+\section{Unários}
+
+De uma maneira geral, todo operador unário tem uma sintaxe semelhante, apresentada no código \ref{code.operators.unary.sintax}, e um exemplo genérico no código \ref{code.operators.unary.example}.
+
+\lstinputlisting[caption={Sintaxe geral de operadores unários}, label=code.operators.unary.sintax]{../code/operators.unary.sintax.cpp}
+
+\lstinputlisting[caption={Exemplo genérico de operadores unários}, label=code.operators.unary.example]{../code/operators.unary.example.cpp}
+
+\subsection{Incremento e decremento unitário}
+
+Uma variável pode ter seu valor incrementado ou decrementado, isto é, acrescido ou decrescido, respectivamente, em um.
+O operador responsável pelo intremento é o duplo mais (\basicCode{++}).
+O operador responsável pelo decremento é o duplo menos (\basicCode{--}).
+A sintaxe associada é apresentada no código \ref{code.operators.increment.sintax}.
+
+\lstinputlisting[caption={Sintaxe de incrementadores e decrementadores unitários}, label=code.operators.increment.sintax]{../code/operators.increment.sintax.cpp}
+
+Seu uso pode ser prefixo ou posfixo, ambos os casos incrementam, mas de maneiras diferentes.
+O prefixo realiza a operação e então retorna o valor.
+O posfixo retorna o valtor e entao raliza a operação.
+Um exemplo é encontrado no código \ref{code.operators.increment.example}.
+
+\lstinputlisting[caption={Exemplo de incrementadores e decrementadores initários}, label=code.operators.increment.example]{../code/operators.increment.example.cpp}
+
+\subsection{Sinalizadores aritiméticos}
+
+Todas as variáveis apresentadas até agora estavam armazenando valores não negativos, isso porque é necessário utilizar um operador para descrever um numero negativo.
+Há um operador que deixa explícito que um número é positivo, porém todo número é implicitamente positivo quando nenhum sinal é colocado, assim como na matemática.
+
+O operador que retorna o correspondente negativado de um tipo é o sinal de menos (\basicCode{-}).
+O operador que retorna o correspondente positivado de um tipo é o sinal de mais (\basicCode{+}).
+A sintaxe associada é apresentada no código \ref{code.operators.sign.sintax}.
+
+\lstinputlisting[caption={Sintaxe do sinalizadores aritiméticos}, label=code.operators.sign.sintax]{../code/operators.sign.sintax.cpp}
+
+Vale notar que, matematicamente, são equivalente a multiplitar por $-1$ e $+1$, respectivamente, ou seja, o operador do sinal de mais não realiza operação útil neste contexto, porém em outros ele é necessário.
+Exemplos do uso padrão são encontrados no código \ref{code.operators.sign.example}.
+
+\lstinputlisting[caption={Exemplo de sinalizadores aritiméticos}, label=code.operators.sign.example]{../code/operators.sign.example.cpp}
+
+\subsection{Negador lógico}
+
+Em lógica, negar significa inverter o valor, em computação também.
+O operador de negação utiliza o ponto de exclamação (\basicCode{!}), e normalmente é utilizado com tipos booleanos.
+A sintaxe associada é apresentada no código \ref{code.operators.neg.sintax}.
+Vale ressaltar que não se relaciona à operação de fatorial da matemática, que utiliza o mesmo símbolo.
+
+\lstinputlisting[caption={Sintaxe da negação lógica}, label=code.operators.neg.sintax]{../code/operators.neg.sintax.cpp}
+
+Alguns exemplos podem ser encontrador no código \ref{code.operators.neg.example}.
+
+\lstinputlisting[caption={Exemplo de negação lógica}, label=code.operators.neg.example]{../code/operators.neg.example.cpp}
+
+\subsection{Complemento binário}
+
+O operador de complemento binário é o til (\lstinline|~|).
+Esta operação faz uma inversão bit-a-bit no número, ou seja, transforma \basicCode{1} em \basicCode{0} e \basicCode{0} em \basicCode{1} para todo o bit.
+Sua sintaxe é apresentada no código \ref{code.operators.complement.sintax} e um exemplo de uso é apresentado no código \ref{code.operators.complement.example}.
+Vale ressaltar que o sinal de positividade é representado por um bit em tipos não \basicCode{unsigned}, portanto o complemento binário irá inverter o sinal nesses casos.
+
+\lstinputlisting[caption={Sintaxe do complemento binário}, label=code.operators.complement.sintax]{../code/operators.complement.sintax.cpp}
+
+\lstinputlisting[caption={Exemplo de negação lógica}, label=code.operators.complement.example]{../code/operators.complement.example.cpp}

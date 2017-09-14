@@ -1,0 +1,6 @@
+\part{Básico}
+\input{../chapters/sintax.txt}
+\input{../chapters/types.txt}
+\input{../chapters/variables.txt}
+\input{../chapters/operators.txt}
+\input{../chapters/flow.txt}

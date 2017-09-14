@@ -30,7 +30,7 @@ Quando uma variável não é inicializada, pode trazer o chamada lixo de memóri
 
 O lixo de memória é o resíduo de outros processos do sistema operacional vigente. Quando o processo acaba, é menos custoso deixar a memória com os ultimos valores registrados, e isso pode ser um problema para o próximo programa a utilizar aquele espaço de memória, por isso é recomendado declarar toda variável com um valor de inicialização definido.
 
-Existem algumas formas de inicializar variáveis que dependem de operadores aritiméticos, estas formas são apresentadas no capítulo \ref{cap.aritimetic}, onde os operadores são descritos.
+Existem algumas formas de inicializar variáveis que dependem de operadores aritiméticos, estas formas são apresentadas no capítulo \ref{cap.operators}, onde os operadores são descritos.
 A maneira apresentada aqui não é a mais usual, mas é mais veloz, a execução de um comparador de velocidades pode comprovar.
 
 Além da sequência de declaração, ao fim adiciona-se o valor escolhido entre parenteses (\basicCode{()}).

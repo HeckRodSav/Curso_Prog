@@ -4,10 +4,10 @@ bool verdadeiro(true);	//Com palavra-chave
 char igual(0x3D);				//Sinal de igual ASCII
 char letraA('A');				//Aspas simples
 
-int contador(1);									//Contador de eventos
+int contador(1), acumulador(0);		//Várias variáveis do mesmo tipo
 unsigned int positivo(523); 			//Inteiro sem sinal
 short doisBytes(93);							//Modificador de comprimento
 long grande(32416189349L);				//Número grande
 double cargaFundamental(1.6e-19);	//Notação científica
-float pi(3.14159265358979323846264338327950288419f);//Flutuante preciso
+float pi(3.14159265358979323846264338327950288419f);	//Flutuante preciso
 //...
