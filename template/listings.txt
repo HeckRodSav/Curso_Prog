@@ -25,7 +25,7 @@
 		% tab=\rightarrowfill,
 		extendedchars=true, 
 		showstringspaces=false,
-		numberbychapter=true,
+		numberbychapter=false,
 		emptylines=1,
 		frame=L,
 		% firstnumber=last,
@@ -34,13 +34,16 @@
 		captionpos=b,
 		xleftmargin=2em,
 		inputencoding=utf8,
-		texcl=true,
+		%texcl=true,
+		upquote=true,
 		literate=%
 			{á}{{\'a}}1
 			{à}{{\`a}}1
+			{â}{{\^a}}1
 			{ã}{{\~a}}1
 			{é}{{\'e}}1
 			{è}{{\`e}}1
+			{ê}{{\^e}}1
 			{í}{{\'i}}1
 			{ì}{{\`i}}1
 			{ó}{{\'o}}1
@@ -51,9 +54,11 @@
 			{ü}{{\"u}}1
 			{Á}{{\'A}}1
 			{À}{{\`A}}1
+			{Â}{{\^A}}1
 			{Ã}{{\~A}}1
 			{É}{{\'E}}1
 			{È}{{\`E}}1
+			{Ê}{{\^E}}1
 			{Í}{{\'I}}1
 			{Ì}{{\`I}}1
 			{Ó}{{\'O}}1

@@ -1,0 +1,9 @@
+//...
+do
+{
+	<comand1>;
+	<comand2>;
+	//...
+	<comandN>;
+} while(<cond>);
+//...

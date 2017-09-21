@@ -1,0 +1,9 @@
+//...
+for(<inicialização>; <cond>; <incremento>)
+{
+	<comand1>;
+	<comand2>;
+	//...
+	<comandN>;
+}
+//...

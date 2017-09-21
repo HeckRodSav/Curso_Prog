@@ -22,6 +22,7 @@ Um bloco de código é delimitado pelos caracteres de chave esquerda (\basicCode
 Um bloco de código pode ser criado dentro de outro.
 É recomendado que, a cada novo bloco, um aumento no recuo da margem do programa seja feito, mantendo todo comando dentro do bloco alinhado, permitindo a fácil visualização do início e fim do bloco de código.
 Normalmente utiliza-se um caractere de tabulação, e este é o nome do processo de formatação visual do código.
+Também é possível encontrar programadores que utilizem espaços em branco para o processo de tabulação, porém não é recomendado.
 
 \begin{center}
     \noindent\lstinline[basicstyle={\Huge\ttfamily}]|{;}|
@@ -31,7 +32,7 @@ Normalmente utiliza-se um caractere de tabulação, e este é o nome do processo
 
 A \emph{sensibilidade de caixa} é uma das características mais comuns e linguagens de programação modernas, embora possa parecer incoerente em linguagem coloquial, quando escrita pode ser a diferença entre um programa que é compilável ou não, essa sensibilidade é denominada \textit{case sensitive}.
 De maneira simples, a caixa alta é o conjunto de caracteres de letras maiúsculas e a caixa baixa o conjunto de caracteres de letras minúsculas.
-Então, se em um lugar do código existir um termo como \basicCode{palavra}, em outro o termo \basicCode{Palavra} e em um terceiro lugar o termo \basicCode{PALAVRA}, o compilador reconhecerá como três símbolos diferentes, completamente distintos e sem qualquer relação natural, mesmo que em um contexto coloquial sejam exatamente o mesmo termo.
+Então, se em um lugar do código existir um termo como \basicCode{palavra}, em outro o termo \basicCode{Palavra} e em um terceiro lugar o termo \basicCode{PALAVRA}, o compilador reconhecerá como três símbolos diferentes, isto é, completamente distintos e sem qualquer relação, mesmo que em um contexto coloquial sejam exatamente o mesmo termo.
 
 Por se tratar de uma linguagem relativamente antiga, o C++ tem uma limitação nos caracteres processáveis, então alguns caracteres especiais não são aceitos pelo compilador, gerando um erro. Ainda que a sintaxe esteja perfeita e nenhum erro de lógica exista, caracteres como \texttt{ã} ou \texttt{ç} não são tolerados.
 Somente os caracteres da tabela ASCII são aceitos, esta pode ser consultada no apêndice \ref{ASCII}.

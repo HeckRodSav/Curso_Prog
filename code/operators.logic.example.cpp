@@ -1,0 +1,6 @@
+//...
+bool T(true), F(false);
+
+bool A(T || F);	//A vale 1
+bool B(T && F);	//B vale 0
+//...

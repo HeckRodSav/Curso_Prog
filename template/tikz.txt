@@ -37,8 +37,10 @@
 	start chain=going below,% General flow is top-to-bottom
 	node distance=4ex and 16ex,% Global setup of box spacing
 	every join/.style={norm},% Default linetype for connecting boxes
+	%--------------------------------------------------
+	line/.style={line width = .4mm},
 	% -------------------------------------------------
-	base/.style={draw, on chain, on grid, align=center, minimum height=4ex},
+	base/.style={draw, on chain, on grid, align=center, minimum height=4ex, line},
 	proc/.style={base, rectangle, text width=8em},
 	dotx/.style={proc, dotted},
 	test/.style={base, diamond, aspect=2, text width=5em},
@@ -48,10 +50,10 @@
 	nmarkB/.style={draw, magenta, circle, font={\sffamily\bfseries}},
 	% -------------------------------------------------
 	% Connector line styles for different parts of the diagram
-	norm/.style={->, draw, black},
+	norm/.style={->, draw, black, line},
 	true/.style={norm, blue},
 	false/.style={norm, orange},
-	thick/.style={norm, line width = .5mm},
+	thick/.style={norm, line width = .7mm},
 	dott/.style={-, draw, dotted, black},
 	it/.style={font={\small\itshape}}
 }

@@ -1,16 +1,16 @@
 \chapter{Tipos de dados}\label{cap.types}
 
-Uma das primeiras necessidades dentro de programação, e de construção de software no geral, é o armazenamento de dados.
+Uma das primeiras necessidades dentro de programação e de construção de software no geral, é o armazenamento de dados.
 Valores numéricos, condições lógicas, caracteres e até mesmo frases podem ser armazenadas dentro dos tipos do C++.
 Uma tipo é dito primitiva quando é definido na base da linguagem e é apenas um molde para um armazenamento de dados.
 
 \section{Valores lógicos}
 
 \subsection{Booleanos}
-O tipo \basicCode{bool} armazena valores de estado lógico, ou seja, \basicCode{verdadeiro} e \basicCode{falso}.
+O tipo \basicCode{bool} armazena valores de estado lógico, ou seja, \basicCode{verdadeiro} ou \basicCode{falso}.
 Seu nome deriva do termo \textit{boolean}.
 
-Em C++, um \basicCode{bool} pode receber os estados lógicos utilizando os valores numéricos \basicCode{1} e \basicCode{0}, respectivamente para verdadeiro e falso, ou as palavras-chave \basicCode{true} e \basicCode{false}.
+Em C++, um \basicCode{bool} pode receber os estados lógicos utilizando os valores numéricos \basicCode{1} ou \basicCode{0}, respectivamente para verdadeiro ou falso, ou as palavras-chave \basicCode{true} ou \basicCode{false}.
 Um detalhe herdado da linguagem C é que qualquer valor diferente de \basicCode{0} será considerado verdadeiro, então um número como \basicCode{54} será considerado verdadeiro.
 
 O espaço de memória ocupado pelo tipo \basicCode{bool} depende do compilador utilizado.
@@ -26,6 +26,7 @@ Seu nome deriva do termo \basicCode{integer}.
 Pode receber números diretamente em sua forma decimal, como \basicCode{28}, ou na forma hexadecimal, como \basicCode{1C}.
 
 O espaço ocupado depende da arquitetura do sistema, em geral ocupa 2 bytes em arquiteturas 32 bits, e 8 bytes em arquitetura 64 bits.
+Os números registráveis também dependes da arquitetura.
 
 \subsection{Números flutuante}
 
@@ -51,7 +52,7 @@ A precisão do número flutuante é associada a estes valores.
 
 Um \basicCode{float} tem precisão de $38$ casas decimais e ocupa 4 bytes.
 Um \basicCode{double} tem precisão de $308$ casas decimais e ocupa 8 bytes.
-Pode ser comum achar que o maior é melhor que o outro, porém ele torna as operações mais lentas.
+Pode ser comum achar que o maior é melhor, porém ele torna as operações mais lentas.
 
 Podem receber valores diretamente na forma decimal caso os valores sejam inteiros, como \basicCode{28}, com marcação de ponto decimal, como \basicCode{3.141592}, ou em notação científica, como \basicCode{1.6e-19}, onde \basicCode{e-19} é o mesmo que $ 10^{-19} $.
 
@@ -70,15 +71,15 @@ Seu nome deriva do termo \textit{character}.
 
 Em C++, um \basicCode{char} pode receber qualquer caracter ASCII de três maneiras:
 \begin{itemize}
-	\item Através do simbolo diretamente, utilizando-o entre aspas simples (\lstinline[stringstyle={}]{'}), por exemplo \lstinline[stringstyle={}]{'M'}.
+	\item Através do símbolo diretamente, utilizando-o entre aspas simples (\lstinline[stringstyle={}]{'}), por exemplo \lstinline[stringstyle={}]{'M'}.
 	\item Através do código hexadecimal do símbolo, por exemplo, \basicCode{0x4D} para \lstinline[stringstyle={}]{'M'}.
-	\item Através do código decimal do simbolo, convertido através do hexadecimal, por exemplo, \basicCode{77} para \lstinline[stringstyle={}]{'M'}.
+	\item Através do código decimal do símbolo, convertido através do hexadecimal, por exemplo, \basicCode{77} para \lstinline[stringstyle={}]{'M'}.
 \end{itemize}
-Os itens estão em ordem de usualidade, o mais comum e mais prático para o programador é utilizar os simbolos do teclado, sem consultar tabelas.
+Os itens estão em ordem de usualidade, o mais comum e mais prático para o programador é utilizar os símbolos do teclado, sem consultar tabelas.
 O uso da tabela é necessário quando símbolos não presentes no teclado são necessários ao longo do programa.
 
 O espaço ocupado pelo tipo \basicCode{char} é de um byte.
-Como a codificação ASCII é baseada em valore numéricos para codificação dos simbolos, o tipo \basicCode{char} também é considerado armazenamento de número inteiro.
+Como a codificação ASCII é baseada em valore numéricos para codificação dos símbolos, o tipo \basicCode{char} também é considerado armazenamento de número inteiro.
 
 Uma regra de sintaxe importante está na diferença entre aspas simples (\lstinline[stringstyle={}]{'}) e aspas duplas (\lstinline[stringstyle={}]{"}), onde a primeira é utilizada para notação de caracteres únicos, já a segunda para sequências de caracteres.
 
@@ -88,7 +89,7 @@ Uma regra de sintaxe importante está na diferença entre aspas simples (\lstinl
 
 \section{Vazios}
 
-O tipo \basicCode{void} é diferente dos demais, ele não armazena valore, portanto não ocupa espaço definido em memória.
+O tipo \basicCode{void} é diferente dos demais, ele não armazena Valores, portanto não ocupa espaço definido em memória.
 Basicamente, ele é utilizado para dar nome a algo de valor vazio, que é o significado de seu nome.
 A utilização dos tipo \basicCode{void} será exemplificada no capítulo \ref{cap.functions}.
 
@@ -149,7 +150,7 @@ Esta forma também se aplica a \basicCode{short} e o tipo implícito é sempre \
 \section{Literais}
 
 Literais são os valores digitados de maneira direta no código, sem o uso de variáveis.
-O tipo do literal é definido com caracteres específicos junto a eles, que deixam explicito o tipo de um dado, deixar claro para o compilador como ele deve ser processado.
+O tipo do literal é definido com caracteres específicos junto a eles, que deixam explícito o tipo de um dado, deixar claro para o compilador como ele deve ser processado.
 Este tipo de definição é importante, por exemplo, para operações matemáticas, já que a precisão de um \basicCode{float} é diferente da de um \basicCode{double}, o que pode levar à erros de processamento.
 
 \subsection{Inteiro}
@@ -160,7 +161,7 @@ Ainda é possível escrever o número em forma binária, utilizando-se do prefix
 
 \subsection{Flutuante}
 
-Quando um leteral flutuante é definido, será considerado \basicCode{double} pelo compilador, a menos que conte com o sufixo \basicCode{f} ou \basicCode{F} que o tornará \basicCode{float}, como em \basicCode{0.114f}.
+Quando um literal flutuante é definido, será considerado \basicCode{double} pelo compilador, a menos que conte com o sufixo \basicCode{f} ou \basicCode{F} que o tornará \basicCode{float}, como em \basicCode{0.114f}.
 
 \subsection{Caracteres}
 
@@ -170,4 +171,4 @@ Por exemplo, \lstinline[stringstyle={}]{'M'} é convertido para \basicCode{77}.
 
 \subsection{Faixa}
 
-Há ainda a opção de definição de faixa em literal, utilizando o sufixo \basicCode{l} ou \basicCode{L}, como em \basicCode{199930L}.
+É possível definir faixa em literal do tipo \basicCode{int}, utilizando o sufixo \basicCode{l} ou \basicCode{L}, como em \basicCode{199930L}.

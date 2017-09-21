@@ -1,34 +1,36 @@
 \chapter{Variáveis}\label{cap.variables}
 
-Retomando a idea apresentada no início do capítulo \ref{cap.types}, é necessário agora criar coisas que tenham as características dos tipos primitivos e possam ser trabalhadas, lembrando que tipos primitivos são definidos pela linguagem e são apenas moldes de armazenamento de dados.
+Retomando a idea apresentada no início do capítulo \ref{cap.types}, é necessário agora criar entidades que tenham as características dos tipos primitivos e possam ser trabalhadas, lembrando que tipos primitivos são definidos pela linguagem e são apenas moldes de armazenamento de dados.
 
 \section{Declarando variáveis}
 
-As variáveis são os armazenadores de dados, moldados a partir dos seus tipos primitivos, essencialmente, a declaração de qualquer tipo de variável é feita da mesma maneira, apresentada no código \ref{code.variables.declaration}.
+As variáveis são os armazenadores de dados, moldados a partir dos seus tipos primitivos, essencialmente a declaração de qualquer tipo de variável é feita da mesma maneira, apresentada no código \ref{code.variables.declaration}.
 Respectivamente a lista de modificadores, separados por espaço, o nome do tipo e finalmente o nome da variável.
 
-O nome de uma variável pode contes caracteres nos intervalos [\basicCode{0},\basicCode{9}], [\basicCode{a},\basicCode{z}], [\basicCode{A},\basicCode{Z}] e o underline (\basicCode{_}).
+O nome de uma variável pode conter caracteres nos intervalos [\basicCode{0},\basicCode{9}], [\basicCode{a},\basicCode{z}], [\basicCode{A},\basicCode{Z}] e o underline (\basicCode{_}).
 O nome também não pode ter como primeiro caracter um número.
 Vale lembrar que apenas o uso de caracteres ASCII é válido.
 
 \lstinputlisting[caption={Declaração de variável}, label=code.variables.declaration]{../code/variables.declaration.cpp}
 
-É recomendada a preferência de nomes de variáveis com letras minúsculas, pois letras maiúsculas costumam ser utilizadas em outras situações descritas posteriormente.
+É recomendada a preferência de nomes de variáveis com letras minúsculas, pois letras maiúsculas costumam ser utilizadas em outras situações que serão descritas posteriormente.
 
 Também recomenda-se utilizar um nome autodescritivo para uma variável, por exemplo, em um calendário, é esperável encontrar uma variável chamada \basicCode{dia} e não uma chama \basicCode{abacaxi}.
 Existem ainda os casos onde apenas uma palavra não será suficiente para tal descrição, ou queremos fazer separações dentro do nome, normalmente utiliza captalização na primeira letra de cada palavra após a primeira, por exemplo \basicCode{diaDaSemana}.
-É menos comum porém também permitido o uso de underlines (\basicCode{_}) para a separação, por exemplo \basicCode{dia_do_mes}.
+É menos comum, ainda que permitido, o uso de underlines (\basicCode{_}) para a separação, por exemplo \basicCode{dia_do_mes}.
 
 Outra recomendação é nunca utilizar o underline (\basicCode{_}) como primeiro caracter, pois alguns compiladores tem palavras-chave próprias que tem esta característica em comum, e podem gerar erros inesperados.
 
-É importante se atentar ao fato de que uma variável só pode ser utiilizada depois de ter sido decladada, ou seja, não é possível utilizar uma variável e declarar ela duas linhas abaixo.
+É importante se atentar ao fato de que uma variável só pode ser utilizada depois de ter sido declarada, ou seja, não é possível utilizar uma variável e declarar ela duas linhas abaixo.
+Alguns exemplos podem ser encontrados na seção \ref{cap.variables.example}.
 
 \section{Inicializando variáveis}
 
 A declaração do código \ref{code.variables.declaration} não inicializa a variável, ou seja, não passa um valor inicial.
-Quando uma variável não é inicializada, pode trazer o chamada lixo de memória.
+Quando uma variável não é inicializada, pode trazer o chamada \emph{lixo de memória}.
 
-O lixo de memória é o resíduo de outros processos do sistema operacional vigente. Quando o processo acaba, é menos custoso deixar a memória com os ultimos valores registrados, e isso pode ser um problema para o próximo programa a utilizar aquele espaço de memória, por isso é recomendado declarar toda variável com um valor de inicialização definido.
+O lixo de memória é o resíduo de outros processos do sistema operacional vigente.
+Quando o processo acaba, é menos custoso deixar a memória com os ultimos valores registrados, e isso pode ser um problema para o próximo programa a utilizar aquele espaço de memória, por isso é recomendado declarar toda variável com um valor de inicialização.
 
 Existem algumas formas de inicializar variáveis que dependem de operadores aritiméticos, estas formas são apresentadas no capítulo \ref{cap.operators}, onde os operadores são descritos.
 A maneira apresentada aqui não é a mais usual, mas é mais veloz, a execução de um comparador de velocidades pode comprovar.
@@ -38,7 +40,7 @@ O valor escolhido deve ser pensado de acordo com o objetido da variável, por ex
 
 \lstinputlisting[caption={Declaração de variável}, label=code.variables.inicialization]{../code/variables.inicialization.cpp}
 
-\section{Exemplos de variáveis}
+\section{Exemplos de variáveis}\label{cap.variables.example}
 
 Alguns exemplos de declaração e inicalização de variáveis são apresentados no código \ref{code.variables.examples}, com comentários referentes às declarações.
 
@@ -46,13 +48,14 @@ Alguns exemplos de declaração e inicalização de variáveis são apresentados
 
 \section{Escopo}
 
-Variáveis podem ser declaradas em quase qualquer lugar do programa, porém não podem ser acessadas de qualquer lugar do programa.
+As variáveis podem ser declaradas em quase qualquer lugar do programa, porém não podem ser acessadas de qualquer lugar do programa.
+Existem dois casos de declaração de variáveis, as locais e as globais:
+\begin{itemize}
+	\item Uma variável \emph{local} é declarada dentro de um bloco de código, e não pode ser acessada fora dele. A tentativa de acesso fora da região onde a variável foi declarada gera um erro de escopo.
+	\item Uma variável \emph{global} é declarada fora de qualquer bloco de código, e pode ser acessada de qualquer parte do programa, inclusive dentro de outros blocos.
+\end{itemize}
 
-Existem dois casos de declaração de variáveis, as locais e as globais.
-Uma variável local é declarada dentro de um bloco de código, ela não pode ser acessada fora dele.
-Uma variável global é declarada fora de um bloco de código, ela pode ser acessada de qualquer parte do programa.
-
-Existe ainda uma situação relativa, onde uma variável é localmente global, ou seja, pode ser acessada em qualquer região dentro do bloco no qual foi declarado, até bloco internos, mas não pode ser acessada fora dele.
+Existe ainda uma terceira situação, onde uma variável é localmente global, ou seja, pode ser acessada em qualquer região dentro do bloco no qual foi declarado, até em blocos internos, mas não pode ser acessada fora desta região ao qual perterce.
 O código \ref{code.variables.escope} mostra um exemplo.
 
 \lstinputlisting[caption={Declarações de variável}, label=code.variables.escope]{../code/variables.escope.cpp}
