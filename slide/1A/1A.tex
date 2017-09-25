@@ -1,0 +1,143 @@
+\documentclass[11pt]{beamer}
+
+\newcommand{\DEBUG}{0}
+\newcommand{\PRESENTATION}{0}
+\input{../slideTemplate.txt}
+
+\subtitle{Introducto}
+\usecolortheme[named=slideBlue]{structure}
+
+\begin{document}
+
+\titlepage
+
+\begin{frame}
+	\tableofcontents
+\end{frame}
+
+\section{Sobre o curso}
+	\begin{frame}{Sobre o professor}
+		\begin{itemize}
+			\presentationPause\item Técnico de mecatrônica - ETEC Jorge Street - 2014
+			\presentationPause\item Ingressante de 2015
+			\presentationPause\item Programador na equipe UFABC Rocket Design
+			\presentationPause\item Ciência da Computação
+			\presentationPause\item Engenharia de Informação
+			\presentationPause\item Entusiasta de tecnologia
+		\end{itemize}
+	\end{frame}	
+
+
+	\begin{frame}{Sobre o curso}
+		\begin{itemize}
+			\presentationPause\item Essencialmente presencial
+			\presentationPause\item Temos um site! <\href{https://sites.google.com/view/heckrodsav}{sites.google.com/view/heckrodsav}>
+			\presentationPause\item Presença: chamada toda aula
+			\presentationPause\item Avaliação: pequenas atividades ao longo do curso
+			\presentationPause\item Aulas em horários {\itshape relativamente} flexíveis
+			\presentationPause\item Temos um servidor! <\href{https://c9.io/heck0cpp0course}{c9.io/heck0cpp0course}>
+			\presentationPause\item Esquema de cores para indicar nível de dificuldade
+		\end{itemize}
+		\begin{center}
+			\palette
+		\end{center}
+	\end{frame}	
+
+\section{Um pouco sobre C++}
+	\begin{frame}{Breve história}
+		\begin{itemize}
+			\presentationPause\item Surgiu em 1979
+			\presentationPause\item Deriva diretamente da linguagem C
+			\presentationPause\item Primeira padronização em 1998, depois 2003, 2011 e 2014
+			\presentationPause\item Próxima atualização em 2017
+			\presentationPause\item Multiparadigma!
+		\end{itemize}
+	\end{frame}	
+
+	\begin{frame}{Porque usar C++?}
+		\begin{itemize}
+			\presentationPause\item Realmente rápido, perdendo para linguagens de máquina, como Assembly
+			\presentationPause\item Amplamente difundida, utilizada e referenciada
+			\presentationPause\item Acesso a hardware
+			\presentationPause\item Respeita o Programador
+			\presentationPause\item Falar mais vantagens é \textit{spoiler}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{O que é feito em C++?}
+		\begin{multicols}{2}
+			\begin{itemize}
+				\presentationPause\item Adobe Photoshop
+				\presentationPause\item Arduino
+				\presentationPause\item Counter-Strike
+				\presentationPause\item GTA
+				\presentationPause\item Half-Life
+				\presentationPause\item JVM - Java
+				\presentationPause\item Linux
+				\presentationPause\item Maya
+				\presentationPause\item Microsoft Office
+				\presentationPause\item Mozilla Firefox
+				\presentationPause\item The Sims
+				\presentationPause\item Tibia
+				\presentationPause\item Unreal Engine 4
+				\presentationPause\item Windows
+			\end{itemize}		
+		\end{multicols}
+	\end{frame}
+	
+	\section{Um pouco de código}
+	\begin{frame}{O código mínimo}
+		O código mínimo é base pra entendimento da linguagem, porém sua compreensão requer uma base sólida de conceitos que serão abordados posteriormente.
+
+		Ele faz absolutamente nada. :)
+		\lstinputlisting{../../code/minimal.cpp}
+	\end{frame}
+	
+	\begin{frame}{Sintaxe básica}
+		\presentationPause\begin{center}
+			\noindent\lstinline[basicstyle={\Huge\ttfamily}]k\{;\}k
+		\end{center}
+		\presentationPause\begin{center}
+			\noindent\lstinline[basicstyle={\Huge\ttfamily},mathescape]|A$\neq$a|
+		\end{center}
+		\presentationPause\begin{center}
+			\noindent\lstinline[basicstyle={\Huge\ttfamily},commentstyle={}]|//Linear|
+		\end{center}
+		\presentationPause\begin{center}
+			\noindent\lstinline[basicstyle={\Huge\ttfamily},commentstyle={}]|/*Blocular*/|
+		\end{center}
+	\end{frame}
+
+\section{GNU/Linux e o GCC}
+	\begin{frame}{Onde programar?}
+		\begin{itemize}
+			\presentationPause\item Code::Blocks
+			\presentationPause\item O GNU/Linux
+			\presentationPause\item \textit{Open source}
+			\presentationPause\item O GCC
+		\end{itemize}
+		\presentationPause\lstinputlisting[language=bash, numbers=none]{../../code/bash.compile.sh}
+	\end{frame}
+
+	\begin{frame}{Hello Wolrd!}
+		O programa mais comum para iniciar é o \textit{Hello Wolrd}, que consiste em uma saída de texto simples.
+		O C++ permite sua escrita de várias formas diferentes.
+
+		\only<1>{\lstinputlisting{../../code/minimal.example.HW.puts.cpp}
+		É a forma mais arcaica de apresentar uma informação, a mais complicada.}
+
+		\only<2>{\lstinputlisting{../../code/minimal.example.HW.printf.cpp}
+		É a forma utilizada no C, que permite formatação de dados de maneira mais intuitiva.}
+
+		\only<3>{\lstinputlisting{../../code/minimal.example.HW.cout.cpp}
+		É a forma moderna do C++, utiliza o conceito de transmissão de dados, a mais simples.}
+	\end{frame}
+
+\section{Hora de brincar}
+	\begin{frame}
+		\begin{center}\Huge
+			Vamos testar!
+		\end{center}
+	\end{frame}
+
+\end{document}

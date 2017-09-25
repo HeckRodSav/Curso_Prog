@@ -1,0 +1,1 @@
+user@pc:~$ g++ code.cpp -o app.run

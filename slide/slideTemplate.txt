@@ -1,0 +1,32 @@
+\input{../../template/template.txt}
+
+\input{../../template/xcolor.txt}
+\input{../../template/listings.txt}
+\input{../../template/tikz.txt}
+
+\lstset{
+	basicstyle={\ttfamily\scriptsize },
+	frame=none,
+	captionpos=none
+}
+
+\newcommand{\presentationPause}{\ifthenelse{\equal{\PRESENTATION}{1}}{\pause}{}}
+
+\usepackage{remreset}% tiny package containing just the \@removefromreset command
+\makeatletter
+\@removefromreset{subsection}{section}
+\makeatother
+\setcounter{subsection}{1}
+
+\mode<presentation> {
+	\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+	\usetheme{Dresden}
+	% \useoutertheme{smoothbars}
+	\useoutertheme{miniframes}
+	\useinnertheme{rectangles}
+}
+
+\title[C++]{{\bfseries C++} \\ Básico ao Avançado}
+\author[Heitor]{Heitor Rodrigues Savegnago}
+\institute{UFABC Rocket Design}
+\date{2017.3}

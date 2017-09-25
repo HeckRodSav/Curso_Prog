@@ -12,3 +12,5 @@
 *.out
 *.xwm
 .vscode
+*.nav
+*.snm

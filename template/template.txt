@@ -1,0 +1,15 @@
+\usepackage{ae}%Al­most Euro­pean T1 coded fonts
+\usepackage[utf8]{inputenc}%Caracteres especiais
+\usepackage[T1]{fontenc}%Caracteres especiais
+\usepackage[brazil]{babel}
+\usepackage{indentfirst}
+
+\usepackage{pmboxdraw}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{float}
+\usepackage{multicol}
+
+\usepackage{ifthen}

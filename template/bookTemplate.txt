@@ -1,0 +1,5 @@
+\input{../template/template.txt}
+
+\input{../template/xcolor.txt}
+\input{../template/listings.txt}
+\input{../template/tikz.txt}
