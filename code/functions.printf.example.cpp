@@ -1,0 +1,6 @@
+//...
+printf("cinco + sete = %i\n", 12);
+printf("%i + %i = %s\n", 5, 7, "doze");
+float pi(3.1415);
+printf("Pi vale %f\n", pi);
+//...

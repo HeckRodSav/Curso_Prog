@@ -1,0 +1,131 @@
+\documentclass[11pt]{beamer}
+	
+\newcommand{\DEBUG}{0}
+\newcommand{\PRESENTATION}{0}
+\input{../slideTemplate.txt}
+
+\subtitle{Tipo assim\dots}
+\usecolortheme[named=slideBlue]{structure}
+
+\begin{document}
+
+\titlepage
+
+\begin{frame}
+	\tableofcontents
+\end{frame}
+
+\section{Memorizando dados}
+	\begin{frame}{Tipos}
+		\begin{itemize}
+			\presentationPause\item Todo programa precisa armazenar dados, até o código mínimo utiliza uma \presentationPause\item quantidade de memória.
+			\presentationPause\item Podem ser armazenados dados numéricos, de texto, estados lógicos.
+			\presentationPause\item Os tipos aqui apresentados são denominados \emph{tipos primitivos}.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Tipos primitivos}
+		\begin{itemize}
+			\presentationPause\item Estados lógicos são armazenados nas memórias tipo \basicCode{bool}
+			\presentationPause\item Caracteres de texto são armazenados nas memórias tipo \basicCode{char}
+			\presentationPause\item Valore numéricos apresentam dois tipos de armazenamento:
+			\begin{itemize}
+				\presentationPause\item Números inteiros nos tipo \basicCode{int}
+				\presentationPause\item Números flutuantes nos tipo \basicCode{float} e \basicCode{double}
+			\end{itemize}
+		\end{itemize}
+		\presentationPause Há ainda um tipo especial, que não armazena dados, o tipo \basicCode{void}, seu será explicado daqui algumas aulas.
+	\end{frame}
+
+	\section{Modificadores de tipos}
+	\begin{frame}{Modificadores}
+		\begin{itemize}
+			\presentationPause\item Os modificadores de faixa são palavras-chave que alteram os valores registráveis por um tipo.
+			\presentationPause\item Os modificadores \basicCode{signed} e \basicCode{unsigned} alteram a signatura da faixa.
+			\presentationPause\item Os modificadores \basicCode{short} e \basicCode{long} alteram o comprimento da faixa.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Modificadores}
+		\tiny
+		\begin{table}[h]
+			\centering
+			\caption{Relação de faixa e tamanhos de memória para tipos primitivos com modificadores de faixa}
+			\label{table.sign.range}
+			\begin{tabular}{rccc}
+				\multicolumn{1}{c}{código}	& tamanho (B) & valor mínimo & valor máximo \\\hline
+		
+				\presentationPause\basicCode{bool}								& 1  & 0 & 1 \\\hline
+		
+				\presentationPause\basicCode{signed char}					& 1  & -127 & 126 \\
+				\basicCode{char}								& 1  & -127 & 126 \\
+				\basicCode{unsigned char}				& 1  & 0 & 255\\\hline
+		
+				\presentationPause\basicCode{signed short int}		& 2  & -32768 & 32767 \\
+				\basicCode{short int}						& 2  & -32768 & 32767 \\
+				\basicCode{unsigned short int}	& 2  & 0 & 64535\\\hline
+		
+				\presentationPause\basicCode{signed int}					& 4  & -2147483648 & 2147483647 \\
+				\basicCode{int}									& 4  & -2147483648 & 2147483647 \\
+				\basicCode{unsigned int}				& 4  & 0 & 4294967295\\\hline
+		
+				\presentationPause\basicCode{signed long int}			& 8  & -9223372036854775808 & 9223372036854775807 \\
+				\basicCode{long int}						& 8  & -9223372036854775808 & 9223372036854775807 \\
+				\basicCode{unsigned long int}		& 8  & 0 & 18446744073709551616\\\hline
+		
+				\presentationPause\basicCode{float}								& 4  & $1.2\cdot10^{-38}$ & $3.4\cdot10^{+38}$\\\hline
+		
+				\presentationPause\basicCode{double}							& 8  & $1.73\cdot10^{-308}$ & $1.7\cdot10^{+308}$ \\
+				\basicCode{long double}					& 16 & $3.4\cdot10^{-4932}$ & $3.4\cdot10^{+4932}$ 
+			\end{tabular}
+		\end{table}
+
+	\end{frame}
+
+\section{Variáveis}
+	\begin{frame}{Variáveis}
+		De nada adianta \emph{existir} um tipo de armazenamento de dados se não soubermos usá-lo.
+
+		\presentationPause Uma variável é declarada colocando a lista de modificadores, o tipo e o nome da variável.
+
+		\presentationPause\lstinputlisting[numbers=none,linerange={2-2}]{../../code/variables.declaration.cpp}
+
+		\presentationPause Quando uma variável é declarada, ela pode vir com lixo de memória, para evitar isso, declaramos a variável com um valor de inicialização, seguindo a sintaxe:
+
+		\presentationPause\lstinputlisting[numbers=none,linerange={2-2}]{../../code/variables.inicialization.cpp}
+	\end{frame}
+
+	\begin{frame}{Declarando variáveis}
+		\presentationPause\lstinputlisting[linerange={2-12}]{../../code/variables.examples.cpp}
+			\presentationPause\emph{Note os detalhes!}
+	\end{frame}
+
+\section{Exibindo valores}
+	\begin{frame}{\textit{printf}}
+		\begin{itemize}
+			\presentationPause\item O \basicCode{prinft} é uma das opções para exibição na tela.
+			\presentationPause\item Pular linha? Caracter especial! <\href{http://en.cppreference.com/w/cpp/language/escape}{en.cppreference.com/w/cpp/language/escape}>
+			\presentationPause\item Exibir variáveis? Sequência especial! <\href{http://en.cppreference.com/w/cpp/io/c/fprintf}{en.cppreference.com/w/cpp/io/c/fprintf}>
+		\end{itemize}
+		\presentationPause\lstinputlisting[linerange={2-2}, numbers=none]{../../code/functions.printf.sintax.cpp}
+	\end{frame}
+
+	\begin{frame}{Exemplo de \textit{printf}}
+		\presentationPause
+		O código:
+		\lstinputlisting[linerange={2-5}, numbers=none]{../../code/functions.printf.example.cpp}
+
+		\presentationPause
+		Gera a saída:
+		\lstinputlisting[language={}, numbers=none]{../../code/functions.printf.out.txt}
+	\end{frame}
+
+\section{Hora de brincar}
+	\begin{frame}
+		\begin{center}\Huge
+			Vamos testar!
+		\end{center}
+	\end{frame}
+
+\end{document}
+	

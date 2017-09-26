@@ -1,0 +1,3 @@
+cinco + sete = 12
+5 + 7 = doze
+Pi vale 3.141500
