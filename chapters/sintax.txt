@@ -23,7 +23,7 @@ Um bloco de código pode ser criado dentro de outro.
 É recomendado que, a cada novo bloco, um aumento no recuo da margem do programa seja feito, mantendo todo comando dentro do bloco alinhado, permitindo a fácil visualização do início e fim do bloco de código.
 Normalmente utiliza-se um caractere de tabulação, e este é o nome do processo de formatação visual do código.
 Também é possível encontrar programadores que utilizem espaços em branco para o processo de tabulação, porém não é recomendado.
-
+/
 \begin{center}
     \noindent\lstinline[basicstyle={\Huge\ttfamily}]|{;}|
 \end{center}
@@ -71,7 +71,7 @@ Os comentários devem respeitar o uso de caracteres ASCII, caracteres especiais 
 
 \section{Um pequeno exemplo de sintaxe}
 
-O código \ref{code.minimal.sintax} apresenta alguns exemplos de sintaxe.
+O código \ref{code.minimal.basic.sintax} apresenta alguns exemplos de sintaxe.
 Note a forma que a palavra \basicCode{int} não está com a coloração diferenciada como no código \ref{code.minimal}.
 
-\lstinputlisting[caption={Exemplos de sintaxe no código mínimo}, label=code.minimal.sintax]{../code/minimal.sintax.cpp}
+\lstinputlisting[caption={Exemplos de sintaxe no código mínimo}, label=code.minimal.basic.sintax]{../code/minimal/basic.sintax.cpp}

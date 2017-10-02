@@ -16,9 +16,9 @@ Existem mais operadores além dos descritos aqui, porém seu uso requer domínio
 
 De uma maneira geral, todo operador unário tem uma sintaxe semelhante, apresentada no código \ref{code.operators.unary.sintax}, e um exemplo genérico no código \ref{code.operators.unary.example}.
 
-\lstinputlisting[caption={Sintaxe geral de operadores unários}, label=code.operators.unary.sintax]{../code/operators.unary.sintax.cpp}
+\lstinputlisting[caption={Sintaxe geral de operadores unários}, label=code.operators.unary.sintax]{../code/operators/unary.sintax.cpp}
 
-\lstinputlisting[caption={Exemplo genérico de operadores unários}, label=code.operators.unary.example]{../code/operators.unary.example.cpp}
+\lstinputlisting[caption={Exemplo genérico de operadores unários}, label=code.operators.unary.example]{../code/operators/unary.example.cpp}
 
 \subsection{Incremento e decremento unitário}
 
@@ -27,14 +27,14 @@ O operador responsável pelo intremento é o duplo mais (\basicCode{++}).
 O operador responsável pelo decremento é o duplo menos (\basicCode{--}).
 A sintaxe associada é apresentada no código \ref{code.operators.increment.sintax}.
 
-\lstinputlisting[caption={Sintaxe de incrementadores e decrementadores unitários}, label=code.operators.increment.sintax]{../code/operators.increment.sintax.cpp}
+\lstinputlisting[caption={Sintaxe de incrementadores e decrementadores unitários}, label=code.operators.increment.sintax]{../code/operators/increment.sintax.cpp}
 
 Seu uso pode ser prefixo ou posfixo, ambos os casos incrementam, mas de maneiras diferentes.
 O prefixo realiza a operação e então retorna o valor.
 O posfixo retorna o valtor e entao raliza a operação.
 Um exemplo é encontrado no código \ref{code.operators.increment.example}.
 
-\lstinputlisting[caption={Exemplo de incrementadores e decrementadores initários}, label=code.operators.increment.example]{../code/operators.increment.example.cpp}
+\lstinputlisting[caption={Exemplo de incrementadores e decrementadores initários}, label=code.operators.increment.example]{../code/operators/increment.example.cpp}
 
 \subsection{Sinalizadores aritiméticos}
 
@@ -45,12 +45,12 @@ O operador que retorna o correspondente negativado de um tipo é o sinal de meno
 O operador que retorna o correspondente positivado de um tipo é o sinal de mais (\basicCode{+}).
 A sintaxe associada é apresentada no código \ref{code.operators.sign.sintax}.
 
-\lstinputlisting[caption={Sintaxe do sinalizadores aritiméticos}, label=code.operators.sign.sintax]{../code/operators.sign.sintax.cpp}
+\lstinputlisting[caption={Sintaxe do sinalizadores aritiméticos}, label=code.operators.sign.sintax]{../code/operators/sign.sintax.cpp}
 
 Vale notar que, matematicamente, são equivalente a multiplicar por $-1$ e $+1$, respectivamente, ou seja, o operador do sinal de mais não realiza operação útil neste contexto, porém em outros ele é necessário.
 Exemplos do uso padrão são encontrados no código \ref{code.operators.sign.example}.
 
-\lstinputlisting[caption={Exemplo de sinalizadores aritiméticos}, label=code.operators.sign.example]{../code/operators.sign.example.cpp}
+\lstinputlisting[caption={Exemplo de sinalizadores aritiméticos}, label=code.operators.sign.example]{../code/operators/sign.example.cpp}
 
 \subsection{Negador lógico}
 
@@ -61,11 +61,11 @@ A sintaxe associada é apresentada no código \ref{code.operators.neg.sintax}.
 Vale ressaltar que não se relaciona à operação de fatorial da matemática, que utiliza o mesmo símbolo.
 Uma tabela verdade de referência é apresentada na tabela \ref{table.truth}.
 
-\lstinputlisting[caption={Sintaxe da negação lógica}, label=code.operators.neg.sintax]{../code/operators.neg.sintax.cpp}
+\lstinputlisting[caption={Sintaxe da negação lógica}, label=code.operators.neg.sintax]{../code/operators/neg.sintax.cpp}
 
 Alguns exemplos podem ser encontrador no código \ref{code.operators.neg.example}.
 
-\lstinputlisting[caption={Exemplo de negação lógica}, label=code.operators.neg.example]{../code/operators.neg.example.cpp}
+\lstinputlisting[caption={Exemplo de negação lógica}, label=code.operators.neg.example]{../code/operators/neg.example.cpp}
 
 \subsection{Complemento binário}
 
@@ -74,9 +74,9 @@ Esta operação faz uma inversão bit-a-bit no número, ou seja, transforma \bas
 Sua sintaxe é apresentada no código \ref{code.operators.complement.sintax} e um exemplo de uso é apresentado no código \ref{code.operators.complement.example}.
 Vale ressaltar que o sinal de positividade é representado por um bit em tipos não \basicCode{unsigned}, portanto o complemento binário irá inverter o sinal nesses casos.
 
-\lstinputlisting[caption={Sintaxe do complemento binário}, label=code.operators.complement.sintax]{../code/operators.complement.sintax.cpp}
+\lstinputlisting[caption={Sintaxe do complemento binário}, label=code.operators.complement.sintax]{../code/operators/complement.sintax.cpp}
 
-\lstinputlisting[caption={Exemplo de complemento binário}, label=code.operators.complement.example]{../code/operators.complement.example.cpp}
+\lstinputlisting[caption={Exemplo de complemento binário}, label=code.operators.complement.example]{../code/operators/complement.example.cpp}
 
 
 
@@ -86,9 +86,9 @@ Vale ressaltar que o sinal de positividade é representado por um bit em tipos n
 
 Assim como os operadores unários, os binários seguem um padrão na sintaxe, apresentada no código \ref{code.operators.binary.sintax} e um exemplo genérico no código \ref{code.operators.binary.example}.
 
-\lstinputlisting[caption={Sintaxe geral para operadores binários}, label=code.operators.binary.sintax]{../code/operators.binary.sintax.cpp}
+\lstinputlisting[caption={Sintaxe geral para operadores binários}, label=code.operators.binary.sintax]{../code/operators/binary.sintax.cpp}
 
-\lstinputlisting[caption={Exemplo genérico de operadores binários}, label=code.operators.binary.example]{../code/operators.binary.example.cpp}
+\lstinputlisting[caption={Exemplo genérico de operadores binários}, label=code.operators.binary.example]{../code/operators/binary.example.cpp}
 
 
 
@@ -100,12 +100,12 @@ O primeiro operador binário apresentado é o de atribuição simpes, que utiliz
 Diz-se que o operador de atribuição simples tem característica de agrupamento da direita para a esquerda, isto é, o valor do tipo à direita do operador é atribuído à variável da esquerda.
 Sua sintaxe básica é apresentada no código \ref{code.operators.assignment.sintax}.
 
-\lstinputlisting[caption={Sintaxe do operador de atribuição}, label=code.operators.assignment.sintax]{../code/operators.assignment.sintax.cpp}
+\lstinputlisting[caption={Sintaxe do operador de atribuição}, label=code.operators.assignment.sintax]{../code/operators/assignment.sintax.cpp}
 
 O operador de atribuição é o mais comum ao inicializar uma variável.
 Alguns exemplos pode ser encontrados no código \ref{code.operators.assignment.example}
 
-\lstinputlisting[caption={Exemplo do operador de atribuição}, label=code.operators.assignment.example]{../code/operators.assignment.example.cpp}
+\lstinputlisting[caption={Exemplo do operador de atribuição}, label=code.operators.assignment.example]{../code/operators/assignment.example.cpp}
 
 \subsection{Aritiméticos}
 
@@ -114,7 +114,7 @@ A soma pelo sinal de mais (\basicCode{+}), subtração pelo sinal de menos (\bas
 Diferente do operador de atribuição simples, os operadores aritiméticos não alteram o valor de variáveis, apenas retornam o cálculo.
 Um exemplo de sintaxe é apresentado no código \ref{code.operators.arithmetic.sintax}.
 
-\lstinputlisting[caption={Sintaxe dos operadores aritiméticos}, label=code.operators.arithmetic.sintax]{../code/operators.arithmetic.sintax.cpp}
+\lstinputlisting[caption={Sintaxe dos operadores aritiméticos}, label=code.operators.arithmetic.sintax]{../code/operators/arithmetic.sintax.cpp}
 
 Também são de agrupamento da direita para a esquerda.
 Estes operadores funcionam da mesma maneira que na matemática.
@@ -136,7 +136,7 @@ Exemplos podem ser encontrador no código \ref{code.operators.arithmetic.example
 	\end{array}
 \end{equation}
 
-\lstinputlisting[caption={Exemplo de operadores aritiméticos}, label=code.operators.arithmetic.example]{../code/operators.arithmetic.example.cpp}
+\lstinputlisting[caption={Exemplo de operadores aritiméticos}, label=code.operators.arithmetic.example]{../code/operators/arithmetic.example.cpp}
 
 O operador módulo é especialmente útil quando precisa-se verificar se um número é multiplo de outro, onde seu retorno é \basicCode{0}.
 Assim como na matemática, a divisão por zero é proibida em C++, gerando um erro e até a finalização incompleta do programa.
@@ -149,7 +149,7 @@ O operador de deslocamento para a direita utiliza o sinal de maior duas vezes (\
 O valor à esquerda é o deslocado, o valor à direita é a quantidade de bits deslocados.
 A sintaxe associada é encontrada no código \ref{code.operators.shift.sintax}.
 
-\lstinputlisting[caption={Sintaxe dos operadores de deslocamento}, label=code.operators.shift.sintax]{../code/operators.shift.sintax.cpp}
+\lstinputlisting[caption={Sintaxe dos operadores de deslocamento}, label=code.operators.shift.sintax]{../code/operators/shift.sintax.cpp}
 
 Matematicamente esta operação equivale a multiplicar ou dividir o valor por uma potência de dois, como na equação \ref{equation.shiftL} para o deslocamento à esquerda e na equação \ref{equation.shiftR} para o deslocamento à direita.
 Porém, computacionalmente, os deslocamentos são muito mais rápidos que divisões e multiplicações, por isso é recomendada sua utilização em casos de operações com potências de 2.
@@ -160,7 +160,7 @@ Porém, computacionalmente, os deslocamentos são muito mais rápidos que divis�
 Onde V é o valor à esquerda do operador e S o valor à direita.
 Alguns exemplos de operadores de deslocamento podem ser encontrados no código \ref{code.operators.shift.example}.
 
-\lstinputlisting[caption={Exemplos dos operadores de deslocamento}, label=code.operators.shift.example]{../code/operators.shift.example.cpp}
+\lstinputlisting[caption={Exemplos dos operadores de deslocamento}, label=code.operators.shift.example]{../code/operators/shift.example.cpp}
 
 \subsection{Lógicos bit-a-bit}
 
@@ -181,7 +181,7 @@ A tabela \ref{table.truth} apresenta uma relação entre as oprações lógicas 
 Exemplos dos operadores lógicos bit-a-bit podem ser encontrados no código \ref{code.operators.bitwise.example}.
 O conjunto de operações bit-a-bit é apresentado na forma matemática na equação \ref{equation.bitwise}, vale ressaltar que uma operação bit-a-bit significa que o operador lógico será realizado entre o bit de um valor e o bit correspondente no outro valor, ou seja, o primeiro bit de um opera com o primeiro bit do outro.
 
-\lstinputlisting[caption={Sintaxe dos operadores lógicos bitwise}, label=code.operators.bitwise.sintax]{../code/operators.bitwise.sintax.cpp}
+\lstinputlisting[caption={Sintaxe dos operadores lógicos bitwise}, label=code.operators.bitwise.sintax]{../code/operators/bitwise.sintax.cpp}
 
 \begin{table}[!h]
 	\centering
@@ -197,7 +197,7 @@ O conjunto de operações bit-a-bit é apresentado na forma matemática na equa�
 	\end{tabular}
 \end{table}
 
-\lstinputlisting[caption={Exemple dos operadores lógicos bitwise}, label=code.operators.bitwise.example]{../code/operators.bitwise.example.cpp}
+\lstinputlisting[caption={Exemple dos operadores lógicos bitwise}, label=code.operators.bitwise.example]{../code/operators/bitwise.example.cpp}
 
 \begin{equation}\label{equation.bitwise}
 	\begin{array}{cc}
@@ -222,16 +222,16 @@ O conjunto de operações bit-a-bit é apresentado na forma matemática na equa�
 O conjunto de operadores de atribuição composta trabalha como uma combinação do operador de atribuição simples com outro operador binário.
 Todo operador de atribuição composta tem o mesmo formato, que consiste no operador de interesse seguido do operador de atribuição simples, sem espaços vazios.
 Estes operadores realizam um cálculo sobre o valor de uma variável e atribuem este valor à própria variável.
-A sintaxe associada é apresentada no código \ref{code.operators.conpound.sintax}.
+A sintaxe associada é apresentada no código \ref{code.operators.compound.sintax}.
 
-\lstinputlisting[caption={Sintaxe dos operadores de atribuição composta}, label=code.operators.conpound.sintax]{../code/operators.conpound.sintax.cpp}
+\lstinputlisting[caption={Sintaxe dos operadores de atribuição composta}, label=code.operators.compound.sintax]{../code/operators/compound.sintax.cpp}
 
-Uma relação entre os operadores binários descritos e os operadores de atribuição é apresentada na tabela \ref{table.conpound}, alguns exemplos de uso podem ser encontrados no código \ref{code.operators.conpound.example}.
+Uma relação entre os operadores binários descritos e os operadores de atribuição é apresentada na tabela \ref{table.compound}, alguns exemplos de uso podem ser encontrados no código \ref{code.operators.compound.example}.
 
 \begin{table}[!h]
 	\centering
 	\caption{Relação de operadores de atribuição composta e seus equivalentes}
-	\label{table.conpound}
+	\label{table.compound}
 	\begin{tabular}{rclcrcccl}
 		\multicolumn{3}{c}{Composto}	&  & \multicolumn{5}{c}{Equivalente}\\\hline
 		\basicCode{A} & \basicCode{+=} & \basicCode{B;} & $\Leftrightarrow$ & \basicCode{A} & \basicCode{=} & \basicCode{A} & \basicCode{+} & \basicCode{B;} \\
@@ -247,11 +247,11 @@ Uma relação entre os operadores binários descritos e os operadores de atribui
 	\end{tabular}
 \end{table}
 
-\lstinputlisting[caption={Exemplos de operadores de atribuição composta}, label=code.operators.conpound.example]{../code/operators.conpound.example.cpp}
+\lstinputlisting[caption={Exemplos de operadores de atribuição composta}, label=code.operators.compound.example]{../code/operators/compound.example.cpp}
 
 \subsection{Comparadores}
 
-Existem operadores contruídos para a comparação de valores, verificando se são iguais ou diferentes, e ainda qual deles tem o maior ou o menor valor.
+Existem operadores construídos para a comparação de valores, verificando se são iguais ou diferentes, e ainda qual deles tem o maior ou o menor valor.
 
 O operador comparador de igualdade utiliza o sinal e igual duas vezes(\basicCode{==}).
 Este operador não altera o valor das variáveis.
@@ -276,9 +276,9 @@ O operador recíproco, que verifica se um valor é \emph{menor ou igual} utiliza
 Um exemplo de sintaxe é apresentado no código \ref{code.operators.comparison.sintax}.
 Exemplos do uso podem ser encontrador no código \ref{code.operators.comparison.example}.
 
-\lstinputlisting[caption={Sintaxe de operadores de comparação}, label=code.operators.comparison.sintax]{../code/operators.comparison.sintax.cpp}
+\lstinputlisting[caption={Sintaxe de operadores de comparação}, label=code.operators.comparison.sintax]{../code/operators/comparison.sintax.cpp}
 
-\lstinputlisting[caption={Sintaxe de operadores de comparação}, label=code.operators.comparison.example]{../code/operators.comparison.example.cpp}
+\lstinputlisting[caption={Sintaxe de operadores de comparação}, label=code.operators.comparison.example]{../code/operators/comparison.example.cpp}
 
 \subsection{Lógicos booleanos}
 
@@ -288,9 +288,9 @@ A tabela \ref{table.truth} também serve de referência para a relação destes 
 
 O código \ref{code.operators.logic.sintax} apresenta a sintaxe associada destes operadores, e o código \ref{code.operators.logic.example} apresenta exemplos de uso.
 
-\lstinputlisting[caption={Sintaxe de operadores lógicos booleanos}, label=code.operators.logic.sintax]{../code/operators.logic.sintax.cpp}
+\lstinputlisting[caption={Sintaxe de operadores lógicos booleanos}, label=code.operators.logic.sintax]{../code/operators/logic.sintax.cpp}
 
-\lstinputlisting[caption={Exemplos dos operadores lógicos booleanos}, label=code.operators.logic.example]{../code/operators.logic.example.cpp}
+\lstinputlisting[caption={Exemplos dos operadores lógicos booleanos}, label=code.operators.logic.example]{../code/operators/logic.example.cpp}
 
 \section{Ternário}
 
@@ -298,12 +298,12 @@ Há apenas um operador ternário, sua finalidade é selecionar um valor de retor
 A sintaxe do operador ternário é apresentada no código \ref{code.operators.ternary.sintax}.
 Consiste em um valor lógico booleano, como os tipo \basicCode{bool} ou os operadores de comparação, um ponto de interrogação (\basicCode{?}), o valor para retorno caso a condição lógica seja \basicCode{true},dois pontos (\basicCode{:}) e um valor caso a condição lógica seja falsa.
 
-\lstinputlisting[caption={Sintaxe do operador ternário}, label=code.operators.ternary.sintax]{../code/operators.ternary.sintax.cpp}
+\lstinputlisting[caption={Sintaxe do operador ternário}, label=code.operators.ternary.sintax]{../code/operators/ternary.sintax.cpp}
 
 Este operador foi construído para situações onde se faz necessária a utilização de valores relativos à uma condição lógica.
 Alguns exemplos podem ser encontrador no código \ref{code.operators.ternary.example}.
 
-\lstinputlisting[caption={Exemplo de operador ternário}, label=code.operators.ternary.example]{../code/operators.ternary.example.cpp}
+\lstinputlisting[caption={Exemplo de operador ternário}, label=code.operators.ternary.example]{../code/operators/ternary.example.cpp}
 
 \section{Precedência de operadores}
 
@@ -343,4 +343,4 @@ Alguns exemplos de precedência poder ser encontradas no código \ref{code.opera
 	\end{tabular}
 \end{table}
 
-\lstinputlisting[caption={Exemplo de operadores e precedência}, label=code.operators.precedence.example]{../code/operators.precedence.example.cpp}
+\lstinputlisting[caption={Exemplo de operadores e precedência}, label=code.operators.precedence.example]{../code/operators/precedence.example.cpp}

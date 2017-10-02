@@ -4,5 +4,5 @@
 O C++ é ...
 
 O mínimo código em C++ é apresentado no código \ref{code.minimal}.
-\lstinputlisting[caption={Código mínimo}, label=code.minimal]{../code/minimal.cpp}
+\lstinputlisting[caption={Código mínimo}, label=code.minimal]{../code/minimal/basic.cpp}
 Este é o código mais simples que um compilador C++ aceitará sem erros ou notas de atenção.

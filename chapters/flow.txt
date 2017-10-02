@@ -24,7 +24,7 @@
 
 \subsection{O \textit{if} e a estrutura básica de decisão}
 
-\lstinputlisting[caption={\textit{if} simples linear}, label=code.flow.if.line.sintax]{../code/flow.if.line.sintax.cpp}
+\lstinputlisting[caption={\textit{if} simples linear}, label=code.flow.if.line.sintax]{../code/flow/if.line.sintax.cpp}
 
 % A estrutura básica de decisão da maioria das linguagens é o \textit{if}. Essa estrutura avalia uma expressão lógica.
 
@@ -37,11 +37,11 @@
 
 % Nela, caso a condicional entre parênteses seja verdadeira, o comando (que deve ser único, e não uma sequência) será executado; mas caso seja falsa, ele será ignorado e o programa seguirá executando os próximos comandos.
 
-\lstinputlisting[caption={\textit{if} simples blocular}, label=code.flow.if.block.sintax]{../code/flow.if.block.sintax.cpp}
+\lstinputlisting[caption={\textit{if} simples blocular}, label=code.flow.if.block.sintax]{../code/flow/if.block.sintax.cpp}
 
 % Quando for necessário executar mais de uma linha de comando após uma decisão, utiliza-se um bloco de código no lugar de uma simples linha.
 
-\lstinputlisting[caption={\textit{if} Exemplo de utilização do if}, label=code.flow.if.example]{../code/flow.if.example.cpp}
+\lstinputlisting[caption={\textit{if} Exemplo de utilização do if}, label=code.flow.if.example]{../code/flow/if.example.cpp}
 
 \begin{figure}[h]
 	\centering
@@ -54,7 +54,7 @@
 
 % Em oposição ao \textit{if}, o comando \textit{else} não precisa de condicional, e executa o comando que o precede caso o resultado da expressão passada ao \textit{if} seja falsa. Assim, o conjunto \textit{if} e \textit{else} geram uma bifurcação no fluxo do programa.
 
-\lstinputlisting[caption={\textit{if} composto linear}, label=code.flow.ifelse.line.sintax]{../code/flow.ifelse.line.sintax.cpp}
+\lstinputlisting[caption={\textit{if} composto linear}, label=code.flow.ifelse.line.sintax]{../code/flow/ifelse.line.sintax.cpp}
 
 \begin{figure}[h]
 	\centering
@@ -65,7 +65,7 @@
 
 % Assim como o \textit{if}, para que o \textit{else} execute vários comandos é preciso que estes estejam contidos num bloco de código. 
 
-\lstinputlisting[caption={\textit{if} composto blocular}, label=code.flow.ifelse.block.sintax]{../code/flow.ifelse.block.sintax.cpp}
+\lstinputlisting[caption={\textit{if} composto blocular}, label=code.flow.ifelse.block.sintax]{../code/flow/ifelse.block.sintax.cpp}
 
 \begin{figure}[h]
 	\centering
@@ -76,7 +76,7 @@
 
 % Não há limitação de aninhamento, permitindo a criação de uma tomada de decisão abrangente de acordo com a necessidade. A rede de tomada de decisões pode assumir uma grande complexidade.
 
-\lstinputlisting[caption={\textit{if} aninhado}, label=code.flow.ifelse.nested.sintax]{../code/flow.ifelse.nested.sintax.cpp}
+\lstinputlisting[caption={\textit{if} aninhado}, label=code.flow.ifelse.nested.sintax]{../code/flow/ifelse.nested.sintax.cpp}
 
 % A visualização do fluxograma permite uma melhor compreensão de como ocorre a quebra no fluxo:
 
@@ -87,7 +87,7 @@
 	\label{fig.ifelse.nested}
 \end{figure}
 
-\lstinputlisting[caption={\textit{if} Exemplo de if else}, label=code.flow.ifelse.example]{../code/flow.ifelse.example.cpp}
+\lstinputlisting[caption={\textit{if} Exemplo de if else}, label=code.flow.ifelse.example]{../code/flow/ifelse.example.cpp}
 
 % \section{Laços de repetição}
 
@@ -97,21 +97,21 @@
 
 % Quando precisamos realizar um comando por um numero pré determinado de vezes utilizamos o laço \textit{for}. Sua estrutura possui 3 áreas: a declaração e inicialização de variáveis; a condição de parada; e a operação de incremento.
 
-% \lstinputlisting[caption={\textit{for} simples linear}, label=code.flow.for.line.sintax]{../code/flow.for.line.sintax.cpp}
+% \lstinputlisting[caption={\textit{for} simples linear}, label=code.flow.for.line.sintax]{../code/flow/for.line.sintax.cpp}
 
 % Pode-se declarar várias variáveis, realizar várias comparações lógicas e até incrementar mais de uma variável. Geralmente, como este laço é amplamente aplicado em quantidades de repetições conhecidas, utiliza-se uma única variável, declarada e implementada no próprio laço: \textit{for(int i=0; i<10; i++)}.
 
-% \lstinputlisting[caption={\textit{for} simples blocular}, label=code.flow.for.block.sintax]{../code/flow.for.block.sintax.cpp}
+% \lstinputlisting[caption={\textit{for} simples blocular}, label=code.flow.for.block.sintax]{../code/flow/for.block.sintax.cpp}
 
-% \lstinputlisting[caption={\textit{for} Exemplo}, label=code.flow.for.example]{../code/flow.for.example.cpp}
+% \lstinputlisting[caption={\textit{for} Exemplo}, label=code.flow.for.example]{../code/flow/for.example.cpp}
 
 % \subsection{O laço \textit{while}}
 
-% \lstinputlisting[caption={\textit{while} Simples linear}, label=code.flow.while.line.sintax]{../code/flow.while.line.sintax.cpp}
+% \lstinputlisting[caption={\textit{while} Simples linear}, label=code.flow.while.line.sintax]{../code/flow/while.line.sintax.cpp}
 
-% \lstinputlisting[caption={\textit{while} Simples blocular}, label=code.flow.while.block.sintax]{../code/flow.while.block.sintax.cpp}
+% \lstinputlisting[caption={\textit{while} Simples blocular}, label=code.flow.while.block.sintax]{../code/flow/while.block.sintax.cpp}
 
-% \lstinputlisting[caption={\textit{while} Exemplo}, label=code.flow.while.example]{../code/flow.while.example.cpp}
+% \lstinputlisting[caption={\textit{while} Exemplo}, label=code.flow.while.example]{../code/flow/while.example.cpp}
 
 % Quando não sabemos precisamente a quantidade de operações que vão ser executadas, o laço \textit{while} é utilizado. Este laço executa uma linha de comando ou um bloco de comando indefinidamente, enquanto a condicional for verdadeira. É importante controlar internamente no laço alguma variável ou operação que tenha influência na condicional do laço, para evitar com que o fluxo entre em um laço infinito.
 
@@ -119,8 +119,8 @@
 
 % Quando não se sabe quantas operações precisamente serão executadas, porém queremos que o laço seja executado ao menos uma vez, utilizamos o laço do ... while. A diferença deste para o \textit{while} é que este realiza a comparação lógica ao chegar no final do comando ou do bloco de comandos.
 
-% \lstinputlisting[caption={\textit{do ... while} Simples linear}, label=code.flow.dowhile.line.sintax]{../code/flow.dowhile.line.sintax.cpp}
+% \lstinputlisting[caption={\textit{do ... while} Simples linear}, label=code.flow.dowhile.line.sintax]{../code/flow/dowhile.line.sintax.cpp}
 
-% \lstinputlisting[caption={\textit{do ... while} Simples blocular}, label=code.flow.dowhile.block.sintax]{../code/flow.dowhile.block.sintax.cpp}
+% \lstinputlisting[caption={\textit{do ... while} Simples blocular}, label=code.flow.dowhile.block.sintax]{../code/flow/dowhile.block.sintax.cpp}
 
-% \lstinputlisting[caption={\textit{do ... while} Exemplo}, label=code.flow.dowhile.example]{../code/flow.dowhile.example.cpp}
+% \lstinputlisting[caption={\textit{do ... while} Exemplo}, label=code.flow.dowhile.example]{../code/flow/dowhile.example.cpp}

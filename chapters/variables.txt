@@ -11,7 +11,7 @@ O nome de uma variável pode conter caracteres nos intervalos [\basicCode{0},\ba
 O nome também não pode ter como primeiro caracter um número.
 Vale lembrar que apenas o uso de caracteres ASCII é válido.
 
-\lstinputlisting[caption={Declaração de variável}, label=code.variables.declaration]{../code/variables.declaration.cpp}
+\lstinputlisting[caption={Declaração de variável}, label=code.variables.declaration]{../code/variables/declaration.cpp}
 
 É recomendada a preferência de nomes de variáveis com letras minúsculas, pois letras maiúsculas costumam ser utilizadas em outras situações que serão descritas posteriormente.
 
@@ -38,13 +38,13 @@ A maneira apresentada aqui não é a mais usual, mas é mais veloz, a execução
 Além da sequência de declaração, ao fim adiciona-se o valor escolhido entre parenteses (\basicCode{()}).
 O valor escolhido deve ser pensado de acordo com o objetido da variável, por exemplo, se ela for um contador, é interessante que comece em um, se for um acumulador de soma, um bom valor inicial é zero.
 
-\lstinputlisting[caption={Declaração de variável}, label=code.variables.inicialization]{../code/variables.inicialization.cpp}
+\lstinputlisting[caption={Declaração de variável}, label=code.variables.inicialization]{../code/variables/inicialization.cpp}
 
 \section{Exemplos de variáveis}\label{cap.variables.example}
 
 Alguns exemplos de declaração e inicalização de variáveis são apresentados no código \ref{code.variables.examples}, com comentários referentes às declarações.
 
-\lstinputlisting[caption={Declarações de variável}, label=code.variables.examples]{../code/variables.examples.cpp}
+\lstinputlisting[caption={Declarações de variável}, label=code.variables.examples]{../code/variables/examples.cpp}
 
 \section{Escopo}
 
@@ -58,4 +58,4 @@ Existem dois casos de declaração de variáveis, as locais e as globais:
 Existe ainda uma terceira situação, onde uma variável é localmente global, ou seja, pode ser acessada em qualquer região dentro do bloco no qual foi declarado, até em blocos internos, mas não pode ser acessada fora desta região ao qual perterce.
 O código \ref{code.variables.escope} mostra um exemplo.
 
-\lstinputlisting[caption={Declarações de variável}, label=code.variables.escope]{../code/variables.escope.cpp}
+\lstinputlisting[caption={Declarações de variável}, label=code.variables.escope]{../code/variables/escope.cpp}
