@@ -1,18 +1,34 @@
 \begin{tikzpicture}
-	\node [coord] (c1) {}; \cmark{1};
-	\node [proc, join=by dott] {\basicCode{...}};
-	\node [proc, join] {\basicCode{...}};
-	\node [proc, join] {\basicCode{...}};
-	\node [coord, join=by dott] (c2) {}; \cmark{2};
+	\node [coord] (ci) {}; \cmark{i};
+	\node [proc, join=by dott] (p0) {\basicCode{...}}; \pmark{0};
+	\node [proc, join] (p1) {\basicCode{...}}; \pmark{1};
+	\node [proc, join] (p2) {\basicCode{...}}; \pmark{2};
 
-	\node [coord, right=of c1] (c3) {}; \cmark{3};
-	\node [coord, right=of c2] (c4) {}; \cmark{4};
+	\node [coord, right=of ci] (ci1) {}; \cmark{i1};
+	\node [coord, right=of ci1] (ci2) {}; \cmark{i2};
 
-	\node [coord, left=of c1] (c5) {}; \cmark{5};
-	\node [coord, left=of c2] (c6) {}; \cmark{6};
+	\node [proc, right=of p2] (p3) {\basicCode{...}}; \pmark{3};
+	\node [proc, right=of p3] (p4) {\basicCode{...}}; \pmark{4};
+	\node [proc, right=of p4] (p5) {\basicCode{...}}; \pmark{5};
+	
+	\node [coord, right=of ci2] (cf) {}; \cmark{f}
+	\node [proc] (p6) {\basicCode{...}}; \pmark{6};
+	\node [proc] (p7) {\basicCode{...}}; \pmark{7};
+	\node [proc] (p8) {\basicCode{...}}; \pmark{8};
 
-	\path (c3) to node [midway, above, sloped] {\basicCode[\itshape\ttfamily\Large]{Fluxo}} (c4);
-	\draw [->, thick] (c3) -- (c4);
-	\path (c5) to node [midway, below, sloped, white!0] {\basicCode[\itshape\ttfamily\Large]{Fluxo}} (c6);
-	\draw [->, thick, white!0] (c5) -- (c6);
+	\draw [norm] (p2.east) -- (p3.west);
+	\draw [norm] (p3.east) -- (p4.west);
+	\draw [norm] (p4.east) -- (p8.west);
+
+	\draw [norm] (p8.north) -- (p7.south);
+	\draw [norm] (p7.north) -- (p6.south);
+	\draw [norm, dott] (p6.north) -- (cf);
+
+	\node [coord, right=of p1] (c1) {}; \cmark{1};
+	\node [coord, left=of p7] (c2) {}; \cmark{2};
+
+	\path (c1) to node [midway, above, sloped] {\basicCode[\itshape\ttfamily\Large]{Fluxo}} (c2);
+	\draw [thick] (ci1) -- (c1);
+	\draw [thick] (c1) -- (c2);
+	\draw [thick] (c2) -- (ci2);
 \end{tikzpicture}

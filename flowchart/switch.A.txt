@@ -1,0 +1,56 @@
+\begin{tikzpicture}[scale=1]
+	\node [coord]  (c1)   {}; \cmark{1};
+	\node [dotx, join=by dott]{\basicCode{...}};
+	\node [test, join]  (t1)  {\basicCode{A==1}?}; \tmark{1};
+	\node [proc, join]  (p1A)  {\basicCode{<comand1A>}}; \pmark{1A};
+	\node [proc, join]  (p1B)  {\basicCode{<comand1B>}}; \pmark{1B};
+	\node [proc, join]  (p1C)  {\basicCode{<comand1C>}}; \pmark{1C};
+	\node [proc, join]  (p1D)  {\basicCode{<comand1D>}}; \pmark{1D};
+	\node [proc, join]  (p1E)  {\basicCode{<comand1E>}}; \pmark{1E};
+	\node [dotx, join]  (p7)  {\basicCode{...}}; \pmark{7};
+	\node [coord, join=by dott] (c3) {}; \cmark{3}
+
+	\node [test, right=of t1]  (t2)  {\basicCode{A==2}?}; \tmark{2};
+	\node [proc, join]  (p2)  {\basicCode{<comand2>}}; \pmark{2};
+
+	\node [test, right=of t2]  (t3)  {\basicCode{A==3}?}; \tmark{3};
+	\node [proc, join]  (p3)  {\basicCode{<comand3>}}; \pmark{3};
+
+	\node [test, right=of t3]  (t4)  {\basicCode{A==4}?}; \tmark{4};
+	\node [proc, join]  (p4A)  {\basicCode{<comand4A>}}; \pmark{4A};	
+	\node [proc, join]  (p4B)  {\basicCode{<comand4B>}}; \pmark{4B};	
+
+	\node [test, right=of t4]  (t5)  {\basicCode{A==5}?}; \tmark{5};
+	\node [proc, join]  (p5A)  {\basicCode{<comand5A>}}; \pmark{5A};
+	\node [proc, join]  (p5B)  {\basicCode{<comand5B>}}; \pmark{5B};
+	\node [proc, join]  (p5C)  {\basicCode{<comand5C>}}; \pmark{5C};
+	\node [proc, join]  (p5D)  {\basicCode{<comand5D>}}; \pmark{5D};
+	
+	\node [proc, right=of t5]  (p6)	{\basicCode{<comand0>}}; \pmark{6}
+
+	\path (t1.east) to node [near start, xshift=0em, yshift=1em] {F} (t2.west);
+	\path (t1.south)  to node [near start, xshift=1em, yshift=0em] {V} (p1A.north);
+	\draw [->,norm] (t1.east) -- (t2.west);
+	
+	\path (t2.east) to node [near start, xshift=0em, yshift=1em] {F} (t3.west);
+	\path (t2.south)  to node [near start, xshift=1em, yshift=0em] {V} (p2.north);
+	\draw [->,norm] (t2.east) -- (t3.west);
+	\draw [->,norm] (p2.south) |- (p7.east);
+
+	\path (t3.east) to node [near start, xshift=0em, yshift=1em] {F} (t4.west);
+	\path (t3.south)  to node [near start, xshift=1em, yshift=0em] {V} (p3.north);
+	\draw [->,norm] (t3.east) -- (t4.west);
+	\draw [->,norm] (p3.east) |- (p4A.west);
+
+	\path (t4.east) to node [near start, xshift=0em, yshift=1em] {F} (t5.west);
+	\path (t4.south)  to node [near start, xshift=1em, yshift=0em] {V} (p4A.north);
+	\draw [->,norm] (t4.east) -- (t5.west);
+	\draw [->,norm] (p4B.south) |- (p7.east);
+
+	\path (t5.east) to node [near start, xshift=0em, yshift=1em] {F} (p6.west);
+	\path (t5.south)  to node [near start, xshift=1em, yshift=0em] {V} (p5A.north);
+	\draw [->,norm] (t5.east) -- (p6.west);
+	\draw [->,norm] (p5D.south) |- (p7.east);
+
+	\draw [->,norm] (p6.south) |- (p7.east);
+\end{tikzpicture}

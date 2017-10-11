@@ -13,6 +13,3 @@
 \usepackage{multicol}
 
 \usepackage{ifthen}
-
-\newcommand{\DEBUG}{0}
-\newcommand{\PRESENTATION}{0}

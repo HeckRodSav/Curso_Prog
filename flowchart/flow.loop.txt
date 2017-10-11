@@ -1,0 +1,17 @@
+\begin{tikzpicture}[scale=1]
+	\node [coord]  (c1)   {}; \cmark{1};
+	\node [dotx, join=by dott]{\basicCode{...}};
+	\node [proc, join]  (p1)  {\basicCode{...}}; \pmark{1};
+	\node [proc, join]        {\basicCode{...}};
+	\node [proc, join]  (p2)  {\basicCode{...}}; \pmark{2};
+	\node [dotx, join]        {\basicCode{...}};
+	\node [coord, join=by dott] (c4) {}; \cmark{4};
+
+	\node [coord, right=of p1] (c2)  {}; \cmark{2};
+	\node [coord, right=of p2] (c3)  {}; \cmark{3};
+	\node [coord, left=of p1] (c5)  {}; \cmark{5};
+	\node [coord, left=of p2] (c6)  {}; \cmark{6};
+
+	\draw [->,norm] (p2.east) -| (c3) -| (c2) -- (p1.east);
+	\draw [->,norm, white!0] (p2.west) -| (c6) -| (c5) -- (p1.west);
+\end{tikzpicture}

@@ -1,15 +1,16 @@
 //...
-
-int A(2);
-
-switch(A)
+bool aprovado;
+//...
+switch(conceito)
 {
-	case 1:
-		A = 5;
+	case 'A':
+	case 'B':
+	case 'C':
+	case 'D':
+		aprovado = true;
 		break;
-	case 0:
-		A = 1;
+	case 'F':
+		aprovado = false;
 		break;
-	default:
-		A = -1;
 }
+//...

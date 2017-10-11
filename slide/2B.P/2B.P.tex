@@ -1,0 +1,274 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{1}
+
+\subtitle{E se\dots}
+\usecolortheme[named=slideBlue]{structure}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Fluxo}
+		\begin{frame}{Fluxo}
+			\begin{itemize}
+				\presentationPause\item Ordem de comandos
+				\presentationPause\item Não é padrão a multiexecução
+				\presentationPause\item Fluxos lineares nem sempre são úteis
+				\presentationPause\item Fluxograma
+				\presentationPause\item Algoritmo
+			\end{itemize}
+			\presentationPause
+			\begin{figure}
+				\centering
+				\input{../../flowchart/flow.simple.txt}
+				\caption{Fluxograma de fluxo simples}
+				\label{fig.flow.simple}
+			\end{figure}
+		\end{frame}
+
+	\section{Decisões}
+		\begin{frame}{Ambiguidade}
+			\presentationPause
+			\begin{figure}
+				\centering
+				\input{../../flowchart/flow.double.txt}
+				\caption{Fluxograma de fluxo ambíguo}
+				\label{fig.flow.double}
+			\end{figure}
+			\begin{itemize}
+				\presentationPause\item Qual escolher?
+				\presentationPause\item \emph{A luta do bem contra o mal}
+				\presentationPause\item \emph{Inverno ou verão}?
+				\presentationPause\item \emph{Dia ou noite}?
+				\presentationPause\item \emph{Biscoito ou bolacha}?
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{O \textit{if}}
+			\begin{columns}
+				\begin{column}{0.65\textwidth}
+					\begin{itemize}
+						\presentationPause\item Estrutura primordial: \presentationPause o \basicCode{if}
+						\presentationPause\item Recebe um \emph{argumento} tipo \basicCode{bool}
+						\presentationPause\item Não é um comando
+						\presentationPause\item É um controlador de fluxo
+						\presentationPause\item Pode ser construído com comando ou bloco de código
+					\end{itemize}
+					\presentationPause\lstinputlisting[numbers=none,linerange={2-2}]{../../code/flow/if.line.sintax.cpp}
+				\end{column}
+				\begin{column}{0.35\textwidth}
+					\presentationPause\lstinputlisting[numbers=none,linerange={2-7}]{../../code/flow/if.block.sintax.cpp}
+				\end{column}
+			\end{columns}
+		\end{frame}
+
+		\begin{frame}{O \textit{if} linear}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/if.line.txt}
+				\caption{Fluxograma de \textit{if} simples linear}
+				\label{fig.flow.if.line}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}{O \textit{if} blocular}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/if.block.txt}
+				\caption{Fluxograma de \textit{if} simples blocular}
+				\label{fig.flow.if.block}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}{O \textit{else}}
+			\begin{columns}
+				\begin{column}{0.65\textwidth}
+					\begin{itemize}
+						\presentationPause\item Quando ser quer algo oposto ao \basicCode{if}
+						\presentationPause\item Só entra quando o \basicCode{if} tem argumento falso
+						\presentationPause\item Só pode ser usado com \basicCode{if}
+						\presentationPause\item Melhor que fazer comparação oposta
+					\end{itemize}
+					\presentationPause\lstinputlisting[numbers=none,linerange={2-3}]{../../code/flow/ifelse.line.sintax.cpp}
+				\end{column}
+				\begin{column}{0.35\textwidth}  %%<--- here
+					\presentationPause\lstinputlisting[numbers=none,linerange={2-13}]{../../code/flow/ifelse.block.sintax.cpp}
+				\end{column}
+			\end{columns}
+		\end{frame}
+
+		\begin{frame}{O \textit{if} \textit{else} linear}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/ifelse.line.txt}
+				\caption{Fluxograma de \textit{if} \textit{else} simples linear}
+				\label{fig.flow.if.line}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}{O \textit{if} \textit{else} blocular}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/ifelse.block.txt}
+				\caption{Fluxograma de \textit{if} \textit{else} simples blocular}
+				\label{fig.flow.ifelse.block}
+			\end{figure}
+		\end{frame}
+
+	\section{Aninhamento}
+		\begin{frame}{Estruturas aninhadas}
+			\begin{itemize}
+				\presentationPause\item Estruturas em qualquer lugar
+				% \presentationPause\item 
+			\end{itemize}
+			\only<1>{\lstinputlisting[numbers=none,linerange={2-15}]{../../code/flow/ifelse.nested.sintax.cpp}}
+			% \only<2>
+			% {
+			% 	\begin{figure}[H]
+			% 		\centering
+			% 		\input{../../flowchart/ifelse.nested.txt}
+			% 		\caption{Fluxograma de \textit{if} \textit{else} aninhado}
+			% 		\label{fig.flow.nested}
+			% 	\end{figure}
+			% }
+			\only<2>{\lstinputlisting{../../code/flow/ifelse.example.A.cpp}}
+			\only<3>{\lstinputlisting[firstnumber=4]{../../code/flow/ifelse.example.D.cpp}}
+			\only<4>{\lstinputlisting[firstnumber=4]{../../code/flow/ifelse.example.C.cpp}}
+			\only<5>{\lstinputlisting[firstnumber=4]{../../code/flow/ifelse.example.B.cpp}}
+		\end{frame}
+
+	\section{Repetições}
+		\begin{frame}
+			\begin{itemize}
+				\presentationPause\item Repetição de comandos
+				\presentationPause\item Algoritmo de Euclides
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}
+			\lstinputlisting[numbers=none,linerange={2-25}]{../../code/flow/repeat.cpp}
+		\end{frame}
+		
+		\begin{frame}{Ambiguidade}
+			\presentationPause
+			\begin{figure}
+				\centering
+				\input{../../flowchart/flow.loop.txt}
+				\caption{Fluxograma de fluxo repetitivo}
+				\label{fig.flow.loop}
+			\end{figure}
+			\begin{itemize}
+				\presentationPause\item O que fazer?
+				\presentationPause\item \emph{Ficar na zona de conforto ou enfrentar a realidade}?
+				\presentationPause\item \emph{Repetição eterna ou faz uma vez a vai embora}?
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Mas\dots}
+			\begin{itemize}
+				\presentationPause\item Não faz sentido repetir algo assim
+				\presentationPause\item O programador precisa saber o valor inicial antes de tudo
+				\presentationPause\item Por que então já não calcula antes?
+				\presentationPause\item \basicCode{ctrl c}, \basicCode{ctrl v}
+				\presentationPause\item Alterar um valor comum a todos os casos
+				\presentationPause\item Um \basicCode{if} já não serve?
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{O \textit{while}}
+			\begin{columns}
+				\begin{column}{.65\textwidth}
+					\begin{itemize}
+						\presentationPause\item Sintaxe idêntica ao \basicCode{if}
+						\presentationPause\item Recebe argumento tipo \basicCode{bool}
+						\presentationPause\item Pergunta é realizada \emph{antes} da repetição
+						\presentationPause\item Não é um comando
+						\presentationPause\item É um controlador de fluxo
+						\presentationPause\item Pode ser construído com comando ou bloco de código
+					\end{itemize}
+					\presentationPause\lstinputlisting[numbers=none,linerange={2-2}]{../../code/flow/while.line.sintax.cpp}
+				\end{column}
+				\begin{column}{.35\textwidth}
+					\presentationPause\lstinputlisting[numbers=none,linerange={2-7}]{../../code/flow/while.block.sintax.cpp}
+				\end{column}
+			\end{columns}
+		\end{frame}
+
+		\begin{frame}{O \textit{while} linear}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/while.line.txt}
+				\caption{Fluxograma de \textit{while} simples linear}
+				\label{fig.flow.while.line}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}{O \textit{while} blocular}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/while.block.txt}
+				\caption{Fluxograma de \textit{while} simples blocular}
+				\label{fig.flow.while.block}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}{Algoritmo de Euclides}
+			\lstinputlisting[numbers=none,linerange={2-8}]{../../code/flow/while.example.cpp}
+		\end{frame}
+
+
+		\begin{frame}{O \textit{do}}
+			\begin{columns}
+				\begin{column}{.65\textwidth}
+					\begin{itemize}
+						\presentationPause\item Sintaxe semelhanto ao \basicCode{while} normal
+						\presentationPause\item Recebe argumento tipo \basicCode{bool}
+						\presentationPause\item Pergunta é realizada \emph{depois} da repetição
+						\presentationPause\item Não é um comando
+						\presentationPause\item É um controlador de fluxo
+						\presentationPause\item Acaba com ponto-e-vírgula
+						\presentationPause\item Pode ser construído com comando ou bloco de código
+					\end{itemize}
+					\presentationPause\lstinputlisting[numbers=none,linerange={2-2}]{../../code/flow/dowhile.line.sintax.cpp}
+				\end{column}
+				\begin{column}{.35\textwidth}
+					\presentationPause\lstinputlisting[numbers=none,linerange={2-8}]{../../code/flow/dowhile.block.sintax.cpp}
+				\end{column}
+			\end{columns}
+		\end{frame}
+
+		\begin{frame}{O \textit{do} \textit{while} linear}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/dowhile.line.txt}
+				\caption{Fluxograma de \textit{do} \textit{while} simples linear}
+				\label{fig.flow.while.line}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}{O \textit{do} \textit{while} blocular}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/dowhile.block.txt}
+				\caption{Fluxograma de \textit{do} \textit{while} simples blocular}
+				\label{fig.flow.while.block}
+			\end{figure}
+		\end{frame}
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+
+\end{document}

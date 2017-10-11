@@ -1,11 +1,15 @@
 \input{../../template/template.txt}
+\usepackage[orientation=landscape,size=custom,width=16,height=12,scale=0.5,debug]{beamerposter}
+
+\newcommand{\DEBUG}{0}
+\newcommand{\PRESENTATION}{0}
 
 \input{../../template/xcolor.txt}
 \input{../../template/listings.txt}
 \input{../../template/tikz.txt}
 
 \lstset{
-	basicstyle={\ttfamily\scriptsize },
+	basicstyle={\ttfamily\small},
 	frame=none,
 	captionpos=none,
 	xleftmargin=0em

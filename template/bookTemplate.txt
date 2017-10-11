@@ -1,6 +1,8 @@
 \usepackage[margin=2cm]{geometry}
 \input{../template/template.txt}
 
+\newcommand{\DEBUG}{1}
+
 \input{../template/xcolor.txt}
 \input{../template/listings.txt}
 \input{../template/tikz.txt}

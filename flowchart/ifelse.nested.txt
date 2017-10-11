@@ -1,7 +1,7 @@
 \begin{tikzpicture}[scale=1]
 	\node [coord]  (ca1)   {}; \cmark{a1};
 	\node [dotx, join=by dott]			{\basicCode{...}};
-	\node [test, join]  (ta1)  			{\basicCode{<cond0>}?};
+	\node [test, join]  (ta1)  			{\basicCode{<cond0>}?}; \tmark{a1};
 
 	\node [coord, right=of ta1] (ca2) {}; \cmark{a2};
 	\node [coord, right=of ca2] (ca3) {};\cmark{a3};
@@ -10,7 +10,7 @@
 	
 	
 	%A
-	\node [test, join]  (tb1)  			{\basicCode{<condA>}?};
+	\node [test, join]  (tb1)  			{\basicCode{<condA>}?}; \tmark{b1};
 	
 	\node [coord, right=of tb1] (cb2) {}; \cmark{b2};
 	% \node [coord] (cb3) {}; \cmark{b3};
@@ -37,7 +37,7 @@
 	
 	
 	%B
-	\node [test, join]  (tc1)  			{\basicCode{<condB>}?};
+	\node [test, join]  (tc1)  			{\basicCode{<condB>}?}; \tmark{c1};
 
 	\node [coord, right=of tc1] (cc2) {}; \cmark{c2};
 	% \node [coord] (cc3) {}; \cmark{c3};

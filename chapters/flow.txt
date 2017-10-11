@@ -1,93 +1,283 @@
 \chapter{Controladores de Fluxo}\label{cap.flow}
 
-% Os programas são escritos seguindo a sintaxe da linguagem, (como descrito no capítulo \ref{cap.sintax}), e durante sua execução as linhas de comando são executadas de acordo com a ordem em que estão dispostas. Então, os programas em C++ seguem um fluxo, que é criado durante o processo de desenvolvimento do código.
+	O fluxo descreve a lista ordenada de comandos que são realizados por um programa.
+	Esta lista segue a ordem de comandos sequêncialmente descritos no código, como ilustrado na figura \ref{fig.flow.simple}.
+	Esta sequência é única, ou seja, não existem situações parelelas, pois em C++ não há por padrão a multiexecução (\textit{muti thread}).
+	Porém um fluxo que não sofre alterações nem sempre é útil, por isso existem os controles de fluxo, que podem mudar a direção do fluxo e criar repetições.
 
-\begin{figure}[h]
-	\centering
-	\input{../flowchart/flow.simple.txt}
-	\caption{Fluxograma de fluxo simples}
-	\label{fig.flow.simple}
-\end{figure}
+	A representação gráfica de um fluxo é chamada de fluxograma.
+	Os blocos retangulares representam os comandos.
 
-% Um fluxo totalmente linear é pouco interessante para aplicações mais complexas, pois estas muitas vezes requerem tomadas de decisão durante a execução para realizar suas tarefas adequadamente. Para isso, existem palavras-chave que podem gerar uma descontinuidade no fluxo.
+	\begin{figure}[H]
+		\centering
+		\input{../flowchart/flow.simple.txt}
+		\caption{Fluxograma de fluxo simples}
+		\label{fig.flow.simple}
+	\end{figure}
 
-\section{Decisões na direção do fluxo}
+	\section{Decisões na direção do fluxo}
 
-% A quebra no fluxo é feita a partir de uma tomada de decisão com base em expressões lógicas. Cada uma das palavras-chave recebem uma expressão booleana, que é avaliada e de acordo com a validade da sentença (verdadeira ou falsa) o fluxo do programa segue uma direção diferente.
+		Quando o fluxo pode tomar mais de um rumo é necessário um critério de decisão, indicando qual dos caminhos tomar, sendo o outro ignorado.
+		Um exemplo de fluxo com ambiguidade é apresentado na figura \ref{fig.flow.double}.
+		Note que não é possível escolher um lado sem um critério de decisão, gerando um problema de ambiguidade.
+		Precisamos de uma estrutura de decisão.
 
-\begin{figure}[h]
-	\centering
-	\input{../flowchart/flow.double.txt}
-	\caption{Fluxograma de fluxo ambíguo}
-	\label{fig.flow.double}
-\end{figure}
+		\begin{figure}[H]
+			\centering
+			\input{../flowchart/flow.double.txt}
+			\caption{Fluxograma de fluxo ambíguo}
+			\label{fig.flow.double}
+		\end{figure}
 
-\subsection{O \textit{if} e a estrutura básica de decisão}
+		\subsection{O \textit{if} e a estrutura básica de decisão}
 
-\lstinputlisting[caption={\textit{if} simples linear}, label=code.flow.if.line.sintax]{../code/flow/if.line.sintax.cpp}
+			A mais simples estrutura de decisão é definida pela palavra-chave \basicCode{if}, que recebe o que é chamado de \emph{argumento} entre parênteses.
+			O argumento é do tipo \basicCode{bool}, uma condição lógica onde, caso verdadeiro, o comando associado ao \basicCode{if} será realização, caso contrário, não.
+			Um exemplo da sintaxe linear básica é apresentada no código \ref{code.flow.if.line.sintax}, e a figura \ref{fig.flow.if.line} apresenta um fluxograma que ilustra as direções do fluxo.
+			Nos fluxogramas, os losangos representam decisões, conforme a indicação de verdadeiro ou falso.
 
-% A estrutura básica de decisão da maioria das linguagens é o \textit{if}. Essa estrutura avalia uma expressão lógica.
+			\lstinputlisting[caption={Estrutura de \textit{if} simples linear}, label=code.flow.if.line.sintax]{../code/flow/if.line.sintax.cpp}
+			
+			Quando apenas um comando é condicionado pelo \basicCode{if}, adicionamos este comando seguido da definição do direcionador.
 
-\begin{figure}[h]
-	\centering
-	\input{../flowchart/if.line.txt}
-	\caption{Fluxograma de \textit{if} simples linear}
-	\label{fig.flow.if.line}
-\end{figure}
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/if.line.txt}
+				\caption{Fluxograma de \textit{if} simples linear}
+				\label{fig.flow.if.line}
+			\end{figure}
 
-% Nela, caso a condicional entre parênteses seja verdadeira, o comando (que deve ser único, e não uma sequência) será executado; mas caso seja falsa, ele será ignorado e o programa seguirá executando os próximos comandos.
+			Quando mais de um comando está condicionado ao mesmo estado lógico, é possível fazer uma sequencia de estruturas repetindo o direcionador de fluxo.
+			Porém toda vez que o fluxo encontra um direcionador, um pequeno tempo é gasto processando tal alteração.
+			Para evitar este processamento desnecessário, utiliza-se o direcionador de fluxo junto a um bloco de código, já que este pode ser considerado como uma composição de comandos.
+			O código \ref{code.flow.if.block.sintax} apresenta um exemplo de sintaxe de estrutura de decisão simples utilizando um bloco de código, a figura \ref{fig.flow.if.block} apresenta um fluxograma que representa esta estrutura genérica.
 
-\lstinputlisting[caption={\textit{if} simples blocular}, label=code.flow.if.block.sintax]{../code/flow/if.block.sintax.cpp}
+			\lstinputlisting[caption={Estrutura de \textit{if} simples blocular}, label=code.flow.if.block.sintax]{../code/flow/if.block.sintax.cpp}
 
-% Quando for necessário executar mais de uma linha de comando após uma decisão, utiliza-se um bloco de código no lugar de uma simples linha.
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/if.block.txt}
+				\caption{Fluxograma de \textit{if} simples blocular}
+				\label{fig.flow.if.block}
+			\end{figure}
 
-\lstinputlisting[caption={\textit{if} Exemplo de utilização do if}, label=code.flow.if.example]{../code/flow/if.example.cpp}
+			O \basicCode{if} é uma controlador de fluxo versátil, que pode ser usado nas mais diversas situações, porém existem mais nuances sobre seu uso que serão apresentadas posteriormente.
+			Alguns exemplos de uso do \basicCode{if} podem ser encontrados no código \ref{code.flow.if.example}.
 
-\begin{figure}[h]
-	\centering
-	\input{../flowchart/if.block.txt}
-	\caption{Fluxograma de \textit{if} simples blocular}
-	\label{fig.flow.if.block}
-\end{figure}
+			\lstinputlisting[caption={Estrutura de \textit{if} Exemplo de utilização do if}, label=code.flow.if.example]{../code/flow/if.example.cpp}
 
-\subsection{O \textit{else} e as estruturas duplas}
+		\subsection{O \textit{else} e a estrutura complementar}
 
-% Em oposição ao \textit{if}, o comando \textit{else} não precisa de condicional, e executa o comando que o precede caso o resultado da expressão passada ao \textit{if} seja falsa. Assim, o conjunto \textit{if} e \textit{else} geram uma bifurcação no fluxo do programa.
+			Existem casos onde comandos somente podem ser realizados perante a condições lógicas, nestes casos utilizamos o \basicCode{if}.
+			Existem também os casos onde comando são mutuamente excludentes, ou seja, a condição que permite o primeiro, inibe o segundo.
 
-\lstinputlisting[caption={\textit{if} composto linear}, label=code.flow.ifelse.line.sintax]{../code/flow/ifelse.line.sintax.cpp}
+			Num primeiro momento, pode-se imaginar que utiliza-se uma sequência de estruturas de decisão simples, com condições inversas.
+			Tal método funciona, porém a verificação de condição requer processo me máquina, de maneira que em programas grandes é perceptível a baixa no desenpenho.
 
-\begin{figure}[h]
-	\centering
-	\input{../flowchart/ifelse.line.txt}
-	\caption{Fluxograma de \textit{if} composto linear}
-	\label{fig.flow.ifelse.line}
-\end{figure}
+			Para evitar isso, existe o complementar na estrutura de decisão.
+			Utilizando a palavra-chave \basicCode{else} para condições complementares.
+			Somente quando a condição o \basicCode{if} for falsa o comando associado ao \basicCode{else} será executado.
+			O código \ref{code.flow.ifelse.line.sintax} apresenta um exemplo da sintaxe linear complementar, e a figura \ref{fig.flow.ifelse.line} apresenta o fluxograma associado.
 
-% Assim como o \textit{if}, para que o \textit{else} execute vários comandos é preciso que estes estejam contidos num bloco de código. 
+			\lstinputlisting[caption={Estrutura de \textit{if} complementares linear}, label=code.flow.ifelse.line.sintax]{../code/flow/ifelse.line.sintax.cpp}
 
-\lstinputlisting[caption={\textit{if} composto blocular}, label=code.flow.ifelse.block.sintax]{../code/flow/ifelse.block.sintax.cpp}
+			Assim como no \basicCode{if} linear, a estrutura do \basicCode{if} \basicCode{else} pode ser escrita adicionando o comando associado seguido da definição do direcionador.
 
-\begin{figure}[h]
-	\centering
-	\input{../flowchart/ifelse.block.txt}
-	\caption{Fluxograma de \textit{if} composto blocular}
-	\label{fig.flow.ifelse.block}
-\end{figure}
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/ifelse.line.txt}
+				\caption{Fluxograma de \textit{if} complementares linear}
+				\label{fig.flow.ifelse.line}
+			\end{figure}
 
-% Não há limitação de aninhamento, permitindo a criação de uma tomada de decisão abrangente de acordo com a necessidade. A rede de tomada de decisões pode assumir uma grande complexidade.
+			Igualmente a estrutura de um \basicCode{if} simples, o \basicCode{if} \basicCode{else} também pode trabalhar com blocos de código, seguindo a sintaxe apresentada no código \ref{code.flow.ifelse.block.sintax}, a figura \ref{fig.flow.ifelse.block} apresenta o fluxograma associado.
 
-\lstinputlisting[caption={\textit{if} aninhado}, label=code.flow.ifelse.nested.sintax]{../code/flow/ifelse.nested.sintax.cpp}
+			\lstinputlisting[caption={Estrutura de \textit{if} complementares blocular}, label=code.flow.ifelse.block.sintax]{../code/flow/ifelse.block.sintax.cpp}
 
-% A visualização do fluxograma permite uma melhor compreensão de como ocorre a quebra no fluxo:
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/ifelse.block.txt}
+				\caption{Fluxograma de \textit{if} complementares blocular}
+				\label{fig.flow.ifelse.block}
+			\end{figure}
 
-\begin{figure}[h]
-	\centering
-	\input{../flowchart/ifelse.nested.txt}
-	\caption{Fluxograma de \textit{if} aninhado}
-	\label{fig.ifelse.nested}
-\end{figure}
+		\subsection{Estruturas aninhadas}
 
-\lstinputlisting[caption={\textit{if} Exemplo de if else}, label=code.flow.ifelse.example]{../code/flow/ifelse.example.cpp}
+			Dentro de qualquer bloco de código é possível declarar controladores de fluxo, inclusive controladores com blocos, e sucessivamente.
+			A este tipo de estrutua é utilizado o termo \emph{estrutura aninhada}, que consiste em controladores de fluxo dentro de controladores de fluxo.
+
+			O código \ref{code.flow.ifelse.nested.sintax} mostra um exemplo simples de sintaxe de estrutura aninhada de \basicCode{if} composto com \basicCode{else}, e a figura \ref{fig.flow.ifelse.nested} apresenta um fluxograma mostrando uma estrutura aninhada de \basicCode{if} \basicCode{else}, note que o controle de fluxo é colocado dentro de um bloco de código com outros comandos.
+
+			\lstinputlisting[caption={Estrutura de \textit{if} aninhado}, label=code.flow.ifelse.nested.sintax]{../code/flow/ifelse.nested.sintax.cpp}
+
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/ifelse.nested.txt}
+				\caption{Fluxograma de \textit{if} aninhado}
+				\label{fig.flow.ifelse.nested}
+			\end{figure}
+
+			Um exemplo interessante de estrutura aninhada é apresentada no código \ref{code.flow.ifelse.example.A}.
+			Note como a escolha de condicionais não leva em consideração um intervalo delimitado, mas considera verificações de números pelo topo, ou seja, começando do maior.
+			Esta verificação tem características especiais que melhoram o desenpenho do programa.
+
+			\lstinputlisting[caption={Exemplo de \textit{if} \textit{else} aninhado}, label=code.flow.ifelse.example.A]{../code/flow/ifelse.example.A.cpp}
+
+			Em uma comparação rápida entre os códigos \ref{code.flow.ifelse.example.A} e \ref{code.flow.ifelse.example.B} não é difícil notar que todo \basicCode{if} no segundo exemplo será processado, o que é desnecessário, visto que apenas um deles poderá ser verdadeiro, portanto um caso de complemento seria suficiente, como no primeiro exemplo.
+
+			\lstinputlisting[firstnumber=4,caption={Exemplo de \textit{if} sequencial}, label=code.flow.ifelse.example.B]{../code/flow/ifelse.example.B.cpp}
+
+			Similar ao exemplo do código \ref{code.flow.ifelse.example.A}, o código \ref{code.flow.ifelse.example.C} utiliza o método espelho, verificando on números pela base, ou seja, começando do menor.
+
+			\lstinputlisting[firstnumber=4,caption={Exemplo de \textit{if} \textit{else} aninhado}, label=code.flow.ifelse.example.C]{../code/flow/ifelse.example.C.cpp}
+
+			A compreensão do código \ref{code.flow.ifelse.example.A} pode não ser clara em um primeiro momento para programadores iniciantes, o código \ref{code.flow.ifelse.example.D} é equivalente, deixando cada bloco de código explicitamente declarado, facilitando a leitura e compreensão.
+			Vale notar, para a estrutura \basicCode{if} \basicCode{else}, um \basicCode{else} só é permitido se associado a um \basicCode{if}, e, em uma estrutura aninhada, cada \basicCode{else} é associado ao \basicCode{if} anterior mais próximo.
+
+			\lstinputlisting[firstnumber=4,caption={Exemplo de \textit{if} \textit{else} aninhado com blocos explicitamente delimitados}, label=code.flow.ifelse.example.D]{../code/flow/ifelse.example.D.cpp}
+
+		
+		
+		\subsection{O \textit{switch} e a estrutura composta}
+			
+			Quando uma grande gama de opções de fluxo é possível, e todas estas opções estão relacionadas a mesma variável para decisão, podemos utilizar uma grande sequência de \basicCode{if} \basicCode{else}, como no código \ref{code.flow.if.sequence}.
+
+			\lstinputlisting[caption={Estrutura composta formada por \textit{if}}, label=code.flow.if.sequence]{../code/flow/if.sequence.cpp}
+
+			Porém nem sempre é conveniente construir uma sequência, para isso existe a estrutura \basicCode{switch} \basicCode{case}.
+			Um fluxo equivalente ao apresentado no código \ref{code.flow.if.sequence} é mostrado no fluxograma da figura \ref{fig.flow.switch.A}, e o código \ref{code.flow.switch.sintax} apresenta a o mesmo fluxo utilizando o \basicCode{switch}, e mostra alguns detalhes da sintaxe.
+
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/switch.A.txt}
+				\caption{Fluxograma de esturura de decisão composta}
+				\label{fig.flow.switch.A}
+			\end{figure}
+
+			% \begin{figure}[H]
+			% 	\centering
+			% 	\input{../flowchart/switch.B.txt}
+			% 	\caption{Fluxograma de esturura de decisão composta}
+			% 	\label{fig.flow.switch.B}
+			% \end{figure}
+
+			Os valore de um \basicCode{switch} são colocadas a direita do palavra-chave \basicCode{case}, seguidos de dois pontos (\basicCode{:}).
+			A estrutura do \basicCode{switch} é fundamentada em condições de igualdade, então apenas se faz útil quando um conjunto discreto de valores é possível.
+			Sequências como no código \ref{code.flow.ifelse.example.A} não podem ser construídas utilizando um \basicCode{switch}.
+
+			Dentro de cada \basicCode{case} podem existir vários comandos, inclusive controles de fluxo, como \basicCode{if} \basicCode{else} e até \basicCode{switch}, e os demais descritos posteriormente.
+
+			Cada vez que uma das condicionais é verdadeira, todos os comando subsequentes serão realizados, até se estiverem relacionados a outras condicionais, isso apenas não ocorre quando a palavra-chave \basicCode{break} é encontrada, que causa uma quebra no fluxo e sai da estrutura do \basicCode{switch} \basicCode{case} e retoma o fluxo normal.
+			O \basicCode{break} tem uma função semelhante em outras estruturas que serão mostradas posteriormente.
+
+			A última característica a ser notada é o \basicCode{default}, que somente é executada quando nenhum dos outros casos é verdadeiro (ou quano não há \basicCode{break} previamente).
+			Este caso especial serve, principalmente, para situações de erro, onde nenhuma das condições foi aceita.
+
+			\lstinputlisting[caption={Estrutura composta formada por \textit{switch}, \textit{case}, \textit{break} e \textit{default}}, label=code.flow.switch.sintax]{../code/flow/switch.sintax.cpp}
+
+			Note como a estrutura do \basicCode{switch} é mais limpa que a sequência de \basicCode{if} \basicCode{else} equivalente.
+			Dentro de cada \basicCode{case} pode-se delimitar um bloco de código para melhor compreensão, mas não é obrigatório.
+
+			Um exemplo de \basicCode{switch} é mostrado no código \ref{code.flow.switch.example}.
+			Este exemplo é sequencial ao código \ref{code.flow.ifelse.example.A}.
+
+			\lstinputlisting[firstnumber=10,caption={Exemplo de \textit{switch}}, label=code.flow.switch.example]{../code/flow/switch.example.cpp}
+
+	\section{Repetições no fluxo}
+
+		Em muitas situações é comum ao programador se deparar com repetições de comandos ou até blocos de código.
+		Naturalmente é possível copiar o código a quantidade de vezes necessária para que a repetição de uma parte seja efetuada, porém isso tende a gerar problemas.
+		
+		Por exemplo, uma das técnicas para o calculo de mínimo divisor comum (MDC) consiste em subtrair o menor valor do maior sucessivamente até que um deles valha 0, então o outro valor será o MDC obtido pelo processo, a esta técnica é dado o nome de \emph{algoritmo de Euclides}.
+		Sem utilizar um controle de fluxo que possibilita a repetição de comandos, o programador precisa conhecer os valores a serem calculados.
+		O código \ref{code.flow.repeat} mostra como fica a estutura sem a utilização de estruturas de repetição.
+
+		\lstinputlisting[caption={Algoritmo de Euclides sem estrutura de repetição}, label=code.flow.repeat]{../code/flow/repeat.cpp}
+
+		Porém não faz sentido a utilização do código para calcular o valor a cada vez que o programa é executado, se o programador sabe quantas vezes será repetido, já conhece os valores a serem calculados, pode calcular e utilizar os valores finais no código, que o deixaria muito mais eficaz.
+
+		Naturalmente existirão situações onde o programador conhece a quantidade de repetições necessárias porém não pode fornecer o resultado final diretamente, e para estes casos vale ressaltar: copiando blocos de código, se há um erro de digitação ou de lógica, este erro será copiado, então localizar e consertar tal erro será mais difícil.
+
+		Uma repetição genérica de comandos pode ser um problema de ambiguidade, como apresentado na figura \ref{fig.flow.loop}.
+		É de se esperar que um \basicCode{if} sirva para se livrar de tal ambiguidade, a estrutura mais simples de repetição faz isso.
+
+		\begin{figure}[H]
+			\centering
+			\input{../flowchart/flow.loop.txt}
+			\caption{Fluxograma de fluxo repetitivo}
+			\label{fig.flow.loop}
+		\end{figure}
+
+		\subsection{O \textit{while} e a estrutura de repetição indefinida}
+
+			A mais simples estrutura de repetição é definida pela palavra-chave \basicCode{while}, que recebe um tipo \basicCode{bool} como argumento.
+			Enquanto esta condição lógica for verdadeira, a repetição será realizada, terminando quando a verificação é realizada e a condição for falsa.
+
+			Um exemplo da sintaxe linear básica é apresentada no código \ref{code.flow.while.line.sintax}, e a figura \ref{fig.flow.while.line} apresenta um fluxograma que ilustra as direções do fluxo.
+			
+			Assim como no \basicCode{if}, é permitida a utilização de blocos de código.
+			Vale notar que a verificação de condição apenas é feita uma vez a cada repetição, portanto a condição do argumento pode ser alterada várias vezes dentro do bloco associado, mas só será considerado o valor no momento de verificação
+
+			\lstinputlisting[caption={Estrutura de \textit{while} simples linear}, label=code.flow.while.line.sintax]{../code/flow/while.line.sintax.cpp}
+
+			A estrutura do \basicCode{while} é idêntica à do \basicCode{if}.
+
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/while.line.txt}
+				\caption{Fluxograma de \textit{while} simples linear}
+				\label{fig.flow.while.line}
+			\end{figure}
+
+			O exemplo de \basicCode{while} construído com bloco de código é apresentado no código \ref{code.flow.while.block.sintax} e o fluxograma associado está na figura \ref{fig.flow.while.block}.
+
+			\lstinputlisting[caption={Estrutura de \textit{while} simples blocular}, label=code.flow.while.block.sintax]{../code/flow/while.block.sintax.cpp}
+
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/while.block.txt}
+				\caption{Fluxograma de \textit{while} simples blocular}
+				\label{fig.flow.while.block}
+			\end{figure}
+
+			O mesmo algoritmo de Euclides do código \ref{code.flow.repeat} pode ser escrito como no código \ref{code.flow.while.example}.
+			Note que nesse caso o programdor não precisa conhecer os valores iniciais, note também que o algoritmo depende de uma condição de parada, que indica que seu térmido foi atingido, cabe ao programador construir um critério de parada adequado ao problema.
+			
+			De muito vale ressaltar: no \basicCode{while}, caso a condicional não seja verdadeira no primeiro instante, a repetição não se inicia.
+			
+			\lstinputlisting[firstnumber=4,caption={Algoritmo de Euclides com estrutura repetição}, label=code.flow.while.example]{../code/flow/while.example.cpp}
+			
+		\subsection{O \textit{do} e a estrutura de inicio obrigatório}
+
+			Esta estrutura é muito semelhante ao \basicCode{while} simples, porém é garantida que o comando seja executado ao menos uma vez.
+
+			O \basicCode{do} \basicCode{while} consiste em uma estrutura de repetição onde a palavra-chave \basicCode{do} fica antes do comando, que será executado ao menos uma vez, seguido da palavra-chave \basicCode{while} com o argumento da condicional.
+			A principal diferença a ser considerada em comparação ao \basicCode{while} o local da comparação, onde no primeiro é feita no começo e nesse é feita no final.
+
+			A sintaxe básica é apresentada no código \ref{code.flow.dowhile.line.sintax} e seu fluxograma na figura \ref{fig.flow.dowhile.line}.
+
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/dowhile.line.txt}
+				\caption{Fluxograma de \textit{do} \textit{while} simples linear}
+				\label{fig.flow.dowhile.line}
+			\end{figure}
+
+			\lstinputlisting[caption={Estrutura de \textit{do} \textit{while} simples linear}, label=code.flow.dowhile.line.sintax]{../code/flow/dowhile.line.sintax.cpp}
+
+			Note que, após o \basicCode{while} há um ponto-e-vírgula (\basicCode{;}), que indica térimino da descrição da estrutura, porém não é permitido a construção de blocos de repetição sem a delimitação de blocos.
+			A sintaxe associada ao \basicCode{do} \basicCode{while} blocular é apresentada no código \ref{code.flow.dowhile.block.sintax} e seu fluxograma na figura \ref{fig.flow.dowhile.block}.
+
+			\begin{figure}[H]
+				\centering
+				\input{../flowchart/dowhile.block.txt}
+				\caption{Fluxograma de \textit{do} \textit{while} simples blocular}
+				\label{fig.flow.dowhile.block}
+			\end{figure}
+
+			\lstinputlisting[caption={Estrutura de \textit{do} \textit{while} simples blocular}, label=code.flow.dowhile.block.sintax]{../code/flow/dowhile.block.sintax.cpp}
+
+			Um uso comum para o \basicCode{do} \basicCode{while} é a construição de menus, já que as opções sempre serão exibidas ao menos uma vez, e então alguma opção é selecionada, saindo da repetição.
 
 % \section{Laços de repetição}
 

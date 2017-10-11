@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=1]
+	\node [coord]  (c1)   {}; \cmark{1};
+	\node [dotx, join=by dott] (pa) {\basicCode{...}}; \pmark{a};
+	
+	\node [coord] (c5) {}; \cmark{5};
+	\node [test] (t1)  {\basicCode{<cond>}?};  \tmark{1};
+	\node [dotx, join] (p0) {\basicCode{...}}; \pmark{0};
+	\node [coord, join=by dott]  (c2)   {}; \cmark{2};
+
+	\node [proc, right=of t1] (p1) {\basicCode{<comand>}}; \pmark{1};
+
+	\path (t1.east) to node [near start, xshift=0em, yshift=1em] {V} (p1.west);
+	\draw [->, norm] (t1.east) -- (p1.west);
+
+	\path (t1.south) to node [near start, xshift=1em, yshift=0em] {F} (p0.north);
+	\draw [->, norm] (p1.north) |- (c5) -- (t1.north);
+
+	\draw [->, norm] (pa.south) |- (c5) -- (t1.north);
+
+	\node [proc, white!0, left=of t1] (p2) {}; \pmark{2};
+
+\end{tikzpicture}

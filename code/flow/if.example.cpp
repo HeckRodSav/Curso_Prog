@@ -1,14 +1,10 @@
 //...
-
-int A(50);
-int B(25);
-int C(15);
-
-if (A<B) C = C * 2; //C recebe o valor 30
-
-if (C<A)
+int A(50), B(25), C(15);
+if (A<B) C *= 2;	//Alteração de valor condicionada
+if (C<A)					//Inversão de valores de variáveis
 {
 	B = A;
 	A = C;
 	C = B;
 }
+//...

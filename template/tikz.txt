@@ -29,31 +29,47 @@
 	{%
 		\providecommand{\pmark}[2][]{\relax}
 	}%
+
+	\ifthenelse{\equal{\DEBUG}{1}}%
+	{%
+	\providecommand{\tmark}[2][]%
+	{%
+	\begin{pgfonlayer}{marx}
+		\node [nmarkC] at (t#2#1) {#2};
+	\end{pgfonlayer}{marx}
+	} 
+	}%
+	{%
+		\providecommand{\tmark}[2][]{\relax}
+	}%
 	
 
 
 \tikzset{
 	>=stealth,% Nice arrows; your taste may be different
 	start chain=going below,% General flow is top-to-bottom
-	node distance=4ex and 16ex,% Global setup of box spacing
+	node distance=2ex and 16ex,% Global setup of box spacing
 	every join/.style={norm},% Default linetype for connecting boxes
 	%--------------------------------------------------
 	line/.style={line width = .4mm},
 	% -------------------------------------------------
-	base/.style={draw, on chain, on grid, align=center, minimum height=4ex, line},
-	proc/.style={base, rectangle, text width=8em},
+	base/.style={draw, on chain, on grid, align=center, minimum height=3ex, minimum width=12ex, text width=12ex, line, inner sep=-.2ex, font={\small}},
+	proc/.style={base, rectangle},
 	dotx/.style={proc, dotted},
-	test/.style={base, diamond, aspect=2, text width=5em},
+	test/.style={base, diamond, aspect=2},
 	term/.style={proc, rounded corners},% coord node style is used for placing corners of connecting lines
 	coord/.style={coordinate, on chain, on grid},% nmark node style is used for coordinate debugging marks
-	nmarkA/.style={draw, cyan, circle, font={\sffamily\bfseries}},
-	nmarkB/.style={draw, magenta, circle, font={\sffamily\bfseries}},
+	% half/.style={coordinate, distance=1ex and 8ex},%
+	nmark/.style={draw, circle, font={\sffamily\bfseries\tiny}, minimum size=.5em, inner sep=1pt},%
+	nmarkA/.style={nmark, cyan, fill=cyan!5},%
+	nmarkB/.style={nmark, magenta, fill=magenta!5},%
+	nmarkC/.style={nmark, green, fill=green!5},%
 	% -------------------------------------------------
 	% Connector line styles for different parts of the diagram
 	norm/.style={->, draw, black, line},
 	true/.style={norm, blue},
 	false/.style={norm, orange},
 	thick/.style={norm, line width = .7mm},
-	dott/.style={-, draw, dotted, black},
+	dott/.style={-, draw, dotted, black, line},
 	it/.style={font={\small\itshape}}
 }
