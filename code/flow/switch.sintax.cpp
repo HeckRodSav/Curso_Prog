@@ -19,12 +19,6 @@ switch(A)
 		<comand4A>;
 		<comand4B>;
 		break;
-	case 5:
-		<comand5A>;
-		<comand5B>;
-		<comand5C>;
-		<comand5D>;
-		break;
 	default:
 		<comand0>;
 }

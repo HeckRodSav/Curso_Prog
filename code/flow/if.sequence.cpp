@@ -27,17 +27,7 @@ else
 				<comand4A>;
 				<comand4B>;
 			}
-			else
-			{
-				if (A == 5)
-				{
-					<comand5A>;
-					<comand5B>;
-					<comand5C>;
-					<comand5D>;
-				}
-				else <comand0>;
-			}
+			else <comand0>;
 		}
 	}
 }

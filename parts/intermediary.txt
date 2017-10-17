@@ -1,3 +1,4 @@
 \part{Intermediário}
 \input{../chapters/functions.txt}
+\input{../chapters/array.txt}
 \input{../chapters/moreOperators.txt}

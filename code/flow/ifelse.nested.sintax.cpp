@@ -2,15 +2,35 @@
 if(<cond0>)
 {
     //...
-    if(<condA>) <comandAA>;
-    else <comandAB>;
+    if(<condA>) 
+    {
+        <comandA1>;
+        //...
+        <comandAN>;
+    }
+    else
+    {
+        <comandB1>;
+        //...
+        <comandBM>;
+    }
     //...
 }
 else
 {
     //...
-    if(<condB>) <comandBA>;
-    else <comandBB>;
+    if(<condB>) 
+    {
+        <comandC1>;
+        //...
+        <comandCP>;
+    }
+    else
+    {
+        <comandD1>;
+        //...
+        <comandDQ>;
+    }
     //...
 }
 //...

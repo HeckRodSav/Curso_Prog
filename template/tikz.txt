@@ -42,6 +42,19 @@
 	{%
 		\providecommand{\tmark}[2][]{\relax}
 	}%
+
+	\ifthenelse{\equal{\DEBUG}{1}}%
+	{%
+	\providecommand{\hmark}[2][]%
+	{%
+	\begin{pgfonlayer}{marx}
+		\node [nmarkD] at (h#2#1) {#2};
+	\end{pgfonlayer}{marx}
+	} 
+	}%
+	{%
+		\providecommand{\hmark}[2][]{\relax}
+	}%
 	
 
 
@@ -54,6 +67,7 @@
 	line/.style={line width = .4mm},
 	% -------------------------------------------------
 	base/.style={draw, on chain, on grid, align=center, minimum height=3ex, minimum width=12ex, text width=12ex, line, inner sep=-.2ex, font={\small}},
+	hide/.style={on chain, on grid, minimum height=3ex, minimum width=12ex, text width=12ex},
 	proc/.style={base, rectangle},
 	dotx/.style={proc, dotted},
 	test/.style={base, diamond, aspect=2},
@@ -64,6 +78,7 @@
 	nmarkA/.style={nmark, cyan, fill=cyan!5},%
 	nmarkB/.style={nmark, magenta, fill=magenta!5},%
 	nmarkC/.style={nmark, green, fill=green!5},%
+	nmarkD/.style={nmark, orange, fill=orange!5},%
 	% -------------------------------------------------
 	% Connector line styles for different parts of the diagram
 	norm/.style={->, draw, black, line},

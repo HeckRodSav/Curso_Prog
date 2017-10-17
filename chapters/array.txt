@@ -1,0 +1,1 @@
+\chapter{Sequências de memórias}\label{cap.array}

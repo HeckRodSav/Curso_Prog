@@ -1,95 +1,68 @@
 \begin{tikzpicture}[scale=1]
-	\node [coord]  (ca1)   {}; \cmark{a1};
-	\node [dotx, join=by dott]			{\basicCode{...}};
-	\node [test, join]  (ta1)  			{\basicCode{<cond0>}?}; \tmark{a1};
+	\node [coord]  (cC1)   {}; \cmark{C1};
+	\node [dotx, join=by dott] (pC1) 	{\basicCode{...}}; \pmark{C1}
+	\node [test, join]  (tC1)  			{\basicCode{<cond0>}?}; \tmark{C1};
+	\node [hide, rectangle,] (hC1) {}; \hmark{C1};
+	\node [hide, rectangle,] (hC2) {}; \hmark{C2};
+	\node [hide, rectangle,] (hC3) {}; \hmark{C3};
+	\node [dotx] (pC2) {}; \pmark{C2};
+	\node [coord, join=by dott] (cC2) {}; \cmark{C2};
 
-	\node [coord, right=of ta1] (ca2) {}; \cmark{a2};
-	\node [coord, right=of ca2] (ca3) {};\cmark{a3};
-	% \node [coord] (ca4) {}; \cmark{a4};
-	\node [dotx]  (pa1)      			{\basicCode{...}}; \pmark{a1}; 
-	
-	
-	%A
-	\node [test, join]  (tb1)  			{\basicCode{<condA>}?}; \tmark{b1};
-	
-	\node [coord, right=of tb1] (cb2) {}; \cmark{b2};
-	% \node [coord] (cb3) {}; \cmark{b3};
-	\node [proc] (pb1) 					{\basicCode{<comandAA>}}; \pmark{b1}
-	\node [coord] (cb4) {}; \cmark{b4};
-	
-	\node [coord, left=of tb1] (cb5) {}; \cmark{b5};
-	% \node [coord] (cb6) {}; \cmark{b6};
-	\node [proc] (pb2) 					{\basicCode{<comandAB>}}; \pmark{b2}
-	\node [coord] (cb7) {}; \cmark{b7};
-	
-	\node [coord, left=of pb1] (cb8) {}; \cmark{b8};
-	\node [proc] (pb3)					{\basicCode{...}}; \pmark{b3}
-	%A
+	%R
+	\node [hide, rectangle, right=of tC1] (hR1) {}; \hmark{R1};
+	\node [dotx, right=of hR1]  (pR1)      			{\basicCode{...}}; \pmark{R1}; 
+	\node [test, join]  (tR1)  {\basicCode{<condA>}?}; \tmark{R1};
 
+	\path (tC1.east) to node [near start, xshift=0em, yshift=1em] {V} (hR1.west);
+	\draw [norm] (tC1.east) -- (pR1.west);
 
-	\node [dotx, join] (pa2) 			{\basicCode{...}}; \pmark{a2};
-	\node [coord] (ca5) {}; \cmark{a5};
+	\node [proc,  right=of tR1]  (pR1)      {\basicCode{<comandA1>}}; \pmark{R1};
+	\node [dotx, join]      {\basicCode{...}};
+	\node [proc, join] (pR2) {\basicCode{<comandAN>}}; \pmark{R2};
 
-	\node [coord, left=of ta1] (ca6) {}; \cmark{a6};
-	\node [coord, left=of ca6] (ca7) {}; \cmark{a7};
-	% \node [coord] (ca8) {}; \cmark{a8};
-	\node [dotx] (pa3)       			{\basicCode{...}}; \pmark{a3};
-	
-	
-	%B
-	\node [test, join]  (tc1)  			{\basicCode{<condB>}?}; \tmark{c1};
+	\node [proc, left=of tR1] (pR3)       {\basicCode{<comandB1>}}; \pmark{R3};
+	\node [dotx, join]      {\basicCode{...}};
+	\node [proc, join] (pR4) {\basicCode{<comandBM>}}; \pmark{R4};
 
-	\node [coord, right=of tc1] (cc2) {}; \cmark{c2};
-	% \node [coord] (cc3) {}; \cmark{c3};
-	\node [proc] (pc1) 					{\basicCode{<comandBA>}}; \pmark{c1}
-	\node [coord] (cc4) {}; \cmark{c4};
+	\node [dotx, left=of pR2] (pR5) {\basicCode{...}}; \pmark{R5};;
 
-	\node [coord, left=of tc1] (cc5) {}; \cmark{c5};
-	% \node [coord] (cc6) {}; \cmark{c6};
-	\node [proc] (pc2)					{\basicCode{<comandBB>}}; \pmark{c2}
-	\node [coord] (cc7) {}; \cmark{c7};
-	
-	\node [coord, left=of pc1] (cc8) {}; \cmark{c8};
-	\node [proc] (pc3) 					{\basicCode{...}}; \pmark{c3}
-	%B
+	\path (tR1.east) to node [near start, xshift=0em, yshift=1em] {V} (pR1.west);
+	\draw [norm] (tR1.east) -- (pR1.west);
+	\draw [norm] (pR2.west) -- (pR5.east);
 
+	\path (tR1.west) to node [near start, xshift=0em, yshift=1em] {F} (pR3.east);
+	\draw [norm] (tR1.west) -- (pR3.east);
+	\draw [norm] (pR4.east) -- (pR5.west);
+	%R
 
-	\node [dotx, join] (pa4) 			{\basicCode{...}}; \pmark{a4};
-	\node [coord] (ca9) {}; \cmark{a9};
+	%L
+	\node [hide, rectangle, left=of tC1] (hL1) {}; \hmark{L1};
+	\node [dotx, left=of hL1]  (pL1)      			{\basicCode{...}}; \pmark{L1}; 
+	\node [test, join]  (tL1)  {\basicCode{<condB>}?}; \tmark{L1};
 
-	\node [coord, left=of pa2] (ca10) {}; \cmark{a10};
-	\node [coord, left=of ca10] (ca11) {}; \cmark{a11};
-	\node [proc] (pa5) 					{\basicCode{...}}; \pmark{a5};
-	\node [dotx, join] 					{\basicCode{...}};
-	\node [coord, join=by dott] (ca12) {}; \cmark{a12};
+	\path (tC1.west) to node [near start, xshift=0em, yshift=1em] {F} (hL1.east);
+	\draw [norm] (tC1.west) -- (pL1.east);
 
+	\node [proc,  right=of tL1]  (pL1)      {\basicCode{<comandC1>}}; \pmark{L1};
+	\node [dotx, join]      {\basicCode{...}};
+	\node [proc, join] (pL2) {\basicCode{<comandCP>}}; \pmark{L2};
 
-	\path (ta1.east) to node [near start, xshift=0em, yshift=1em] {V} (ca2);
-	\draw [->,norm] (ta1.east) -- (ca3) -- (pa1.north);
-	\draw [->,norm] (pa2.south) -- (ca5) -- (pa5.east);
+	\node [proc, left=of tL1] (pL3)       {\basicCode{<comandD1>}}; \pmark{L3};
+	\node [dotx, join]      {\basicCode{...}};
+	\node [proc, join] (pL4) {\basicCode{<comandDQ>}}; \pmark{L4};
 
-	\path (ta1.west) to node [near start, xshift=0em, yshift=1em] {F} (ca6);
-	\draw [->,norm] (ta1.west) -- (ca7) -- (pa3.north);
-	\draw [->,norm] (pa4.south) -- (ca9) -- (pa5.west);
+	\node [dotx, left=of pL2] (pL5) {\basicCode{...}}; \pmark{L5};
 
+	\path (tL1.east) to node [near start, xshift=0em, yshift=1em] {V} (pL1.west);
+	\draw [norm] (tL1.east) -- (pL1.west);
+	\draw [norm] (pL2.west) -- (pL5.east);
 
+	\path (tL1.west) to node [near start, xshift=0em, yshift=1em] {F} (pL3.east);
+	\draw [norm] (tL1.west) -- (pL3.east);
+	\draw [norm] (pL4.east) -- (pL5.west);
+	%L
 
-	\path (tb1.east) to node [near start, xshift=0em, yshift=1em] {V} (cb2);
-	\draw [->,norm] (tb1.east) -- (cb2) -- (pb1.north);
-	\draw [->,norm] (pb1.south) -- (cb4) -- (pb3.east);
-
-	\path (tb1.west) to node [near start, xshift=0em, yshift=1em] {F} (cb5);
-	\draw [->,norm] (tb1.west) -- (cb5) -- (pb2.north);
-	\draw [->,norm] (pb2.south) -- (cb7) -- (pb3.west);
-
-
-
-	\path (tc1.east) to node [near start, xshift=0em, yshift=1em] {V} (cc2);
-	\draw [->,norm] (tc1.east) -- (cc2) -- (pc1.north);
-	\draw [->,norm] (pc1.south) -- (cc4) -- (pc3.east);
-
-	\path (tc1.west) to node [near start, xshift=0em, yshift=1em] {F} (cc5);
-	\draw [->,norm] (tc1.west) -- (cc5) -- (pc2.north);
-	\draw [->,norm] (pc2.south) -- (cc7) -- (pc3.west);
+	\draw [norm] (pR5.south) |- (pC2.east);
+	\draw [norm] (pL5.south) |- (pC2.west);
 
 \end{tikzpicture}

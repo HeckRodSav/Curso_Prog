@@ -1,0 +1,152 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{1}
+
+\subtitle{Dando mais voltas}
+\usecolortheme[named=slideCyan]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Escolha}
+		\begin{frame}{Escolha}
+			\begin{itemize}
+				\presentationPause\item Qual a diferença entre escolha e decisão?
+				\presentationPause\item Problemas da escolha...
+				\presentationPause\item Porque então vou usar essa coisa?
+			\end{itemize}
+			\begin{multicols}{2}
+				\presentationPause\lstinputlisting[numbers=none, linerange={2-33}]{../../code/flow/if.sequence.cpp}
+			\end{multicols}
+		\end{frame}
+
+		\begin{frame}{Não entendeu? Sem problemas}
+			\presentationPause
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/switch.A.txt}
+				\caption{Fluxograma de esturura de decisão composta}
+				\label{fig.flow.switch.A}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}{O \textit{switch}}
+			\begin{itemize}
+				\presentationPause\item O que diabos foi aquilo?\presentationPause?\presentationPause?
+				\presentationPause\item Como faço pra não ter aquilo?
+				\presentationPause\item A estrutura de escolha: \presentationPause o \basicCode{switch}
+				\presentationPause\item Recebe o argumento que precisar
+				\presentationPause\item Principal desvantagem: \presentationPause é binário\presentationPause(?)
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{O \textit{switch}}
+			\begin{multicols}{2}
+				\lstinputlisting[numbers=none, linerange={4-24}]{../../code/flow/switch.sintax.cpp}
+			\end{multicols}
+			Note os detalhes:
+			\begin{multicols}{2}
+				\begin{itemize}
+					\presentationPause\item \basicCode{switch}
+					\presentationPause\item \basicCode{case}
+					\presentationPause\item \basicCode{break}
+					\presentationPause\item \basicCode{default}
+				\end{itemize}
+			\end{multicols}
+		\end{frame}
+
+		\begin{frame}{Não entendeu? Sem problemas}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/switch.A.txt}
+				\caption{Fluxograma de esturura de decisão composta}
+				\label{fig.flow.switch.A}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}{Notas novamente}
+			\lstinputlisting[linerange={4-15}]{../../code/flow/switch.example.cpp}
+		\end{frame}	
+
+	\section{Repete mais}
+		\begin{frame}{Repetições definidas}
+			\begin{itemize}
+				\presentationPause\item Utilizar o \basicCode{while} pra repetição definida?
+				\presentationPause\item O \basicCode{while} tem uma estrutura feita para repetição indefinida
+				\presentationPause\item Há uma estrutura feita só para estas situação
+				\presentationPause\item O fluxograma dela é idêntico ao do \basicCode{while}
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-7}]{../../code/flow/while.i.cpp}
+		\end{frame}
+
+		\begin{frame}{O \textit{for}}
+			% \begin{columns}
+			% 	\begin{column}{.65\textwidth}
+					\begin{itemize}
+						\presentationPause\item Sintaxe simpática
+						\presentationPause\item Todo programador gosta
+						\presentationPause\item Crucial para sequências de memórias
+						\presentationPause\item Recebe três agrupamentos como argumentos\presentationPause(?)
+						\presentationPause\item Iteração! \presentationPause $\neq$ interação...
+						\presentationPause\item Tem uma variável própria \presentationPause em 95\% das vezes...
+						\presentationPause\item \basicCode{++i} $\neq$ \basicCode{i++}
+					\end{itemize}
+					\presentationPause\lstinputlisting[numbers=none, linerange={2-2}]{../../code/flow/for.line.sintax.cpp}
+					\presentationPause\lstinputlisting[numbers=none, linerange={2-7}]{../../code/flow/for.block.sintax.cpp}
+				% \end{column}
+				% \begin{column}{.35\textwidth}
+				% \end{column}
+			% \end{columns}
+		\end{frame}
+
+		\begin{frame}{Alguns (muitos) detalhes}
+			\begin{itemize}
+				\presentationPause\item A declaração da variável de controle pode ser feita na região de inicaliação
+				\presentationPause\item Mais de uma variável pode ser criada e utilizada (todas do mesmo tipo)
+				\presentationPause\item As variáveis de iteração podem ser utilizadas dentro da estrutura de repetição
+				\presentationPause\item A condição de continuação não precisa ser atrelada as variáveis criadas
+				\presentationPause\item O passo de iteração pode alterar todas as variáveis criadas de forma independente
+				\presentationPause\item Não é necessário inicializar a variável de iteração se esta já vem com um valor estabelecido (ou seja, que não é lixo de memória)
+				\presentationPause\item O passo de iteração não precisa alterar somente as variáveis de iteração
+				\presentationPause\item As variáveis declaradas na regição de inicialização são locais para o comando (ou bloco) da repetição
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}
+			\lstinputlisting[linerange={2-19}]{../../code/flow/for.example.cpp}
+		\end{frame}
+
+	\section{Brutal}
+		\begin{frame}{Saídas bruscas}
+			\begin{itemize}
+				\presentationPause\item Saídas bruscas são úteis
+				\presentationPause\item Existe um controle de fluxo para qubra de repetição
+				\presentationPause\item Existe um controle de fluxo para pular iteração
+				\presentationPause\item Associação a \basicCode{if}
+				\presentationPause\item Se não existir \basicCode{if}, existe um problema
+				\presentationPause\item Você já viu um deles
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none,linerange={2-4}]{../../code/flow/continuebreak.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}
+			\lstinputlisting[linerange={2-14}]{../../code/flow/continuebreak.example.cpp}
+		\end{frame}
+		
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+
+\end{document}

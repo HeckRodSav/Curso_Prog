@@ -8,8 +8,9 @@
 \usecolortheme[named=slideBlue]{structure}
 
 \begin{document}
-
-\titlepage
+\begin{frame}
+	\titlepage
+\end{frame}
 
 \begin{frame}
 	\tableofcontents
@@ -43,16 +44,16 @@
 		\lstinputlisting{../../code/operators/increment.example.cpp}
 	\end{frame}
 
-	% \begin{frame}{Sinalizadores}
-	% 	\begin{itemize}
-	% 		\presentationPause\item Equivalem aos sinais matemáticos
-	% 		\presentationPause\item Fazem o mesmo que multiplicar um número por $+1$ ou $-1$
-	% 		\presentationPause\item Não alteram o valor registrado
-	% 	\end{itemize}
-	% 	\presentationPause\lstinputlisting[numbers=none,linerange={2-4}]{../../code/operators/sign.sintax.cpp}
-	% \end{frame}\begin{frame}{Sinalizadores}
-	% 	\lstinputlisting{../../code/operators/sign.example.cpp}
-	% \end{frame}
+	\begin{frame}{Sinalizadores}
+		\begin{itemize}
+			\presentationPause\item Equivalem aos sinais matemáticos
+			\presentationPause\item Fazem o mesmo que multiplicar um número por $+1$ ou $-1$
+			\presentationPause\item Não alteram o valor registrado
+		\end{itemize}
+		\presentationPause\lstinputlisting[numbers=none,linerange={2-4}]{../../code/operators/sign.sintax.cpp}
+	\end{frame}\begin{frame}{Sinalizadores}
+		\lstinputlisting{../../code/operators/sign.example.cpp}
+	\end{frame}
 
 	\begin{frame}{Negador booleano}
 		\begin{itemize}
@@ -79,39 +80,39 @@
 	\end{frame}
 
 \section{Binário}
-	% \begin{frame}{Atribuidor simples}
-	% 	\begin{itemize}
-	% 		\presentationPause\item O operador mais utilizado é o atribuidor simples
-	% 		\presentationPause\item Ele atribui o valor a direita à variável a direita
-	% 		\presentationPause\item Cuidado para não inverter
-	% 		\presentationPause\item Não atribuir tipos a variáveis de outros tipos
-	% 	\end{itemize}
-	% 	\presentationPause\lstinputlisting[numbers=none,linerange={2-2}]{../../code/operators/assignment.sintax.cpp}
-	% \end{frame}\begin{frame}{Atribuidor simples}
-	% 	\lstinputlisting{../../code/operators/assignment.example.cpp}
-	% \end{frame}
+	\begin{frame}{Atribuidor simples}
+		\begin{itemize}
+			\presentationPause\item O operador mais utilizado é o atribuidor simples
+			\presentationPause\item Ele atribui o valor a direita à variável a direita
+			\presentationPause\item Cuidado para não inverter
+			\presentationPause\item Não atribuir tipos a variáveis de outros tipos
+		\end{itemize}
+		\presentationPause\lstinputlisting[numbers=none,linerange={2-2}]{../../code/operators/assignment.sintax.cpp}
+	\end{frame}\begin{frame}{Atribuidor simples}
+		\lstinputlisting{../../code/operators/assignment.example.cpp}
+	\end{frame}
 
-	% \begin{frame}{Aritméticos}
-	% 	\begin{itemize}
-	% 		\presentationPause\item As quatro operações básicas da matemática
-	% 		\presentationPause\item Os símbolos padrão
-	% 		\presentationPause\item Não alteram o valor registrado
-	% 		\presentationPause\item Cuidado para não dividir por 0
-	% 	\end{itemize}
-	% 	\presentationPause\lstinputlisting[numbers=none,linerange={2-6}]
-	% 	{../../code/operators/arithmetic.sintax.cpp}
-	% 	\presentationPause\begin{equation}\nonumber
-	% 		\begin{array}{cc}
-	% 			\text{\basicCode{E}} & \multicolumn{1}{|c}{\text{\basicCode{F}}} \\ \cline{2-2} 
-	% 			\text{\basicCode{G}} & \text{\basicCode{H}}
-	% 		\end{array} \Rightarrow \begin{array}{cc}
-	% 			13 & \multicolumn{1}{|c}{5} \\ \cline{2-2} 
-	% 				3 & 2		
-	% 		\end{array}
-	% 	\end{equation}
-	% \end{frame}\begin{frame}{Aritméticos}
-	% 	\lstinputlisting{../../code/operators/arithmetic.example.cpp}
-	% \end{frame}
+	\begin{frame}{Aritméticos}
+		\begin{itemize}
+			\presentationPause\item As quatro operações básicas da matemática
+			\presentationPause\item Os símbolos padrão
+			\presentationPause\item Não alteram o valor registrado
+			\presentationPause\item Cuidado para não dividir por 0
+		\end{itemize}
+		\presentationPause\lstinputlisting[numbers=none,linerange={2-6}]
+		{../../code/operators/arithmetic.sintax.cpp}
+		\presentationPause\begin{equation}\nonumber
+			\begin{array}{cc}
+				\text{\basicCode{E}} & \multicolumn{1}{|c}{\text{\basicCode{F}}} \\ \cline{2-2} 
+				\text{\basicCode{G}} & \text{\basicCode{H}}
+			\end{array} \Rightarrow \begin{array}{cc}
+				13 & \multicolumn{1}{|c}{5} \\ \cline{2-2} 
+					3 & 2		
+			\end{array}
+		\end{equation}
+	\end{frame}\begin{frame}{Aritméticos}
+		\lstinputlisting{../../code/operators/arithmetic.example.cpp}
+	\end{frame}
 
 	\begin{frame}{Deslocadores}
 		\begin{itemize}
@@ -175,7 +176,7 @@
 		\presentationPause\lstinputlisting[numbers=none,linerange={2-4}]{../../code/operators/compound.sintax.cpp}
 	\end{frame}\begin{frame}{Atribuidor composto}
 		\begin{table}[!h]
-			\small
+			% \footnotesize
 			\centering
 			\caption{Relação de operadores de atribuição composta e seus equivalentes}
 			\label{table.compound}
@@ -197,15 +198,15 @@
 		\lstinputlisting{../../code/operators/compound.example.cpp}
 	\end{frame}
 
-	% \begin{frame}{Comparadores}
-	% 	\begin{itemize}
-	% 		\presentationPause\item Verificar se valores são iguais ou diferentes
-	% 		\presentationPause\item Descobrir se um valor é maior que outro
-	% 	\end{itemize}
-	% 	\presentationPause\lstinputlisting[numbers=none,linerange={2-7}]{../../code/operators/comparison.sintax.cpp}
-	% \end{frame}\begin{frame}{Comparadores}
-	% 	\lstinputlisting{../../code/operators/comparison.example.cpp}
-	% \end{frame}
+	\begin{frame}{Comparadores}
+		\begin{itemize}
+			\presentationPause\item Verificar se valores são iguais ou diferentes
+			\presentationPause\item Descobrir se um valor é maior que outro
+		\end{itemize}
+		\presentationPause\lstinputlisting[numbers=none,linerange={2-7}]{../../code/operators/comparison.sintax.cpp}
+	\end{frame}\begin{frame}{Comparadores}
+		\lstinputlisting{../../code/operators/comparison.example.cpp}
+	\end{frame}
 
 	\begin{frame}{Lógicos Booleanos}
 		\begin{itemize}
@@ -247,7 +248,7 @@
 		\end{itemize}
 	\end{frame}\begin{frame}{Precedência}
 		\begin{table}[!h]
-			\tiny\centering
+			\footnotesize\centering
 			\caption{Ordem de precedência de operadores}
 		
 			\label{table.precedence}
@@ -268,8 +269,9 @@
 				\basicCode{|} & lógico \\
 				\basicCode{\&\&} & lógico \\
 				\basicCode{\|\|} & lógico \\\hline\presentationPause
-				\basicCode{=}, \basicCode{+=}, \basicCode{-=}, \basicCode{*=}, \basicCode{/=}, \basicCode{\%=}, \basicCode{\&=}, \basicCode{\^=}, \basicCode{\|=}, \basicCode{<<=},  \basicCode{>>=} & atribuidor \\\hline\presentationPause
-				\basicCode{?:} & ternário
+				\basicCode{?:} & ternário \\ \hline\presentationPause
+				\basicCode{=} & atribuidor \\
+				\basicCode{+=}, \basicCode{-=}, \basicCode{*=}, \basicCode{/=}, \basicCode{\%=}, \basicCode{\&=}, \basicCode{\^=}, \basicCode{\|=}, \basicCode{<<=},  \basicCode{>>=} & atribuidor
 			\end{tabular}
 		\end{table}
 	\end{frame}\begin{frame}{Precedência}

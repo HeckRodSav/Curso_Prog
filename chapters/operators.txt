@@ -323,23 +323,24 @@ Alguns exemplos de precedência poder ser encontradas no código \ref{code.opera
 	\label{table.precedence}
 	\begin{tabular}{cc}
 		Operador & Descrição \\\hline
-		\basicCode{()} & preferencal\\
-		\basicCode{++}, \basicCode{--} & posfixo \\
-		\basicCode{++}, \basicCode{--} & prefixo \\
-		\basicCode{\~}, \basicCode{!} & lógico \\
-		\basicCode{+}, \basicCode{-} & sinalizadore \\
+		\basicCode{()} & preferencal\\\hline
+		\basicCode{++}, \basicCode{--} & posfixo \\\hline
+		\basicCode{++}, \basicCode{--} & prefixo \\\hline
+		\basicCode{\~}, \basicCode{!} & lógico \\\hline
+		\basicCode{+}, \basicCode{-} & sinalizadore \\\hline
 		\basicCode{*}, \basicCode{/}, \basicCode{\%} & aritimético \\
-		\basicCode{+}, \basicCode{-} & aritimético \\
-		\basicCode{<<}, \basicCode{>>} & deslocador \\
+		\basicCode{+}, \basicCode{-} & aritimético \\\hline
+		\basicCode{<<}, \basicCode{>>} & deslocador \\\hline
 		\basicCode{<}, \basicCode{<=}, \basicCode{>=}, \basicCode{>} & comparador \\
-		\basicCode{==}, \basicCode{!=} & comparador \\
+		\basicCode{==}, \basicCode{!=} & comparador \\\hline
 		\basicCode{\&} & lógico \\
 		\basicCode{\^} & lógico \\
 		\basicCode{|} & lógico \\
 		\basicCode{\&\&} & lógico \\
-		\basicCode{\|\|} & lógico \\
-		\basicCode{=}, \basicCode{+=}, \basicCode{-=}, \basicCode{*=}, \basicCode{/=}, \basicCode{\%=}, \basicCode{\&=}, \basicCode{\^=}, \basicCode{\|=}, \basicCode{<<=},  \basicCode{>>=} & atribuidor \\
-		\basicCode{?:} & ternário
+		\basicCode{\|\|} & lógico \\\hline
+		\basicCode{?:} & ternário \\ \hline
+		\basicCode{=} & atribuidor \\
+		\basicCode{+=}, \basicCode{-=}, \basicCode{*=}, \basicCode{/=}, \basicCode{\%=}, \basicCode{\&=}, \basicCode{\^=}, \basicCode{\|=}, \basicCode{<<=},  \basicCode{>>=} & atribuidor
 	\end{tabular}
 \end{table}
 

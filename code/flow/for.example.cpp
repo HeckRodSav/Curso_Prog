@@ -1,15 +1,20 @@
 //...
+int acc(0);
+for (int i(0); i < 10; i++)	acc += i; //Soma todos os números de 0 a 9
 
 int A(13);
 int B(-13);
+for (int i(A); i > 0; i--)	B += 1;
 
-for (int i(A); i >= 0; i++)	B = B - 1; //incrementa B conforme o valor de A vai sendo decrementado
+for (; A > B; B++) ; //Note como o ponto-e-vírgula está sozinho, ou seja, o comando é vazio, porém B é incrementado
 
-for (; B < 256; B = B + 2); //não inicializa nada, mas incrementa B de 2 em 2 enquanto B<256 for verdadeiro
+int sum(0);
+for (int i(0), j(0); i < 10; i++)	for (int k(0); k < 10; k++, j++) sum += i * j; //Aninhamento
 
-for (A = 25, B = 50; A < B; A++, B = B - 2)
+long prod(1);
+for (A = 25, B = 50; A < B; A++, B -= 2)
 {
-	B = B + 1; //incrementa B em 1
-} //incrementa A em 1 e decrementa B em 2 a cada iteração, enquanto A<B for verdadeiro
-
+	prod *= B;
+	prod /= A;
+}
 //...

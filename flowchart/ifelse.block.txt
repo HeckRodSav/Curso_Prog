@@ -9,7 +9,6 @@
 	% \node [proc, join]      {\basicCode{<comandA2>}};
 	\node [dotx, join]      {\basicCode{...}};
 	\node [proc, join] (p2) {\basicCode{<comandAN>}}; \pmark{2};
-	\node [coord] (c4) {}; \cmark{4};
 
 	% \node [coord, left=of t1] (c5) {}; \cmark{5};
 	% \node [coord] (c6) {}; \cmark{6};
@@ -17,7 +16,6 @@
 	% \node [proc, join]      {\basicCode{<comandB2>}};
 	\node [dotx, join]      {\basicCode{...}};
 	\node [proc, join] (p4) {\basicCode{<comandBM>}}; \pmark{4};
-	\node [coord] (c7) {}; \cmark{7};
 
 	% \node [coord, left=of p2] (c8) {}; \cmark{8};
 	\node [proc, left=of p2] (p5) {\basicCode{...}}; \pmark{5};

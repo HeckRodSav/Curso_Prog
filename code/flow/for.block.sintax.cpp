@@ -1,8 +1,7 @@
 //...
-for(<inicialização>; <cond>; <incremento>)
+for(<inic>; <cond>; <passo>)
 {
 	<comand1>;
-	<comand2>;
 	//...
 	<comandN>;
 }

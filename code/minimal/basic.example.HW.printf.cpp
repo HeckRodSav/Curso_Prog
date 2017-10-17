@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstdio>
 int main()
 {
 	printf("%s\n","Hellow World!");

@@ -127,10 +127,12 @@
 	\section{Aninhamento}
 		\begin{frame}{Estruturas aninhadas}
 			\begin{itemize}
-				\presentationPause\item Estruturas em qualquer lugar
+				\item Estruturas em qualquer lugar
 				% \presentationPause\item 
 			\end{itemize}
-			\only<1>{\lstinputlisting[numbers=none,linerange={2-15}]{../../code/flow/ifelse.nested.sintax.cpp}}
+			\begin{multicols}{2}
+				\only<1>{\lstinputlisting[numbers=none,linerange={2-35}]{../../code/flow/ifelse.nested.sintax.cpp}}
+			\end{multicols}
 			% \only<2>
 			% {
 			% 	\begin{figure}[H]
@@ -147,7 +149,7 @@
 		\end{frame}
 
 	\section{Repetições}
-		\begin{frame}
+		\begin{frame}{Repetições}
 			\begin{itemize}
 				\presentationPause\item Repetição de comandos
 				\presentationPause\item Algoritmo de Euclides

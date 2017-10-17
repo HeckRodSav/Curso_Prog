@@ -1,1 +1,37 @@
-\chapter{Funções}\label{cap.functions}
+\chapter{Procedimentos e funções}\label{cap.functions}
+
+Ao longo do desenvolvimento de programas, não é difícil notar que alguns conjuntos de comandos se repetem ao longo do código.
+Comandos usuais como exibir valores na tela, ler entradas do usuário, fazer conjuntos de contas ou validar valores lidos costumam ocorrer em muitos pontos do programa.
+Assim como no caso das estruturas de repetição, não vale a pena copiar blocos de código pelos mesmos fatores, como alterações posteriores, busca de erros, etc.
+
+Para evitar a necessidade cópias desnecessária, melhorar a legitibilidade, faciliar a busca por erros e a manutenção posterior do códigos foram desenvolvidos os procedimentos e as funções.
+Eles consistem em blocos de código que recebem nomes próprios (assim como variáveis), e podem ser invocados em qualquer parte do programa.
+
+Procedimentos e funções devem ser declarados de maneira global e antes de serem invocadas.
+Podem interagir com variáveis globais e locais (de seus blocos).
+Diferente dos controles de fluxo, necessariamente há um bloco de código associado.
+
+Os mais simples são os procedimentos sem argumentos, sem valores de retorno, sem características especiais.
+Simplesmente são blocos de código com nome próprio que podem ser invocados.
+
+\section{Procedimentos}
+
+	Sua estrutura é tão simples que a apresentação da sintaxe direta serve para entender sua declaração.
+	Lembrando que todo bloco pode contar com controladores de fluxo.
+	O código \ref{code.functions.foo.void.sintax} apresenta a sintaxe básica de um procedimento chamado \basicCode{foo}.
+
+	\lstinputlisting[caption={Sintaxe básica de procedimento sem argumentos}, label=code.functions.foo.void.sintax]{../code/functions/foo.void.sintax.cpp}
+
+	O código \ref{code.functions.foo.void.example} mostra um programa completo que calcula o MDC entre duas variáveis utilizando um procedimento chamado \basicCode{MCDab}.
+	Note como os valores das variáveis são alterados pelo procedimento, isso pode gerar problemas no código.
+
+	\lstinputlisting[caption={Exemplo de procedimento sem argumentos}, label=code.functions.foo.void.example]{../code/functions/foo.void.example.cpp}
+
+	Vale ressaltar que, da maneira que está escrito, o algoritimo de Euclides depende que a variável \basicCode{A} seja a de maior valor.
+	Procedimentos que rebebem argumentos facilitam situações como estas.
+
+\section{Passagem de argumentos}
+
+	Procedimentos podem receber valores de variáveis para seus blocos, através de variáveis auxiliares, que copiam os valores passados aos argumentos.
+	Estas variáveis devem ter o tipo definido, e os argumentos debem ser passados conforme o tipo.
+	Multiplos argumentos de multiplos tipos podem ser utilizado por procedimento, porém a ordem de passagem de argumentos deve ser respeitada.

@@ -9,7 +9,9 @@
 
 \begin{document}
 
-\titlepage
+\begin{frame}
+	\titlepage
+\end{frame}
 
 \begin{frame}
 	\tableofcontents
@@ -221,7 +223,7 @@
 		\only<2>
 		{		
 			\begin{table}[!h]
-				\small
+				% \footnotesize
 				\centering
 				\caption{Relação de operadores de atribuição composta e seus equivalentes}
 				\label{table.compound}
@@ -319,29 +321,30 @@
 		\only<3>
 		{
 			\begin{table}[!h]
-				\tiny\centering
+				\footnotesize\centering
 				\caption{Ordem de precedência de operadores}
 			
 				\label{table.precedence}
 				\begin{tabular}{cc}
 					Operador & Descrição \\\hline
-					\basicCode{()} & preferencal\\\hline
-					\basicCode{++}, \basicCode{--} & posfixo \\\hline
-					\basicCode{++}, \basicCode{--} & prefixo \\\hline
-					\basicCode{\~}, \basicCode{!} & lógico \\\hline
-					\basicCode{+}, \basicCode{-} & sinalizadore \\\hline
+					\basicCode{()} & preferencal\\\hline\presentationPause
+					\basicCode{++}, \basicCode{--} & posfixo \\\hline\presentationPause
+					\basicCode{++}, \basicCode{--} & prefixo \\\hline\presentationPause
+					\basicCode{\~}, \basicCode{!} & lógico \\\hline\presentationPause
+					\basicCode{+}, \basicCode{-} & sinalizadore \\\hline\presentationPause
 					\basicCode{*}, \basicCode{/}, \basicCode{\%} & aritimético \\
-					\basicCode{+}, \basicCode{-} & aritimético \\\hline
-					\basicCode{<<}, \basicCode{>>} & deslocador \\\hline
+					\basicCode{+}, \basicCode{-} & aritimético \\\hline\presentationPause
+					\basicCode{<<}, \basicCode{>>} & deslocador \\\hline\presentationPause
 					\basicCode{<}, \basicCode{<=}, \basicCode{>=}, \basicCode{>} & comparador \\
-					\basicCode{==}, \basicCode{!=} & comparador \\\hline
+					\basicCode{==}, \basicCode{!=} & comparador \\\hline\presentationPause
 					\basicCode{\&} & lógico \\
 					\basicCode{\^} & lógico \\
 					\basicCode{|} & lógico \\
 					\basicCode{\&\&} & lógico \\
-					\basicCode{\|\|} & lógico \\\hline
-					\basicCode{=}, \basicCode{+=}, \basicCode{-=}, \basicCode{*=}, \basicCode{/=}, \basicCode{\%=}, \basicCode{\&=}, \basicCode{\^=}, \basicCode{\|=}, \basicCode{<<=},  \basicCode{>>=} & atribuidor \\\hline
-					\basicCode{?:} & ternário
+					\basicCode{\|\|} & lógico \\\hline\presentationPause
+					\basicCode{?:} & ternário \\ \hline\presentationPause
+					\basicCode{=} & atribuidor \\
+					\basicCode{+=}, \basicCode{-=}, \basicCode{*=}, \basicCode{/=}, \basicCode{\%=}, \basicCode{\&=}, \basicCode{\^=}, \basicCode{\|=}, \basicCode{<<=},  \basicCode{>>=} & atribuidor
 				\end{tabular}
 			\end{table}
 		}
