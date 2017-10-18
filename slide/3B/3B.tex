@@ -1,0 +1,116 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{0}
+
+\subtitle{Funcional}
+\usecolortheme[named=slideCyan]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{I/O \textit{stream}}
+	\begin{frame}{Escrita - \textit{O}}
+		\begin{itemize}
+			\presentationPause\item Já sabemos exibir valores na tela
+			\presentationPause\item Tem uma forma muito mais fácil\dots
+			\presentationPause\item Você não precisa nem saber o que vai mostrar
+			\presentationPause\item Mas\dots  \presentationPause Não é bom pra formatar a saída
+			\presentationPause\item \basicCode{cout}
+		\end{itemize}
+		\presentationPause\lstinputlisting{../../code/minimal/basic.example.HW.cout.cpp}
+	\end{frame}
+
+	\begin{frame}{Leitura - \textit{I}}
+		\begin{itemize}
+			\presentationPause\item E existem alguma coisa que faça leitura tão fácil assim?
+			\presentationPause\item É amigo do programador
+			\presentationPause\item Você só precisa passar a variável
+			\presentationPause\item Mas\dots  \presentationPause A entrada depende do tipo da variável passada
+			\presentationPause\item \basicCode{cin}  
+		\end{itemize}
+		\presentationPause\lstinputlisting{../../code/minimal/basic.example.HW.cin.cpp}
+	\end{frame}
+
+	\begin{frame}{Por quê?}
+		\begin{itemize}
+			\presentationPause\item Por que você me fez sofrer até agora?
+			\presentationPause\item Não é porque eu queira vez sua angústia
+			\presentationPause\item É necessário conhecer a base
+			\presentationPause\item \basicCode{iostream} é avançado e trabalha com conceitos que não vimos
+		\end{itemize}
+	\end{frame}
+
+	\section{Procedimentos}
+		\begin{frame}{Procedural}
+			\begin{itemize}
+				\presentationPause\item Lembra do tipo \basicCode{void} que você esnobava quando criança?
+				\presentationPause\item Ele cresceu\dots
+				\presentationPause\item Procedimentos são blocos de comandos, nomeados
+				\presentationPause\item Podem ser invocados em qualquer lugar do programa
+				\presentationPause\item Melhor que copiar sequências
+				\presentationPause\item Deixa o código mais legível
+				\presentationPause\item Facilita na hora de achar erros
+				\presentationPause\item Podem trabalhar com variáveis globais
+				\presentationPause\item Exige um bloco\dots
+			\end{itemize}
+			\presentationPause\lstinputlisting{../../code/functions/foo.void.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}{Euler}
+			\presentationPause\lstinputlisting{../../code/functions/foo.void.example.cpp}
+		\end{frame}
+
+	\section{Argumentos}
+		\begin{frame}{Paramétrico}
+			\begin{itemize}
+				\presentationPause\item Nem sempre ler variável global é útil
+				\presentationPause\item Nem sempre existir variável gobal é útil
+				\presentationPause\item Parametros entram como argumentos na forma de variáveis
+				\presentationPause\item Repeite a ordem
+				\presentationPause\item Separação por vírgula
+				\presentationPause\item Ainda devolve o valor por variável global
+			\end{itemize}
+			\presentationPause\lstinputlisting{../../code/functions/foo.void.args.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}{Euler}
+			\presentationPause\lstinputlisting{../../code/functions/foo.void.args.example.cpp}
+		\end{frame}
+
+
+	\section{Funções}
+		\begin{frame}{Funcinal}
+			\begin{itemize}
+				\presentationPause\item Devolver valor calculado
+				\presentationPause\item Pode ser invocadas em qualquer lugar do programa
+				\presentationPause\item Leva o tipo do retorno
+				\presentationPause\item Palavra-chave: \presentationPause o \basicCode{return}
+				\presentationPause\item Retorno é obrigatório
+				\presentationPause\item Porque o \basicCode{main} tem tipo \basicCode{int} e retorna \basicCode{0}
+			\end{itemize}
+			\presentationPause\lstinputlisting{../../code/functions/foo.type.args.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}{Euler}
+			\presentationPause\lstinputlisting{../../code/functions/foo.type.args.example.cpp}
+		\end{frame}
+
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+
+
+\end{document}
