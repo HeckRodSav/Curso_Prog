@@ -1,0 +1,162 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{1}
+
+\subtitle{Sequencial}
+\usecolortheme[named=slideTurquoise]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+
+	\section{Várias variáveis}
+		\begin{frame}{Começando de outra forma}
+			\begin{itemize}
+				\presentationPause\item Vamos começar com $n=5$
+				\presentationPause\item Faça um programa que lê $n$ valores
+				\presentationPause\item Exiba os $n$ valores na tela
+				\presentationPause\item Calcule a média dos $n$ valores
+				\begin{columns}
+					\begin{column}{.15\textwidth}
+						\presentationPause\lstinputlisting[numbers=none]{../../code/array/N.declaration.cpp}
+					\end{column}
+					\begin{column}{.20\textwidth}
+						\presentationPause\lstinputlisting[numbers=none]{../../code/array/N.read.cpp}
+					\end{column}
+					\begin{column}{.30\textwidth}
+						\presentationPause\lstinputlisting[numbers=none]{../../code/array/N.average.cpp}
+					\end{column}
+					\begin{column}{.35\textwidth}
+						\presentationPause\lstinputlisting[numbers=none]{../../code/array/N.show.cpp}
+					\end{column}
+				\end{columns}
+				\presentationPause\item Agora com $n=6$, \presentationPause$n=7$, \presentationPause$n=10$, \presentationPause$n=100$\dots
+				\presentationPause\item Existe uma forma de generalizar isso\dots
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Motivacional}
+			\presentationPause\lstinputlisting[caption={Declarando dezenas de variáveis}, label=code.array.vararray]{../../code/array/vararray.cpp}
+		\end{frame}
+
+	\section{Vetores}
+		\begin{frame}{Sequência padrão}
+			\begin{itemize}
+				\presentationPause\item A forma que utilizamos é chamada \emph{vetor}
+				\presentationPause\item Conjuntos de números sequenciados em relação a uma base
+				\presentationPause\item Para nós, variáveis sequenciadas
+				\presentationPause\item Acessíveis por um índice
+				\presentationPause\item Um operador novo! \presentationPause\basicCode{[]}
+				\presentationPause\lstinputlisting[numbers=none, linerange={2-2}]{../../code/array/A.sintax.cpp}
+				\presentationPause\item Inicialização diferentona
+				\presentationPause\lstinputlisting[numbers=none, linerange={2-6}]{../../code/array/A.inicialization.cpp}
+			\end{itemize}
+		\end{frame}
+	
+		\begin{frame}{Sequência padrão}
+			\begin{itemize}
+				\presentationPause\item Acessar os valores por índices entre colchetes \basicCode{[i]}
+				\presentationPause\item Começa em $0$
+				\presentationPause\item Acaba em $n-1$
+			\end{itemize}
+			\presentationPause\begin{table}[H]
+				\centering
+				\caption{Representação de vetor de $n$ valores}
+				\label{table.array}
+				\begin{tabular}{cccccc}
+					$0$                      & $1$                     & $2$                     & $3$                     & $\cdots$                & $n-1$                     \\ \hline
+					\multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+					\end{tabular}
+				\end{table}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/array/A.examples.cpp}
+		\end{frame}
+
+
+	\section{Matrizes}
+		\begin{frame}{Sequência de sequências}
+			\begin{itemize}
+				\presentationPause\item Semelhante ao vetor
+				\presentationPause\item Pode ser considerada uma \emph{matriz}
+				\presentationPause\item Consistem em um vetor com vetores
+				\presentationPause\item Sintaxe de declaração semelhante à do vetor
+				\presentationPause\lstinputlisting[numbers=none, linerange={2-2}]{../../code/array/M.sintax.cpp}
+				\presentationPause\item Inicialização muito diferentona
+				\presentationPause\lstinputlisting[numbers=none, linerange={2-7}]{../../code/array/M.inicialization.cpp}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Sequência de sequências}
+			\begin{itemize}
+				\presentationPause\item Um colchete para cada índice
+				\presentationPause\item Também começa em $0$
+				\presentationPause\item O passo de vetor para matriz é o passo de matriz para tensor
+				\presentationPause\item O \basicCode{for} foi feito pra isso
+			\end{itemize}
+			\begin{table}[H]
+				\centering
+				\caption{Representação de matriz de $m\times n$}
+				\label{table.matrix}
+				\begin{tabular}{ccccccc}
+					& $0$                      & $1$                     & $2$                     & $3$                     & $\cdots$                & $n-1$                     \\ \cline{2-7}
+					$0$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+					$1$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+					$2$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+					$3$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+					$\vdots$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+					$m-1$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+					\end{tabular}
+				\end{table}
+			\end{frame}
+
+			\begin{frame}{Sequência de sequências}
+				\presentationPause\lstinputlisting[numbers=none]{../../code/array/M.examples.cpp}
+			\end{frame}
+	
+
+	\section{Strings}
+		\begin{frame}{Sequências de caracteres}
+			\begin{itemize}
+				\presentationPause\item Vetor especial de \basicCode{char}
+				\presentationPause\item A forma de inicialização diferentona master
+				\presentationPause\lstinputlisting[numbers=none, linerange={2-3}]{../../code/array/S.sintax.cpp}
+				\presentationPause\item Tamanho implítico?
+				\presentationPause\item Aspas duplas \presentationPause e o caractere nulo (\basicCode{'\0'})
+				\presentationPause\item Podemos contar tamanho de \textit{string} com isso?
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Sequências de caracteres}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/array/S.examples.cpp}
+		\end{frame}
+		
+	\section{Preprocessador}
+		\begin{frame}{Preprocessador}
+			\begin{itemize}
+				\presentationPause\item Tamanhos precisam ser literais
+				\presentationPause\item E se eu pudesse criar literais com nomes
+				\presentationPause\item Agora você pode
+				\presentationPause\item \emph{Se ligar agora, 75\% de desconto}
+				\presentationPause\item Define pra mim o que você quer... \presentationPause\basicCode{\#define}
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/preprocessor/define.cpp}
+		\end{frame}
+	
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+
+
+\end{document}

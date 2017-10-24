@@ -1,12 +1,12 @@
-void MDCab(int A, int B)
+int MDCab(int primeiro, int segundo)
 {
-	while(B!=0)
+	while(segundo!=0)
 	{
-		int R(A%B);
-		A=B;
-		B=R;
+		int resto(primeiro%segundo);
+		primeiro=segundo;
+		segundo=resto;
 	}
-	return B;
+	return primeiro;
 }
 
 int main()

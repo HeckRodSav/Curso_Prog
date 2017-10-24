@@ -1,1 +1,108 @@
 \chapter{Sequências de memórias}\label{cap.array}
+
+Em muitos casos, programas recebem dezenas de valores como entrada, processam todos esses valores com uma metodologia repetitiva e então devolvem todos na ordem recebida.
+É possivel criar dezenas de variáveis para fazer a leitura, criar uma função para este prossamento repetitivo e devolver todos estes valores.
+Cem variáveis são criadas no código \ref{code.array.vararray}, porém há uma que não segue o padrão das demais, o que tende a gerar erros ao longo do desenvolvimento do programa.
+
+\lstinputlisting[caption={Declarando dezenas de variáveis}, label=code.array.vararray]{../code/array/vararray.cpp}
+
+Além de digitar cem variáveis ser uma tarefa cansativa, também é necessário digitar um processamento em relação a cada uma delas.
+Como seus identificadores (nomes) são destintos, uma estrutura de repetição não serve de muito, já que são processamentos correspondentes, porém o código muda em cada iteração.
+
+Existe uma forma de agrupamento de variáveis especial criada para situações como esta: o vetor.
+
+	\section{Vetores}
+
+	O termo \emph{vetor} deriva da matemática, onde vetores podem ser representados conjuntos de números sequenciados, referentes a uma base.
+	Para o caso aqui descrito, a ideia de valores sequenciados é o bastante.
+	Vatores são variáveis declaradas de forma sequencial na memória, acessadas apartir de um identificador (nome) comum para todas, diferindo em um índice de acesso.
+
+	A sintaxe de declaração de um vetor é semelhante a de uma variável normal, tendo um tipo e um nome, acrescentando apenas a quantidade de valores salvos entre colchetes (\basicCode{[]}) antes do ponto-e-vírgula, conforme o código \ref{code.array.A.sintax}.
+
+	\lstinputlisting[caption={Declarando vetor com $n$ elementos}, label=code.array.A.sintax]{../code/array/A.sintax.cpp}
+
+	A inicialização de um vetor é diferente da inicialização de uma variável comum, já que possui vários valores associados, três casos de inicialização podem ser encontrados no código \ref{code.array.A.inicialization}
+	O acesso o valor do vetor também utiliza os colchetes(\basicCode{[]}) como artifício, passando a eles o índice utilizado pelo valor salvo no vetor.
+	É muito importante ressaltar que o primeiro valor possui o íncide \basicCode{0}, logo o último tem o índice $n-1$, então o \basicCode{for} do código de inicialiação tem como seus limites estes valores.
+	A tabela \ref{table.array} exibe este detalhe.
+
+	\begin{table}[H]
+		\centering
+		\caption{Representação de vetor de $n$ valores}
+		\label{table.array}
+		\begin{tabular}{cccccc}
+			$0$                      & $1$                     & $2$                     & $3$                     & $\cdots$                & $n-1$                     \\ \hline
+			\multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+			\end{tabular}
+		\end{table}
+
+	\lstinputlisting[caption={Inicializações para vetores}, label=code.array.A.inicialization]{../code/array/A.inicialization.cpp}
+
+	O código \ref{code.array.A.examples} apresenta um caso espacialemente útil do uso de vatores, para calcular a média entre vários valores, todos salvos em um único vetor.
+	É o típico caso onde vários valores são lidos e então processador de forma equivalente.
+	
+	\lstinputlisting[caption={Exemplo de uso para vetores calculando média}, label=code.array.A.examples]{../code/array/A.examples.cpp}
+
+	Assim como é possível criar vetores de variáveis, é possível criar vetores de vetores, e a estes damos o nome de matriz.
+
+	\section{Matrizes}
+
+	Um vetor é como uma matriz de uma dimensão.
+	A declaração de uma matriz se assemelha a de um vetor, diferindo apenas na quantidade de dimensões passadas.
+	É importante ressalta que cada dimensão é passada dentro de um colchete próprio.
+	A sintaxe de declaração de uma matriz é apresentada no código \ref{code.array.M.sintax}.
+
+	\lstinputlisting[caption={Declarando matriz $m\times n$}, label=code.array.M.sintax]{../code/array/M.sintax.cpp}
+
+	Assim como no caso de um vetor, os valores salvos em uma matriz também são acessados utilizando um índice.
+	E ainda como no caso dos vetores, o primeiro valor é \basicCode{0}.
+	A tabela \ref{table.matrix} apresenta este detalhe.
+
+	\begin{table}[H]
+		\centering
+		\caption{Representação de matriz de $m\times n$}
+		\label{table.matrix}
+		\begin{tabular}{ccccccc}
+			& $0$                      & $1$                     & $2$                     & $3$                     & $\cdots$                & $n-1$                     \\ \cline{2-7}
+			$0$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+			$1$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+			$2$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+			$3$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+			$\vdots$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+			$m-1$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+			\end{tabular}
+		\end{table}
+
+		As forma de inicialização de uma matriz são semelhantes às formas de inicialização de um vetor e são apresentadas no código \ref{code.array.M.inicialization}.
+
+		\lstinputlisting[caption={Inicializações para matrizes}, label=code.array.M.inicialization]{../code/array/M.inicialization.cpp}
+
+		Assim como no caso dos vetores, as matrizes tem grande uso para conjuntos de memórias, o código \ref{code.array.M.example} apresenta um método para o cálculo da média de cada linha na matriz e atribuindo estas médias a um vetor de médias.
+
+		\lstinputlisting[caption={Exemplo de uso para matriz calculando média das linhas}, label=code.array.M.examples]{../code/array/M.examples.cpp}
+
+		É possível generalizar matrizes para mais do que duas dimensões, tais estruturas na matemática são denominadas \emph{tensores}, porém não é necessária a abordagem especial deste tipo de estrutura já que o passo de passagem de um vetor para uma matriz é idêntico ao passo de passagem de uma matriz para um tensor.
+		É interessante ressaltar que matrizes são tensores de ordem 2 (ou segunda ordem), e vetores são tensores de ordem 1 (ou primeira ordem).
+
+		Vale notar que que o controle de fluxo \basicCode{for} foi desenvolvido especialmente para esta aplicação.
+
+		\section{Sequências de caracteres}
+
+		Existe um caso especial de vetor utilizado para gravação de texto, não apenas caracteres como no caso de uma variável tipo \basicCode{char}.
+		São vetores comuns de caracteres, a grande diferença está em sua inicalização.
+
+		O termo \textit{string} descreve o vetor de caracteres.
+		A inicialização é feita como do código \ref{code.array.S.examples}, onde a frase \emph{Hello World!} é salva na forma de \textit{string}.
+		Note que o tamanho do vetor está implícito, isso tem um motivo.
+
+		\lstinputlisting[caption={Sintaxe inicialização}, label=code.array.S.sintax]{../code/array/S.sintax.cpp}
+
+		O tamanho implícito está associado a uma caracteristica importante da declaração da string como literal.
+		Quando utilizamos as aspas duplas como notação, é adicionado ao final um caractere especial, o caractere nulo (\basicCode{'\0'}).
+		Este caractere é adicionado para possibilitar o processamento deste tipo de vetor sem que o tamanho seja conhecido, onde a condição de um \basicCode{for} trabalhe verificando se o próximo valor armazenado seja o nulo.
+		O tamanho do vetor não é passado pois seria trabalhoso lembrar deste caractere especial toda vez que um vetor desse tipo for declarado, logo a inicialização precisa ser feita na declaração.
+
+		O código \ref{code.array.S.examples} mostra uma forma de contar o tamanho de uma string, considerando apenas os caracteres não nulos.
+		Note como no segundo caso, a contagem falha.
+
+		\lstinputlisting[caption={Exemplo de \textit{string}}, label=code.array.S.examples]{../code/array/S.examples.cpp}
