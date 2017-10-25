@@ -1,0 +1,32 @@
+\chapter{Ordem de precedência}\label{appendix.precedence}
+
+A ordem de precedência dos operadores segue a tabela \ref{apdx.table.precedence}.
+
+\begin{table}[!h]
+	\centering
+	\caption{Ordem de precedência de operadores}
+
+	\label{apdx.table.precedence}
+	\begin{tabular}{cc}
+		Operador & Descrição \\\hline
+		\basicCode{()} & preferencal\\\hline
+		\basicCode{++}, \basicCode{--} & posfixo \\\hline
+		\basicCode{++}, \basicCode{--} & prefixo \\\hline
+		\basicCode{\~}, \basicCode{!} & lógico \\\hline
+		\basicCode{(type) var}, \basicCode{type(var)} & modelador \\\hline
+		\basicCode{+}, \basicCode{-} & sinalizadore \\\hline
+		\basicCode{*}, \basicCode{/}, \basicCode{\%} & aritimético \\
+		\basicCode{+}, \basicCode{-} & aritimético \\\hline
+		\basicCode{<<}, \basicCode{>>} & deslocador \\\hline
+		\basicCode{<}, \basicCode{<=}, \basicCode{>=}, \basicCode{>} & comparador \\
+		\basicCode{==}, \basicCode{!=} & comparador \\\hline
+		\basicCode{\&} & lógico \\
+		\basicCode{\^} & lógico \\
+		\basicCode{|} & lógico \\
+		\basicCode{\&\&} & lógico \\
+		\basicCode{\|\|} & lógico \\\hline
+		\basicCode{?:} & ternário \\ \hline
+		\basicCode{=} & atribuidor \\
+		\basicCode{+=}, \basicCode{-=}, \basicCode{*=}, \basicCode{/=}, \basicCode{\%=}, \basicCode{\&=}, \basicCode{\^=}, \basicCode{\|=}, \basicCode{<<=},  \basicCode{>>=} & atribuidor
+	\end{tabular}
+\end{table}

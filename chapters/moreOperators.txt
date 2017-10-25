@@ -1,1 +1,30 @@
 \chapter{Mais operadores}\label{cap.moreOperators}
+
+	Em um primeiro momento, é interessante conhecer os operadores que são mais utilizados.
+	A partir desde ponto se torna interessante conhecer os operadores de alteração profunda em variáveis, que permitem comandos mais interessantes.
+
+	\section{Modelador}
+
+		É possível inicializar variáveis ulizando literais, mas nem sempre os tipos certos são utilizados.
+		Por exemplo, se declara uma variável tipo \basicCode{float} e a inicializa com o valor nulo ($0$), é comum utilizar apenas \basicCode{0}, ou até \basicCode{0.0}, que é menos comum.
+		Idealmente deve-se inicializar uma variável tipo \basicCode{float} com um literal tipo \basicCode{float}, no caso, \basicCode{0.0f}.
+
+		Quando não se tem a certeza do tipo de literal utilizado, ou ainda, é necessário utilizar o valor de uma variável de um tipo na inicialização da uma variável de outro tipo, utiliza-se o conceito de \textit{casting}.
+		O casting consiste em converter um tipo em outro de maneira explícita, diferente do caso anterior, onde a conversão era implícita.
+
+		Também é um operador, portanto tem uma posição da ordem de precedência, onde fica abaixo dos operadores de negação.
+		Esse operador não altera o valor salvo na variável, nem altera o tipo dela, apenas retorna um valor do tipo escolhido.
+
+		O apêndice \ref{appendix.precedence} apresenta a tabela completa de precedência de operadores.
+		Existem duas sintaxes para casting explícito, são semelhantes e podem ser utilizadas juntas, ambas apresentadas no código \ref{code.operators.casting.sintax}.
+
+		\lstinputlisting[caption={Sintaxes de casting explícito}, label=code.operators.casting.sintax]{../code/operators/casting.sintax.cpp}
+
+		O casting implícito acontece quando utilizamos o operador de atribuição (\basicCode{=}), e seus variantes, com valores de tipos diferentes.
+		A maneira mais direta de pensar nisso parte da atribuição de um valor do tipo \basicCode{float} em uma variável do tipo \basicCode{int}, como o segundo apenas pode armazenar valores inteiros, a parte decimal do primeiro é ignorada.
+		A esta operação é dado o nome de \emph{truncamento}.
+		Note que não é feito um arredondamento, mesmo que o valor atribuído possua uma dízima como $0.\dot{9}$ ($0.999\dots$).
+
+		Um exemplo útil do uso de casting é apresentado no código \ref{code.operators.casting.example}, onde uma função tipo \basicCode{bool} retorna \basicCode{true} se o argumento de entrada for um númro natural.
+
+		\lstinputlisting[caption={Exemplo do uso de casting}, label=code.operators.casting.example]{../code/operators/casting.example.cpp}

@@ -35,7 +35,7 @@ De maneira simples, a caixa alta é o conjunto de caracteres de letras maiúscul
 Então, se em um lugar do código existir um termo como \basicCode{palavra}, em outro o termo \basicCode{Palavra} e em um terceiro lugar o termo \basicCode{PALAVRA}, o compilador reconhecerá como três símbolos diferentes, isto é, completamente distintos e sem qualquer relação, mesmo que em um contexto coloquial sejam exatamente o mesmo termo.
 
 Por se tratar de uma linguagem relativamente antiga, o C++ tem uma limitação nos caracteres processáveis, então alguns caracteres especiais não são aceitos pelo compilador, gerando um erro. Ainda que a sintaxe esteja perfeita e nenhum erro de lógica exista, caracteres como \texttt{ã} ou \texttt{ç} não são tolerados.
-Somente os caracteres da tabela ASCII são aceitos, esta pode ser consultada no apêndice \ref{ASCII}.
+Somente os caracteres da tabela ASCII são aceitos, esta pode ser consultada no apêndice \ref{appendix.ASCII}.
 Por isso ainda, é comum que programadores escolham escrever seus programas usando termos em linguagens que não apresentem esse caracteres, como inglês, grego ou até latim.
 Não é incomum encontrar termos como \basicCode{alpha} e \basicCode{beta}, ou talvez \basicCode{fungi} e \basicCode{monera} como estes termos.
 

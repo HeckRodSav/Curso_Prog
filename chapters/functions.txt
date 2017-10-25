@@ -47,7 +47,7 @@ Simplesmente são blocos de código com nome próprio que podem ser invocados.
 
 	\lstinputlisting[caption={Sintaxe básica de procedimento com $N$ argumentos}, label=code.functions.foo.void.args.sintax]{../code/functions/foo.void.args.sintax.cpp}
 
-	Lembrando sempre: respeitar a ordem de declaração, o código \ref{code.functions.foo.void.args.example} apresenta o mesmo algoritimo de Euler, num procedimento com passagem de argumentos.
+	Lembrando sempre: respeitar a ordem de declaração, o código \ref{code.functions.foo.void.args.example} apresenta o mesmo algoritimo de Euclides, num procedimento com passagem de argumentos.
 
 	\lstinputlisting[caption={Exemplo de procedimento com argumentos}, label=code.functions.foo.void.args.example]{../code/functions/foo.void.args.example.cpp}
 
@@ -70,7 +70,7 @@ Simplesmente são blocos de código com nome próprio que podem ser invocados.
 
 	\lstinputlisting[caption={Sintaxe básica de função com $N$ argumentos}, label=code.functions.foo.type.args.sintax]{../code/functions/foo.type.args.sintax.cpp}
 
-	A mesma implementação do algoritmo de Euler, porém utilizando uma função do tipo \basicCode{int} é apresentada no código \ref{code.functions.foo.type.args.example}
+	A mesma implementação do algoritmo de Euclides, porém utilizando uma função do tipo \basicCode{int} é apresentada no código \ref{code.functions.foo.type.args.example}
 
 	\lstinputlisting[caption={Exemplo de função com argumentos}, label=code.functions.foo.type.args.example]{../code/functions/foo.type.args.example.cpp}
 

@@ -1,0 +1,58 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{1}
+
+\subtitle{Truncando}
+\usecolortheme[named=slideTurquoise]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Modelando valores}
+	\begin{frame}{Problemas}
+		\begin{itemize}
+			\presentationPause\item Preciso utilizar um operador não definido para um tipo
+			\presentationPause\item \basicCode{\%} para \basicCode{float} ou \basicCode{double}
+			\presentationPause\item Preciso arredondar um número conforme uma regra
+			\presentationPause\item Não posso truncar um valor
+			\presentationPause\item Fazer contas de \basicCode{int} com \basicCode{bool} no meio
+			\presentationPause\item Verificar se uma letra é maiúscula ou minúscula \presentationPause(mentira)
+			\presentationPause\item \textit{hashing} em criptografia
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Solução}
+		Casting!
+		\begin{itemize}
+			\presentationPause\item Mais um operador
+			\presentationPause\item Não possui um símbolo \presentationPause\frownie
+			\presentationPause\item Converte tipos em tipos
+			\presentationPause\item Não altera valor salvo
+			\presentationPause\item Não muda o tipo da variável, só retorna o valor convertido
+			\presentationPause\item Lembra uma função
+		\end{itemize}
+		\presentationPause\lstinputlisting[numbers=none, linerange={2-3}]{../../code/operators/casting.sintax.cpp}
+	\end{frame}
+	
+	\begin{frame}{Aplicação}
+		\presentationPause\lstinputlisting[numbers=none]{../../code/operators/casting.example.cpp}
+	\end{frame}
+
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+
+\end{document}

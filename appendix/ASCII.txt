@@ -1,6 +1,6 @@
 \chapter{Tabela ASCII}\label{ASCII}
 
-A tabela \ref{table.ASCII} apresenta a codificação ASCII extendida, dividida em duas partes, na superior os tipos padrão, na inferior os tipos especiais.
+A tabela \ref{apdx.table.ASCII} apresenta a codificação ASCII extendida, dividida em duas partes, na superior os tipos padrão, na inferior os tipos especiais.
 
 A divisão da tabela é devida à codificação em bytes com um bit de paridade, o que diminui pela metade a capacidade de codificação de um byte.
 
@@ -16,7 +16,7 @@ A interpretação da tabela é feita a partir das coordenadas do caractere escol
 \begin{table}[h]
 	\centering
 	\caption{Codificação ASCII extendida incompleta$^1$.}
-	\label{table.ASCII}
+	\label{apdx.table.ASCII}
 	\begin{tabular}{c|cccccccccccccccc}
 		\verb|xX| & \verb|x0|   & \verb|x1|  & \verb|x2|  & \verb|x3|  & \verb|x4|  & \verb|x5|  & \verb|x6|  & \verb|x7|  & \verb|x8|  & \verb|x9| & \verb|xA|  & \verb|xB|  & \verb|xC| & \verb|xD| & \verb|xE| & \verb|xF|   \\\hline
 		\verb|0X| & \verb|NULL| & \verb|SOH| & \verb|STX| & \verb|ETX| & \verb|EOT| & \verb|ENQ| & \verb|ACK| & \verb|BEL| & \verb|BS|  & \verb|HT| & \verb|LF|  & \verb|VT|  & \verb|FF| & \verb|CR| & \verb|SO| & \verb|SI|   \\
