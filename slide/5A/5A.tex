@@ -1,0 +1,106 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{0}
+
+\subtitle{Vire o papel}
+\usecolortheme[named=slideGreen]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Polimorfismo}
+		\begin{frame}{Qual nome?}
+			\begin{itemize}
+				\presentationPause\item Fazer função para calcular média
+				\presentationPause\item Média de 2 valores\presentationPause, 3 valores\presentationPause, 4 valores\presentationPause\dots
+				\presentationPause\item Qual nome utilizar?
+				\presentationPause\lstinputlisting[numbers=none, linerange={1-14}]{../../code/functions/poly.non.cpp}
+				\presentationPause\item E se você pudesse utilizar o mesmo nome?
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{O mesmo nome}
+			\begin{itemize}
+				\presentationPause\item Você pode!
+				\presentationPause\item \textit{E se ligar agora, tem o incrível desconto de\dots}
+				\presentationPause\item Como?
+				\presentationPause\item Simples, faça!
+				\presentationPause\lstinputlisting[numbers=none, linerange={1-14}]{../../code/functions/poly.average.cpp}
+				\presentationPause\item O compilador resolve (argumentos)
+			\end{itemize}
+		\end{frame}
+
+	\section{Recursão}
+		\begin{frame}{Explicando recursão}
+			\begin{itemize}
+				\presentationPause\item Como explicar recursão?
+				\presentationPause\item Explicar fazendo recursão
+				\presentationPause\item Mas o que é recursão?
+				\presentationPause\item Fazer recursão sem saber recursão
+				\presentationPause\item Como explicar recursão?
+				\presentationPause\item Explicar fazendo recursão
+				\presentationPause\item Mas o que é recursão?
+				\presentationPause\item Fazer recursão sem saber recursão
+				\presentationPause\item Como explicar recursão?
+				\presentationPause\item Explicar fazendo recursão
+				\presentationPause\item Mas o que é recursão?
+				\presentationPause\item Fazer recursão sem saber recursão
+				\presentationPause\item \dots
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{É o que?}
+			\begin{itemize}
+				\presentationPause\item Um procedimento que chama a sí próprio
+				\presentationPause\item Precisa de uma limitação
+				\presentationPause\item \textit{stack overflow}
+				\presentationPause\item Simplificar problema
+				\presentationPause\item Condição de parada
+				\presentationPause\item Passo de recursão
+				\presentationPause\item Caso trivial
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Você já viu um}
+			\begin{itemize}
+				\presentationPause\item A função recursiva mais famosa é o fatorial!
+				\presentationPause\item O que é o fatorial?
+				
+					\presentationPause\begin{equation}\label{equation.fatorial.1}
+						f(n) = n! \equiv n\cdot(n-1)\cdot(n-2)\cdot {\dots} \cdot2\cdot1
+					\end{equation}
+
+					\presentationPause\begin{equation}\label{equation.fatorial.2}
+						n! = \left\{
+						\begin{array}{lcl}
+							n\leq1&\Rightarrow&1\\
+							n\nleq1&\Rightarrow&n\cdot(n-1)!\\
+						\end{array}\right.
+					\end{equation}
+
+					\presentationPause\begin{equation}\label{equation.fatorial.3}
+						f(n) = n! = n\cdot(n-1)! = n\cdot f(n-1)
+					\end{equation}
+				\presentationPause\item E como fica um código disso?
+				\presentationPause\lstinputlisting[numbers=none]{../../code/functions/recursion.cpp}
+			\end{itemize}
+		\end{frame}
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+
+	
+\end{document}

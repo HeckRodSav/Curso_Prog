@@ -1,1 +1,2 @@
 \part{Avançado}
+\input{../chapters/class.txt}

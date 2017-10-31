@@ -30,7 +30,7 @@ Também é possível encontrar programadores que utilizem espaços em branco par
 
 \section{A sensibilidade de caixa e os caracteres ASCII}
 
-A \emph{sensibilidade de caixa} é uma das características mais comuns e linguagens de programação modernas, embora possa parecer incoerente em linguagem coloquial, quando escrita pode ser a diferença entre um programa que é compilável ou não, essa sensibilidade é denominada \textit{case sensitive}.
+A \emph{sensibilidade de caixa} é uma das características mais comuns em linguagens de programação modernas, embora possa parecer incoerente em linguagem coloquial, quando escrita pode ser a diferença entre um programa que é compilável ou não, essa sensibilidade é denominada \textit{case sensitive}.
 De maneira simples, a caixa alta é o conjunto de caracteres de letras maiúsculas e a caixa baixa o conjunto de caracteres de letras minúsculas.
 Então, se em um lugar do código existir um termo como \basicCode{palavra}, em outro o termo \basicCode{Palavra} e em um terceiro lugar o termo \basicCode{PALAVRA}, o compilador reconhecerá como três símbolos diferentes, isto é, completamente distintos e sem qualquer relação, mesmo que em um contexto coloquial sejam exatamente o mesmo termo.
 

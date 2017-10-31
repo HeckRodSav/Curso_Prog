@@ -18,17 +18,17 @@ Simplesmente são blocos de código com nome próprio que podem ser invocados.
 
 	Sua estrutura é tão simples que a apresentação da sintaxe direta serve para entender sua declaração.
 	Lembrando que todo bloco pode contar com controladores de fluxo.
-	O código \ref{code.functions.foo.void.sintax} apresenta a sintaxe básica de um procedimento chamado \basicCode{foo}.
+	O código \ref{code.functions.void.sintax} apresenta a sintaxe básica de um procedimento chamado \basicCode{foo}.
 
 	Os principais detalhes são: o tipo \basicCode{void}, a declaração global e os parênteses (\basicCode{()}) após o nome.
 	Estes parênteses definem a declaração tipo \basicCode{void} como procedimento.
 
-	\lstinputlisting[caption={Sintaxe básica de procedimento sem argumentos}, label=code.functions.foo.void.sintax]{../code/functions/foo.void.sintax.cpp}
+	\lstinputlisting[caption={Sintaxe básica de procedimento sem argumentos}, label=code.functions.void.sintax]{../code/functions/void.sintax.cpp}
 
-	O código \ref{code.functions.foo.void.example} mostra um programa completo que calcula o MDC entre duas variáveis utilizando um procedimento chamado \basicCode{MCDab}.
+	O código \ref{code.functions.void.example} mostra um programa completo que calcula o MDC entre duas variáveis utilizando um procedimento chamado \basicCode{MCDab}.
 	Note como os valores das variáveis são alterados pelo procedimento, isso pode gerar problemas no código.
 
-	\lstinputlisting[caption={Exemplo de procedimento sem argumentos}, label=code.functions.foo.void.example]{../code/functions/foo.void.example.cpp}
+	\lstinputlisting[caption={Exemplo de procedimento sem argumentos}, label=code.functions.void.example]{../code/functions/void.example.cpp}
 
 	Vale ressaltar que, da maneira que está escrito, o algoritimo de Euclides depende que a variável \basicCode{A} seja a de maior valor.
 	Procedimentos que rebebem argumentos facilitam situações como estas.
@@ -41,15 +41,15 @@ Simplesmente são blocos de código com nome próprio que podem ser invocados.
 	Múltiplos argumentos de multiplos tipos podem ser utilizado por procedimento, porém a ordem de passagem de argumentos deve ser respeitada.
 
 	Os argumentos são como variáveis declaradas entre os parênteses do procedimento, que podem ser utilizadas em seu corpo.
-	Estar variáveis reberão os valores passados no invocamento do procedimento durante o código princial.
+	Estar variáveis reberão os valores passados na invocação do procedimento durante o código princial.
 	Cada argumento precisa ser separado por vírgulas, incluisive seus tipos.
-	A sintaxe geral é apresentada no código \ref{code.functions.foo.void.args.sintax}.
+	A sintaxe geral é apresentada no código \ref{code.functions.void.args.sintax}.
 
-	\lstinputlisting[caption={Sintaxe básica de procedimento com $N$ argumentos}, label=code.functions.foo.void.args.sintax]{../code/functions/foo.void.args.sintax.cpp}
+	\lstinputlisting[caption={Sintaxe básica de procedimento com $N$ argumentos}, label=code.functions.void.args.sintax]{../code/functions/void.args.sintax.cpp}
 
-	Lembrando sempre: respeitar a ordem de declaração, o código \ref{code.functions.foo.void.args.example} apresenta o mesmo algoritimo de Euclides, num procedimento com passagem de argumentos.
+	Lembrando sempre: respeitar a ordem de declaração, o código \ref{code.functions.void.args.example} apresenta o mesmo algoritimo de Euclides, num procedimento com passagem de argumentos.
 
-	\lstinputlisting[caption={Exemplo de procedimento com argumentos}, label=code.functions.foo.void.args.example]{../code/functions/foo.void.args.example.cpp}
+	\lstinputlisting[caption={Exemplo de procedimento com argumentos}, label=code.functions.void.args.example]{../code/functions/void.args.example.cpp}
 
 	Note que, mesmo com a passagem de argumentos para o procedimento, o retorno ainda é feito por uma variável global, o que pode ser inconveniente em muitos casos.
 	Se o procedimento pudesse ser usado como variável, seria muito mais simples.
@@ -60,18 +60,78 @@ Simplesmente são blocos de código com nome próprio que podem ser invocados.
 
 	Assim como um procedimento, uma função pode ser invocada em qualquer lugar do código, a diferença é que neste lugar haverá o retorno de um valor (como os operadores, que retornam o valor da operação), então o valor retornado pode ser utilizado em uma operação, assim como uma variável.
 	A função é declarada utilizando o tipo de seu retorno, então se uma função deve retornar um valor tipo \basicCode{int}, deve ser declarada como \basicCode{int}.
+	Basicamente, a função é um procedimento que retorna um valor.
 
 	Assim como o procedimento, a função tem um nome próprio, e pode receber argumentos.
-	A sintaze geral de declaração de uma função com argumento é apresentada no código \ref{code.functions.foo.void.args.sintax}.
+	A sintaze geral de declaração de uma função com argumento é apresentada no código \ref{code.functions.void.args.sintax}.
 	Lembrando que, assim como no procedimento, os argumentos são opcionais.
 
 	O detalhe importante sobre a função é a necessidade de um retorno: toda função deve apresentar a palavra-chave \basicCode{return}, seguida do valor a ser retornado.
 	Vale notar que o \basicCode{return} pode ser encarado como um controle de fluxo, uma vez que ele retorna da função o valor dado, independende do lugar que for encontrado pelo fluxo, saindo da função.
 
-	\lstinputlisting[caption={Sintaxe básica de função com $N$ argumentos}, label=code.functions.foo.type.args.sintax]{../code/functions/foo.type.args.sintax.cpp}
+	\lstinputlisting[caption={Sintaxe básica de função com $N$ argumentos}, label=code.functions.type.args.sintax]{../code/functions/type.args.sintax.cpp}
 
-	A mesma implementação do algoritmo de Euclides, porém utilizando uma função do tipo \basicCode{int} é apresentada no código \ref{code.functions.foo.type.args.example}
+	A mesma implementação do algoritmo de Euclides, porém utilizando uma função do tipo \basicCode{int} é apresentada no código \ref{code.functions.type.args.example}
 
-	\lstinputlisting[caption={Exemplo de função com argumentos}, label=code.functions.foo.type.args.example]{../code/functions/foo.type.args.example.cpp}
+	\lstinputlisting[caption={Exemplo de função com argumentos}, label=code.functions.type.args.example]{../code/functions/type.args.example.cpp}
 
 	Vale notar que a funão \basicCode{main} é do tipo \basicCode{int}, e tem o retorno em \basicCode{0}, este valor informa ao sistema operacional que não houveram erros do programa.
+
+\section{Polimorfismo}
+
+	Além da possibilidade de receber valores no local de invocação e devolver um valor, há outra possibilidade interessante para procedimentos e funções em C++.
+	É possível criar procedimentos que utilizem o mesmo nome, porém façam coisas diferentes.
+	O termo \emph{polimorfo} se refere ao procedimento que apresenta apenas um nome, porém muitas possibilidades de processamento, ou seja, mais de uma forma.
+
+	Procedimentos polimorficos podem ser utilizados para diversas situações, onde um nome é ideal para descrever um conjunto de comandos, porém existe mais de uma forma de construir o bloco de comandos.
+	Num primeiro momento, pode parecer confuso, porém o principal uso deste artifício está na facilidade no entedimento do código.
+	Um exemplo é apresentado no código \ref{code.functions.poly.non}, onde duas funções diferentes fazem coisas semelhantes.
+
+	\lstinputlisting[caption={Funções com objetivos equivalentes}, label=code.functions.poly.non]{../code/functions/poly.non.cpp}
+
+	Note como as funções realizam operações equivalentes, porém os comandos internos não são iguais.
+	Exatamente neste caso utiliza-se o polimorfismo, é possivel criar duas funções que tenham o mesmo nome, porém recebam uma quantidade deiferente de argumentos.
+	Características como quantidade de argumentos e tipo de retorno definem qual destas funções o compilador escolherá na hora da compilação.
+	O código \ref{code.functions.poly.average} apresenta o polimofismo de uma fução de média para duas, três e quatro argumentos.
+
+	\lstinputlisting[caption={Funções com nomes iguais e objetivos equivalentes}, label=code.functions.poly.average]{../code/functions/poly.average.cpp}
+
+	Note como o bloco das funções não sofreu quaquer alteração, apenas o nome foi alterado, de tal forma que o significado associado a ele não mude, porém a capacidade de operar cresça.
+	Neste caso, a escolha é feita pela quantidade de argumentos passados na invocação.
+
+	O conceito de polimofismo será abordado novamente no capítulo \ref{cap.class}.
+
+\section{Recursão}
+
+	O corpo principal do programa existe dentro da função \basicCode{main}, e todo o comando e invocação de qualquer procedimento pode ser feita lá.
+	Seguindo esta lógica, quaisquer procedimentos podem ser invocados dentro de quaisquer procedimentos, isso significa que é possível um procedimento que invoque a si próprio, e a este artifício é dado o nome \emph{recursão}.
+
+	Porém tal característica pode criar uma repetição indefinida, sem condição de parada, caso um procedimento sempre invoque a si, para evitar isso todo procedimento que utiliza recursão apresenta um controle de fluxo que obriga a saída da recursão.
+	Esta condição é associada a uma simplificação de um problema maior.
+
+	A técnica de recursão consiste em tratar um problema complicado dividindo-o em partes menores e mais simples, através de um \emph{passo de recursão}, e a cada uma destas em partes menores, sucessivamente, até que se atinja o dito \emph{cado fundamental}, onde o problema é pequeno o bastante para ser facilmente resolvido, a esta situação é dado o nome de \emph{caso trivial}.
+	Com os problemas triviais resolvidos, é mais fácil combinar suas soluções e encontrar a solução ao problema mais complicado associado.
+
+	O exemplo mais conhecido de função recursiva é o fatorial, que consiste na multiplicação de um número por todos os antecessores até o número $1$, descrito na equação \ref{equation.fatorial.1}, e generalizada na equação \ref{equation.fatorial.2}.
+
+	\begin{equation}\label{equation.fatorial.1}
+		 f(n) = n! \equiv n\cdot(n-1)\cdot(n-2)\cdot {\dots} \cdot2\cdot1
+	\end{equation}
+
+	\begin{equation}\label{equation.fatorial.2}
+		n! = \left\{
+		\begin{array}{lcl}
+			n\leq1&\Rightarrow&1\\
+			n\nleq1&\Rightarrow&n\cdot(n-1)!\\
+		\end{array}\right.
+	\end{equation}
+
+	\begin{equation}\label{equation.fatorial.3}
+		f(n) = n! = n\cdot(n-1)! = n\cdot f(n-1)
+	\end{equation}
+	
+	Neste caso o passo de recursão é repetir a função para o valor subtraído em $1$ ($n-1$), o caso trivial é definido com o valor igual a $1$ ou $0$ ($n=1$ ou $n=0$), onde a função devolve o valor $1$ e a combinação dos resultados consiste em retornar a multiplicação do valor recebido como argumento pelo retornado pela recursão. 
+
+	A transformação da equação \ref{equation.fatorial.2} em uma função é feita de maneira direta, e esta função é apresentada no código \ref{code.functions.recursion}, equivalente a equação \ref{equation.fatorial.3}.
+
+	\lstinputlisting[caption={Função recursiva}, label=code.functions.recursion]{../code/functions/recursion.cpp}
