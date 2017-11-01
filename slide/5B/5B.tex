@@ -1,0 +1,163 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{0}
+
+\subtitle{O primeiro tipo do bebê}
+\usecolortheme[named=slideGreen]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Enumeradores}
+		\begin{frame}{Listando opções}
+			\begin{itemize}
+				\presentationPause\item Qual previsão do tempo pra hoje?
+				\begin{itemize}
+					\presentationPause\item Chuva?
+					\presentationPause\item Sol?
+					\presentationPause\item Nublado?
+					\presentationPause\item Neve?
+					\presentationPause\item Tufão?
+					\presentationPause\item Tsunami?
+					\presentationPause\item Chuva \presentationPause de meteoros?
+					\presentationPause\item Lagarto gigante?
+				\end{itemize}
+				\presentationPause\item Montar um programa que mostra o que fazer conforme previsão do tempo
+				\presentationPause\item Mas como fazer a escolha? \presentationPause Talvez um código para cada clima\dots
+				\begin{enumerate}
+					\presentationPause\item Chuva \presentationPause$\rightarrow$ pegar guarda-chuva
+					\presentationPause\item Sol \presentationPause$\rightarrow$ pegar protetor solar
+					\presentationPause\item Nublado \presentationPause$\rightarrow$ pegar um casaco
+					\presentationPause\item Neve \presentationPause$\rightarrow$ pegar um chocolate quente
+					\presentationPause\item Tufão \presentationPause$\rightarrow$ fugir para o porão \presentationPause(?)
+					\presentationPause\item Tsunami \presentationPause$\rightarrow$ fugir para as montanhas \presentationPause(?)
+					\presentationPause\item Chuva de meteoros \presentationPause$\rightarrow$ fugir pra lua (!)
+					\presentationPause\item Lagarto gigante \presentationPause$\rightarrow$ chamar os King Kong (!)
+				\end{enumerate}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Legal, e?}
+			\begin{itemize}
+				\presentationPause\item Ajudaria muito usar um \basicCode{switch}
+				\presentationPause\item Qual código atribuir para cada situação?
+				\begin{itemize}
+					\presentationPause\item Ordem lexicográfica? \presentationPause(alfabética)
+					\begin{itemize}
+						\presentationPause\item Tufão, tornado, furacão, ciclone\dots
+					\end{itemize}
+					\presentationPause\item Nível de periculosidade?
+					\begin{itemize}
+						\presentationPause\item Um meteoro pode gerar uma tsunami\dots
+					\end{itemize}
+					\presentationPause\item Tamanho da palavra?
+				\end{itemize}
+				\presentationPause\item Basicamente precisamos enumerar estes itens
+				\presentationPause\item E se existisse um modo de colocar códigos de maneira mais simples?
+				\presentationPause\item E se exitisse um tipo que só pode receber valores pré determinados?
+				\presentationPause\item E se este tipo só pudesse receber um valor entre os descritos?
+				\presentationPause\item Tudo isso é possivel \presentationPause com o poder da \textbf{{\color{slideBlue}i}{\color{slideCyan}m}{\color{slideTurquoise}a}{\color{slideGreen}g}{\color{slideYellow}i}{\color{slideOrange}n}{\color{slideRed}a}{\color{slidePurple}ç}{\color{slideBlue}ã}{\color{slideCyan}o}}
+				\presentationPause\item É o que?
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Ilustrando}
+			\begin{itemize}
+				\presentationPause\item Primeiro vamos ver o código sem estas vantagens
+				\presentationPause\item Lembrando que o que define comando é o ponto-e-vírgula
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/types/non.enum.example.cpp}
+			\begin{itemize}
+				\presentationPause\item Parece O.K.
+				\presentationPause\item Mas e se a variável não estiver dentro dos valores válidos?
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Enumerando}
+			\begin{itemize}
+				\presentationPause\item Podemos definir um novo tipo
+				\begin{itemize}
+					\presentationPause\item Apenas recebe valores específicos
+					\presentationPause\item Apenas recebe valores por palavras-chave
+					\presentationPause\item O programador escolhe as palavras-chave
+					\presentationPause\item Este tipo precisa ter um nome
+				\end{itemize}
+				\presentationPause\item A palavra-chave \basicCode{enum} é utilizada para criar estes novos tipos
+				\presentationPause\item Operadores são inconsistentes \presentationPause mas podemos mudar isso utilizando polimorfismo
+				\presentationPause\item A sintaxe lembra vetores
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-5}]{../../code/types/enum.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}{Voltando ao clima}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/types/enum.example.cpp}
+		\end{frame}
+		
+	\section{Tipos Abstrados de Dados}
+		\begin{frame}{Abstraia}
+			\begin{itemize}
+				\presentationPause\item Pensa numa construção
+				\presentationPause\item Ela pode ter portas\presentationPause, quantas?
+				\presentationPause\item Ela pode ter janelas\presentationPause, quantas?
+				\presentationPause\item Ela pode ter cômodos\presentationPause, quantos?
+				\presentationPause\item Ela pode andares\presentationPause, quantos?
+				\presentationPause\item A faichada é pintada de alguma cor\presentationPause, qual?
+				\presentationPause\item Podemos criar variáveis para armazenar cada valor
+				\presentationPause\item Mas isso não garante que estes valores estarão associados
+				\presentationPause\item E se existir outra construção? \presentationPause Mais variáveis?
+			\end{itemize}
+		\end{frame}
+
+	\section{Estruturas}
+		\begin{frame}{Estruture}
+			\begin{itemize}
+				\presentationPause\item É possível criar um tipo que armazene mais de um valor? \presentationPause Vetores!
+				\presentationPause\item Mas vetores só funcionam para valores do mesmo tipo
+				\presentationPause\item Será que existe algo que armazene vários valores de tipos diferentes?
+				\presentationPause\item Sim! \presentationPause A \basicCode{struct}
+				\presentationPause\item Semelhante ao \basicCode{union}
+				\presentationPause\item Dentro dela, colocamos várias variáveis
+				\presentationPause\item E o mais legal: \presentationPause ela é um tipo, e podemos declarar variáveis dela
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-11}]{../../code/types/struct.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}{Horário}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/types/struct.example.cpp}
+		\end{frame}
+		
+	\section{Uniões}
+		\begin{frame}{Unidos somos um}
+			\begin{itemize}
+				\presentationPause\item Irmão estranho da \basicCode{struct}
+				\presentationPause\item Só uma das variáveis pode ser utilizada
+				\presentationPause\item Como assim mano?
+				\presentationPause\item Ele só reserva memória pra salvar um dos valores
+				\presentationPause\item A memória reservada é a com o tamanho da maior variável
+				\presentationPause\item Usado para casos de valor exclusivo
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-11}]{../../code/types/union.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}{Mostra ae}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/types/union.example.cpp}
+		\end{frame}
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+
+	
+\end{document}

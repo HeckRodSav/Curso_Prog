@@ -1,2 +1,4 @@
+\appendix
+\part*{Apêndices}
 \input{../appendix/ASCII.txt}
 \input{../appendix/precedence.txt}
