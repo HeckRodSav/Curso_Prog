@@ -2,10 +2,10 @@
 <tipo> <nome>[<tam1>][<tam2>]{{<val11>, ..., <val1n>}, ..., {<valm1>, ..., <valmn>}};	//Sintaxe de Inicialização
 //...
 int V1[2][3]{};								//Todos os valores como 0
-int V2[2][2]{{1,2,3},{4,5,6}};//Valores separador por vetor
-int V3[2][2]{1,2,3,4,5,6};		//Valores distribuidos automaticamente
+int V2[2][3]{{1,2,3},{4,5,6}};//Valores separador por vetor
+int V3[2][3]{1,2,3,4,5,6};		//Valores distribuidos automaticamente
 int V3[][2]{1,2,3,4,5,6};			//Distribuição com um tamanho implícito
 //Atribuição só pode ser implítica para a primeira dimensão
 //...
-for (int i(0); i<2; i++) for (int j(0); j<2; j++) V1[i][j]=V2[i][j]+V3[i][j];	//Inicialização póstera
+for(int i(0); i<2; i++) for(int j(0); j<2; j++) V1[i][j]=V2[i][j]+V3[i][j];	//Inicialização póstera
 //...

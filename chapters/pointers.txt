@@ -1,0 +1,98 @@
+\chapter{Ponteiros}\label{cap.pointers}
+
+	Toda vez que uma variável é declarada, um espaço de memória é reservado para ela, o nome utilizado nesta declação será associado a um endereço da memória.
+	O endereço de memória normalmente é exibido como um valor hexadecimal de 12 digitos, como \basicCode{0xfedcba987654}, e pode ser obtido com o operador de acesso (referenciador).
+	O nome da variável é apenas um símbolo que referência aquele espaço de memória, um simbolo que aponta para tal espaço.
+	
+	É possível criar variáveis especiais expecializadas em armazenar endereços, e utilizando elas, alterar os valores salvos nestes endereços de maneira indireta.
+	Estar variáveis são chamadas \emph{ponteiros}.
+	Ponteiros apresentem os mesmos tipos que as variáveis normais.
+	
+	Pode parecer estranho que um ponteiro precise de um tipo,já que o valor que armazena é um endereço, e todos os endereços de memória tem o mesmo tamanho, seu tipo define qual o tipo de variável será apontada, especificando quantos bytes de memória deve interagir quando utilizado.
+
+	\section{Declarando ponteiros}
+
+		Semelhante à declaração de variáveis normais, os ponteiros precisam de um tipo e um nome, que segue as mesma regras que as demais variáveis.
+
+		A grande diferença entre suas declarações está na existência do operador de acesso indireto, indicando que a entidade a ser declarada é um ponteiro para o tipo definido.
+		O código \ref{code.pointers.declaration} apresenta a sintaxe de declaração de um ponteiro.
+		Assim como variáveis, pondeiro respeitam escopo.
+
+		\lstinputlisting[caption={Declaração de ponteiro}, label=code.pointers.declaration]{../code/pointers/declaration.cpp}
+
+		Exemplos de ponteiros são apresentados na seção \ref{cap.pointers.examples}.
+
+	\section{Inicializando ponteiros}
+
+		A inicialização de um ponteiro é semelhante à de uma variável em questão de sintaxe, a principal diferença está na passagem do valor, que não pode ser de maneira direta, já que ponteiros armazenam endereços de memória.
+		Logo, a inicialização de um ponteiro recebe o endereço de uma variável, com o operador de endereço.
+		A inicialização também pode ser feita utilizando outro ponteiro como valor.
+
+		Lembrando que um ponteiro deve apontar para uma variável do mesmo tipo que sua própria declaração.
+		O código \ref{code.pointers.inicialization} apresenta a sintaxe de inicialização de um ponteiro.
+
+		\lstinputlisting[caption={Inicialização de ponteiro}, label=code.pointers.inicialization]{../code/pointers/inicialization.cpp}
+
+	\section{Ponteiros de vetores}
+
+		Vetores são variáveis especiais, que tem associado o endereço de memória de um espaço equivalente a $N$ vezes o tamanho padrão do seu tipo, ou seja, um vetor \basicCode{int V[10]} ocupa um espaço de 10 vezes o tamanho padrão de um \basicCode{int}.
+
+		Assim como a variável normal, vetores tem um endereço próprio que pode ser obtido com o operador de endereço, mas vetores apresentam a característica de trabalharem como um vetor, porém não podem alterar o endereço apontado.
+		Quando o objetivo é passar o endereço de um vetor para um ponteiro, o uso do operador é suprido, pois o vetor já trabalha como um ponteiro, então já armazena um endereço, o endereço do bloco de memória reservado para ele.
+
+		A passagem do endereço de um vetor para um ponteiro é igual a passagem do valor de um ponteiro para outro.
+		Exemplos de ponteiros para vetores são apresentados na seção \ref{cap.pointers.examples}.
+
+	\section{Ponteiros de ponteiros}
+
+		Assim como qualquer outra variável, ponteiros tem endereços próprios, e é possivel criar ponteiros para ponteiros.
+		Ponteiros de ponteiros também apresentam tipo definido, o mesmo tipo que o apontado aponta, ou seja, um ponteiro para ponteiro do tipo \basicCode{int} é do tipo \basicCode{int} também.
+		Ponteiros de ponteiros são muito utilizados quando se trabalha com memória danâmica (capítulo \ref{cap.dynamicMemory}), para a criação de matrizes.
+
+		Exemplos do uso de ponteiro de ponteiros é apresentado na seção  \ref{cap.pointers.examples}.
+
+	\section{Aritimética de ponteiros}
+
+		Quanto utilizando o operador de acesso, o ponteiro se comporta exatamente como uma variável do seu tipo.
+		Porém existe um pequeno conjunto de operadores que fazem alterações especiais em ponteiros.
+
+		Os operadores de incremento e decremento unitário fazer a operação de avanço e retrocesso no endereço de memória, as diferenças nos operadores, utilizados como prefixo e posfixo, é a mesma do caso de variáveis normais.
+		O uso destes operadores apenas é coerente com o uso de ponteiros para vetores ou outros ponteiros.
+		Nos demais casos, ponteiros estarão apontando para variávis simples.
+
+		Tabém é possível utilizar os operadores de soma e subtração, que trabalarão como os incrementadores, alterando o endereço salvo no vetor.
+		Toda alteração é proporciona, ou seja, somar $2$ em um vetor implica em apontar para o espaço de memória de duas vezes o tamanho de memória do tipo do vetor, no caso de um ponteiro de \basicCode{int}, com $4$ \textit{bytes}, implica em apontar para um endereço maior em oito unidades do original.
+		Cada unidade alterado no valor (hexadecimal) armazenado em um ponteiro implica na alteração de um byte no espaço de memória.
+
+		Existem um problema associado ao uso destes operadores.
+		Quando utilizados, alteram o valor do endereço armazenado no ponteiro.
+		Se não é possivel recuperar o endereço do espaço de memória, ele ficará alocado até o fim da execução do programa, mais detalhes serão apresentados no capítulo \ref{cap.dynamicMemory}.
+
+		Para evitar este problema, é possível utilizar o operador de indexação, apresentado no capítulo \ref{cap.moreOperators}.
+		Este operador fará o acesso do valor salvo na memória através de um índice, e não causará a perda do endereço do ponteiro.
+		A desvantagem deste operador em relação ao caso do incrementador está na necessidade de uma variável como indexador, ou seja, uma variável para ser incrementada ao longo da passagem pelo vetor.
+
+	\section{Exemplos de ponteiros}\label{cap.pointers.examples}
+
+		A diverdidade de situações onde ponteiros são úteis ou necessários faz com que apenas um exemplo seja insufuciente.
+		O código \ref{code.pointers.examples.1} mostra casos de declaração e inicialização de ponteiros.
+		
+		\lstinputlisting[caption={Exemplo de declaração e inicialização}, label=code.pointers.examples.1]{../code/pointers/examples.1.cpp}
+		
+		O código \ref{code.pointers.examples.2} apresenta uma função onde as variáveis são passadas por endereço, também chamada de passagem por referência.
+
+		\lstinputlisting[caption={Exemplo função que utiliza ponteiros}, label=code.pointers.examples.2]{../code/pointers/examples.2.cpp}
+
+		O código \ref{code.pointers.examples.3} contém um caso de ponteiros como vetor, além do uso do operador de indexação com vetores.
+
+		\lstinputlisting[caption={Exemplo de ponteiro como vetor}, label=code.pointers.examples.3]{../code/pointers/examples.3.cpp}
+
+		O código \ref{code.pointers.examples.4} exemplifica o uso de acesso indireto a membro.
+
+		\lstinputlisting[caption={Exemplo de acesso indireto a membro}, label=code.pointers.examples.4]{../code/pointers/examples.4.cpp}
+
+		O código \ref{code.pointers.examples.5} utiliza aritimética de ponteiros de diversas formas.
+		Note que o endereço original permanece referenciado, mesmo que de maneira indireta.
+
+		\lstinputlisting[caption={Exemplo com aritimética de ponteiros}, label=code.pointers.examples.5]{../code/pointers/examples.5.cpp}
+		% \lstinputlisting[caption={Exemplo 5}, label=code.pointers.examples.5]{../code/pointers/examples.5.cpp}

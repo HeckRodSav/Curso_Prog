@@ -1,0 +1,209 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{1}
+
+\subtitle{Não aponte para mim}
+\usecolortheme[named=slideYellow]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Imprimindo vetores}
+		\begin{frame}{Joga num \basicCode{cout}}
+			\begin{itemize}
+				\presentationPause\item Vocês já tentaram imprimir um vetor?
+				\presentationPause\item Qual resultado obtiveram?
+				\presentationPause\item Vocês tem ideia do que é esse valor?
+				\presentationPause\item Esse valor foi sempre igual?
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-4}]{../../code/pointers/cout.vetor.cpp}
+			\begin{itemize}
+				\presentationPause\item Este valor é o endereço onde o vetor está na memória!
+			\end{itemize}
+		\end{frame}
+
+	\section{Referenciando}
+		\begin{frame}{Variáveis também tem endereço}
+			\begin{itemize}
+				\presentationPause\item Todas as coisas \emph{declaradas} no programa têm um endereço de memória
+				\presentationPause\item Este endereço será apresentado como um número hexadecimal de $12$ (?) dígitos
+				\presentationPause\item Há um operador criado para coletar este valor
+				\presentationPause\item Este operador é chamado \emph{referenciador} \presentationPause ou oprador de endereço
+				\presentationPause\item Utiliza o \emph{e comercial} (\basicCode{\&})
+				\presentationPause\item Operador unário e de consulta
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-2}]{../../code/operators/reference.sintax.cpp}
+			\begin{itemize}
+				\presentationPause\item E o exemplo? \presentationPause Depois...
+				\presentationPause\item Mas podemos exibir valores!
+			\end{itemize}
+		\end{frame}
+
+	\section{Apontando}
+		\begin{frame}{Dedos na cara}
+			\begin{itemize}
+				\presentationPause\item Legal, pra que vou usar isso?
+				\presentationPause\item Com o endereço podemos alterar o valor salvo lá
+				\presentationPause\item Para isso utilizamos algo que serve para apontar para estes endereços
+				\presentationPause\item Os \emph{ponteiros}
+				\presentationPause\item Ponteiros são variáveis especiais expecializada em armazenar endereços
+				\presentationPause\item Apresentam os mesmo tipos que as variáveis \presentationPause (inclusive tipos abstratos)
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Problemas com tamanhos}
+			\begin{itemize}
+				\presentationPause\item \textit{Espera, você está me dizendo \presentationPause que essas variáveis que sempre armazenam endereços \presentationPause tem mais de um tipo???}
+				\presentationPause\item \textit{Mas os endereços não deveriam ter sempre o mesmo formato???}
+				\presentationPause\item Sim! \presentationPause e tem um ótimo motivo
+				\presentationPause\item Vamos brincar com outro operador rapidamente\dots
+				\presentationPause\item O \basicCode{sizeof}, o operador de tamanho
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-2}]{../../code/operators/sizeof.sintax.cpp}
+			\begin{multicols}{3}
+				\begin{itemize}
+					\presentationPause\item \textit{O que ele faz?}
+					\presentationPause\item \textit{O que ele come?}
+					\presentationPause\item \textit{Como se reproduz?}
+				\end{itemize}
+			\end{multicols}
+			\begin{itemize}
+				\presentationPause\item Ele retorna a quantidade de bytes que a entidade no argumento ocupa
+				\presentationPause\item Vamos fazer um teste\dots
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Voltando aos ponteiros}
+			\begin{itemize}
+				\presentationPause\item Legal, com esse operador há uma explicação
+				\presentationPause\item Cada tipo tem um tamanho característico (ou tem outras diferenças)
+				\presentationPause\item Esse tamanho mostra quantos bytes uma variável representa na memória
+				\presentationPause\item Se utilizarmos um ponteiro genérico, não tem como garantir a quantidade correta de bytes alterados no acesso
+				\presentationPause\item Legal, faz sentido, mas duas dúvidas:
+				\begin{itemize}
+					\presentationPause\item Como faz?
+					\presentationPause\item Acesso\dots?
+				\end{itemize}
+				\presentationPause\item Vamos começar com a declaração
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Declarando}
+			\begin{itemize}
+				\presentationPause\item A declaração é quase idêntica à de uma variável comum
+				\presentationPause\item Ela ganha uma estrelinha! \presentationPause Mentira, é só um asterisco \basicCode{*}
+				\presentationPause\item O asterisco está lá só nos ponteiros
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-2}]{../../code/pointers/declaration.cpp}
+			\begin{itemize}
+				\presentationPause\item \textit{Legal, e o tal acesso?}
+				\presentationPause\item Precisamos inicializar ainda\dots
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Inicializando}
+			\begin{itemize}
+				\presentationPause\item Mesma ideia que uma variável normal
+				\presentationPause\item Recebe endereços
+				\presentationPause\item Pode receber o valor de outro ponteiro
+				\presentationPause\item Pode apontar pra qualquer coisa \presentationPause Mas nem todas são simples acessar\dots
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-4}]{../../code/pointers/inicialization.cpp}
+		\end{frame}
+
+		\begin{frame}{Uns exemplos}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-9}]{../../code/pointers/examples.1.cpp}
+		\end{frame}
+
+	\section{Derreferenciando}
+		\begin{frame}{Outro operador}
+			\begin{itemize}
+				\presentationPause\item Agora chegamos na parte de acesso
+				\presentationPause\item Não adianta muito saber o endereço se não souber \textit{mandar cartas}
+				\presentationPause\item Existe um operador para acessar através do endereço, utilizando os ponteiros
+				\presentationPause\item Este operador é chamado \emph{derreferenciador} \presentationPause ou operador de acesso
+				\presentationPause\item Utiliza o asterisco (\basicCode{*})
+				\presentationPause\item É um operador unário e de consulta\presentationPause, mas\dots
+				\presentationPause\item Ele é de consulta para o valor do ponteiro, mas com ele se altera a o valor apontado
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-2}]{../../code/operators/dereference.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}{Legal, quando usar?}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/pointers/examples.2.cpp}
+		\end{frame}
+
+	\section{Ponteiro de membro}
+		\begin{frame}{Uma setinha $\rightarrow$}
+			\begin{itemize}
+				\presentationPause\item Temos um caso especial de ponteiro
+				\presentationPause\item Quando apontamos para um tipo abstrato acontece um problema com precedência\dots
+				\presentationPause\item A precedência do operador de acesso é menor que a do operador de membro (\basicCode{.})
+				\presentationPause\item Podemos utilizar parênteses\dots
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/dereferenceMemberAccess.non.sintax.cpp}
+			\begin{itemize}
+				\presentationPause\item Tá ruim\dots
+				\presentationPause\item E se existir um operador pra facilitar isso?
+				\presentationPause\item Existe! \presentationPause E é uma seta
+				\presentationPause\item Aliás, quase uma seta (\basicCode{->})
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Quase uma seta\dots}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/dereferenceMemberAccess.sintax.cpp}
+			\begin{itemize}
+				\presentationPause\item Utilizamos este operador para acessar membros quando temos apenas o ponteiro
+				\presentationPause\item Ele acessa o endereço apontado e, lá, acessa o membro
+				\presentationPause\item Muito\presentationPause, muito\presentationPause, muitíssimo\presentationPause, muito mesmo utilizado em esturutras de dados
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Um caso de uso}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/pointers/examples.4.cpp}
+		\end{frame}
+
+	\section{Metamatemático \frownie}
+		\begin{frame}{Continhas}
+			\begin{itemize}
+				\presentationPause\item Por que essa carinha triste? \presentationPause\frownie
+				\presentationPause\item Podemos ser melhores do que isso\dots
+				\presentationPause\item Mas vocês precisam saber que isso axiste
+				\presentationPause\item Operadores \basicCode{++} e \basicCode{--} \presentationPause (Soma e subtração também)
+				\presentationPause\item Caminhar para frente e para trás
+				\presentationPause\item Problema: \presentationPause Perder o valor original
+				\presentationPause\item \textit{E daí?}
+				\presentationPause\item Vocês entederão isso na próxima aula
+				\presentationPause\item Tem a ver com \textbf{\presentationPause A \presentationPause COISA \presentationPause MAIS \presentationPause DIFÍCIL} \presentationPause (que não é difícil)
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Sente o drama}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/pointers/examples.5.cpp}
+		\end{frame}
+
+		\begin{frame}{Mais que continhas}
+			\begin{itemize}
+				\presentationPause\item Indexado!
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/pointers/examples.3.cpp}
+		\end{frame}
+		
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+
+	
+\end{document}

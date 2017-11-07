@@ -11,7 +11,7 @@ Como seus identificadores (nomes) são destintos, uma estrutura de repetição n
 
 Existe uma forma de agrupamento de variáveis especial criada para situações como esta: o vetor.
 
-	\section{Vetores}
+\section{*Vetores}
 
 	O termo \emph{vetor} deriva da matemática, onde vetores podem ser representados conjuntos de números sequenciados, referentes a uma base.
 	Para o caso aqui descrito, a ideia de valores sequenciados é o bastante.
@@ -45,7 +45,7 @@ Existe uma forma de agrupamento de variáveis especial criada para situações c
 
 	Assim como é possível criar vetores de variáveis, é possível criar vetores de vetores, e a estes damos o nome de matriz.
 
-	\section{Matrizes}
+\section{*Matrizes}
 
 	Um vetor é como uma matriz de uma dimensão.
 	A declaração de uma matriz se assemelha a de um vetor, diferindo apenas na quantidade de dimensões passadas.
@@ -70,39 +70,39 @@ Existe uma forma de agrupamento de variáveis especial criada para situações c
 			$3$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
 			$\vdots$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
 			$m-1$ & \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
-			\end{tabular}
-		\end{table}
+		\end{tabular}
+	\end{table}
 
-		As forma de inicialização de uma matriz são semelhantes às formas de inicialização de um vetor e são apresentadas no código \ref{code.array.M.inicialization}.
+	As forma de inicialização de uma matriz são semelhantes às formas de inicialização de um vetor e são apresentadas no código \ref{code.array.M.inicialization}.
 
-		\lstinputlisting[caption={Inicializações para matrizes}, label=code.array.M.inicialization]{../code/array/M.inicialization.cpp}
+	\lstinputlisting[caption={Inicializações para matrizes}, label=code.array.M.inicialization]{../code/array/M.inicialization.cpp}
 
-		Assim como no caso dos vetores, as matrizes tem grande uso para conjuntos de memórias, o código \ref{code.array.M.example} apresenta um método para o cálculo da média de cada linha na matriz e atribuindo estas médias a um vetor de médias.
+	Assim como no caso dos vetores, as matrizes tem grande uso para conjuntos de memórias, o código \ref{code.array.M.example} apresenta um método para o cálculo da média de cada linha na matriz e atribuindo estas médias a um vetor de médias.
 
-		\lstinputlisting[caption={Exemplo de uso para matriz calculando média das linhas}, label=code.array.M.examples]{../code/array/M.examples.cpp}
+	\lstinputlisting[caption={Exemplo de uso para matriz calculando média das linhas}, label=code.array.M.examples]{../code/array/M.examples.cpp}
 
-		É possível generalizar matrizes para mais do que duas dimensões, tais estruturas na matemática são denominadas \emph{tensores}, porém não é necessária a abordagem especial deste tipo de estrutura já que o passo de passagem de um vetor para uma matriz é idêntico ao passo de passagem de uma matriz para um tensor.
-		É interessante ressaltar que matrizes são tensores de ordem 2 (ou segunda ordem), e vetores são tensores de ordem 1 (ou primeira ordem).
+	É possível generalizar matrizes para mais do que duas dimensões, tais estruturas na matemática são denominadas \emph{tensores}, porém não é necessária a abordagem especial deste tipo de estrutura já que o passo de passagem de um vetor para uma matriz é idêntico ao passo de passagem de uma matriz para um tensor.
+	É interessante ressaltar que matrizes são tensores de ordem 2 (ou segunda ordem), e vetores são tensores de ordem 1 (ou primeira ordem).
 
-		Vale notar que que o controle de fluxo \basicCode{for} foi desenvolvido especialmente para esta aplicação.
+	Vale notar que que o controle de fluxo \basicCode{for} foi desenvolvido especialmente para esta aplicação.
 
-		\section{Sequências de caracteres}
+\section{Sequências de caracteres}
 
-		Existe um caso especial de vetor utilizado para gravação de texto, não apenas caracteres como no caso de uma variável tipo \basicCode{char}.
-		São vetores comuns de caracteres, a grande diferença está em sua inicalização.
+	Existe um caso especial de vetor utilizado para gravação de texto, não apenas caracteres como no caso de uma variável tipo \basicCode{char}.
+	São vetores comuns de caracteres, a grande diferença está em sua inicalização.
 
-		O termo \textit{string} descreve o vetor de caracteres.
-		A inicialização é feita como do código \ref{code.array.S.examples}, onde a frase \emph{Hello World!} é salva na forma de \textit{string}.
-		Note que o tamanho do vetor está implícito, isso tem um motivo.
+	O termo \textit{string} descreve o vetor de caracteres.
+	A inicialização é feita como do código \ref{code.array.S.examples}, onde a frase \emph{Hello World!} é salva na forma de \textit{string}.
+	Note que o tamanho do vetor está implícito, isso tem um motivo.
 
-		\lstinputlisting[caption={Sintaxe inicialização}, label=code.array.S.sintax]{../code/array/S.sintax.cpp}
+	\lstinputlisting[caption={Sintaxe inicialização}, label=code.array.S.sintax]{../code/array/S.sintax.cpp}
 
-		O tamanho implícito está associado a uma caracteristica importante da declaração da string como literal.
-		Quando utilizamos as aspas duplas como notação, é adicionado ao final um caractere especial, o caractere nulo (\basicCode{'\0'}).
-		Este caractere é adicionado para possibilitar o processamento deste tipo de vetor sem que o tamanho seja conhecido, onde a condição de um \basicCode{for} trabalhe verificando se o próximo valor armazenado seja o nulo.
-		O tamanho do vetor não é passado pois seria trabalhoso lembrar deste caractere especial toda vez que um vetor desse tipo for declarado, logo a inicialização precisa ser feita na declaração.
+	O tamanho implícito está associado a uma caracteristica importante da declaração da string como literal.
+	Quando utilizamos as aspas duplas como notação, é adicionado ao final um caractere especial, o caractere nulo (\basicCode{'\0'}).
+	Este caractere é adicionado para possibilitar o processamento deste tipo de vetor sem que o tamanho seja conhecido, onde a condição de um \basicCode{for} trabalhe verificando se o próximo valor armazenado seja o nulo.
+	O tamanho do vetor não é passado pois seria trabalhoso lembrar deste caractere especial toda vez que um vetor desse tipo for declarado, logo a inicialização precisa ser feita na declaração.
 
-		O código \ref{code.array.S.examples} mostra uma forma de contar o tamanho de uma string, considerando apenas os caracteres não nulos.
-		Note como no segundo caso, a contagem falha.
+	O código \ref{code.array.S.examples} mostra uma forma de contar o tamanho de uma string, considerando apenas os caracteres não nulos.
+	Note como no segundo caso, a contagem falha.
 
-		\lstinputlisting[caption={Exemplo de \textit{string}}, label=code.array.S.examples]{../code/array/S.examples.cpp}
+	\lstinputlisting[caption={Exemplo de \textit{string}}, label=code.array.S.examples]{../code/array/S.examples.cpp}

@@ -1,5 +1,6 @@
 \part{Intermediário}
 \input{../chapters/functions.txt}
-\input{../chapters/array.txt}
 \input{../chapters/moreOperators.txt}
-\input{../chapters/moreTypes.txt}
+\input{../chapters/array.txt}
+\input{../chapters/abstractTypes.txt}
+\input{../chapters/pointers.txt}

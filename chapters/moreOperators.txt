@@ -3,7 +3,7 @@
 	Em um primeiro momento, é interessante conhecer os operadores que são mais utilizados.
 	A partir desde ponto se torna interessante conhecer os operadores de alteração profunda em variáveis, que permitem comandos mais interessantes.
 
-	\section{Modelador}
+	\section{Modelador}%Unário
 
 		É possível inicializar variáveis ulizando literais, mas nem sempre os tipos certos são utilizados.
 		Por exemplo, se declara uma variável tipo \basicCode{float} e a inicializa com o valor nulo ($0$), é comum utilizar apenas \basicCode{0}, ou até \basicCode{0.0}, que é menos comum.
@@ -28,3 +28,90 @@
 		Um exemplo útil do uso de casting é apresentado no código \ref{code.operators.casting.example}, onde uma função tipo \basicCode{bool} retorna \basicCode{true} se o argumento de entrada for um númro natural.
 
 		\lstinputlisting[caption={Exemplo do uso de casting}, label=code.operators.casting.example]{../code/operators/casting.example.cpp}
+	
+	\section{Indexador}%Binário
+
+		Quando trabalha-se com sequências de memórias, apresentadas no capítulo \ref{cap.array}, é necessário realizar a escolha de qual os espaços de memória será utilizado, para isso, utiliza-se o operador de indexação.
+		É um operador que recebe dois argumentos, sendo o primeiro o nome da variável indexada e o segundo o valor da indexação.
+
+		É um operador que permite acesso completo, de tal maneira que seu retorno pode ser tratado como uma variável do tipo da sequência de memória, permitindo leitura e escrita, além dos demais operadores.
+
+		Seu símbolo consiste um par de colchetes (\basicCode{[]}) seguindo o nome da sequência de variáveis.
+		Entre os colchetes, o índice da indexação.
+		No C++, a indexação começa sempre em \basicCode{0}, explicações são dadas no capítulo \ref{cap.array}.
+
+		O código \ref{code.operators.index.sintax} apresenta a sintaxe de uso do operador.
+		Outro tipo de uso, além de exemplos são apresentados no capítulo \ref{cap.array}.
+
+		\lstinputlisting[caption={Sintaxe do operador de indexação}, label=code.operators.index.sintax]{../code/operators/index.sintax.cpp}
+
+		Vale lembrar que, assim como os demais operadores, o uso do indexador é incoerente sozinho, fazendo-se útil apenas quando implica em diferença no programa, ou seja, quando alguma alteração é feita.
+
+	\section{Tamanho em memória}%Unário
+		
+		Ao longo do desenvolvimento de software, pode se fazer necessário saber o tamanho de espaços de memória, seja o espaço ocupado por variáveis, seja o ocupado por vetores (capítulo \ref{cap.array}).
+		É possível criar novas variáveis apenas para armazenar estas informações, porém isso gastaria mais memória, o que pode ser infortúnio em muitos casos.
+
+		O operador \basicCode{sizeof} retorna o tamanho, em \textit{bytes}, da variável, vetor ou tipo passado como argumento.
+		Sua sintaxe é semelhante a de uma função, e é apresentada no código \ref{code.operators.sizeof.sintax}.
+
+		\lstinputlisting[caption={Sintaxe do operador de indexação}, label=code.operators.sizeof.sintax]{../code/operators/sizeof.sintax.cpp}
+
+		Este operador não retorna o tamanho alocado em memória dinâmica (capítulo \ref{cap.dynamicMemory}), também não funciona com ponteiros (capítulo \ref{cap.pointers}).
+
+	\section{Acesso a membro}%Binário
+
+		Ao trabalhar com tipos abstratos ou classes, descritos respectivamente nos capítulos \ref{cap.abstractTypes} e \ref{cap.class}, é necessário acessar os membros internos para trabalhar com eles, para realizar este acesso, utilia-se um operador próprio.
+		O símbolo utilizado é o ponto (\basicCode{.}).
+
+		Primeiro o nome da variável em questão, seguido do operador, então o membro a ser acessado.
+		O código \ref{code.operators.memberAccess.sintax} apresenta a sintaxe do operador de acesso a membro.
+		Exemplos de uso são apresentados nos capítulos \ref{cap.abstractTypes} e \ref{cap.class}.
+
+		\lstinputlisting[caption={Sintaxe do operador de acesso a membro}, label=code.operators.memberAccess.sintax]{../code/operators/memberAccess.sintax.cpp}
+		
+	\section{Endereço}
+
+		Existem situações onde se faz necessária a passagem de variáveis para procedimentos de tal forma as alterações lá feitas, sejam efetivas no restante do programa.
+		Para isso, utiliza-se ponteiros (capítulo \ref{cap.pointers}), além dos operadores de endereço e acesso indireto.
+
+		O acesso é feito utilizando o endereço de memória do espaço que a variável ocupa, o operador em questão retorna este endereço.
+		Seu símbolo é o \emph{e comencial} (\basicCode{\&}).
+		Este operador também é chamado de \emph{referenciador}.
+
+		Um exemplo de sintaxe é apresentado no código \ref{code.operators.reference.sintax}.
+		Valor notar que o uso só é coerente quando seu retorno é aproveitado.
+
+		\lstinputlisting[caption={Sintaxe do operador endereço}, label=code.operators.reference.sintax]{../code/operators/reference.sintax.cpp}
+
+		Um uso peculiar e muito útil para esse operador é encontrado no capítulo \ref{cap.moreFunctions}.
+
+	\section{Acesso indireto}
+
+		Também chamado de \emph{derreferenciador}, realiza a operação inversa ao operador de endereço (\emph{referenciador}), acessando o armazenado em memória através de seu endereço.
+		Também utilizado com ponteiros (capítulo \ref{cap.pointers}).
+
+		Seu uso, como no indexador, permite acesso completo.
+		Inclusive, seu uso equivale ao uso do indexador com índice zero (\basicCode{[0]}), sem símbolo é o asterísco (\basicCode{*}).
+		Sua sintaxe é apresentada no código \ref{code.operators.dereference.sintax}. Lembrando que o uso só é coerente se alguma alteração no programa é feita.		
+
+		\lstinputlisting[caption={Sintaxe do operador endereço}, label=code.operators.dereference.sintax]{../code/operators/dereference.sintax.cpp}
+
+	\section{Acesso indireto de membro}
+	
+		Existem casos onde ponteiros para tipos abstratos são necessários (capítulos \ref{cap.pointers} e \ref{cap.abstractTypes}), e para acessar os membros internos se faz necessário o uso do operador de acesso indireto, além do operador de acesso a membro, conforme a sintaxe apresentada no código \ref{code.operators.dereferenceMemberAccess.non.sintax}.
+
+		\lstinputlisting[caption={Exemplo de acesso a membro de forma indireta sem operador apropriado}, label=code.operators.dereferenceMemberAccess.non.sintax]{../code/operators/dereferenceMemberAccess.non.sintax.cpp}
+
+		Por ser uma estrutura ambígua e que depende de alterações na ordem de precedência, utilizando os parênteses (\basicCode{()}), foi criado um operador que realiza o acesso indireto a membros.
+		Seu simbolo é composto por um sinal de menos, seguido por um sinal de menor (\basicCode{->}), se assemelha a uma seta.
+		Este operador é expecializado para realizar o acesso de membros internos através de ponteiros.
+		Em situações como estruturas de dados, é amplamente utilizados, a sintaxe associada é apresentada no código \ref{code.operators.dereferenceMemberAccess.sintax}.
+		
+		\lstinputlisting[caption={Exemplo de acesso a membro de forma indireta sem operador apropriado}, label=code.operators.dereferenceMemberAccess.sintax]{../code/operators/dereferenceMemberAccess.sintax.cpp}
+
+	\section{*Alocador de memória}
+		\dots
+
+	\section{*Dealocador de memória}
+		\dots

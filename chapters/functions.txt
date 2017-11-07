@@ -37,7 +37,7 @@ Simplesmente são blocos de código com nome próprio que podem ser invocados.
 
 	Procedimentos podem receber valores de variáveis para seus blocos, através de variáveis auxiliares, que copiam os valores passados aos argumentos.
 	Tais variáveis são ditas os \emph{parâmetros} do procedimento (ou da função).
-	Estas variáveis devem ter o tipo definido, e os argumentos debem ser passados conforme o tipo.
+	Estas variáveis devem ter o tipo definido, e os argumentos devem ser passados conforme o tipo.
 	Múltiplos argumentos de multiplos tipos podem ser utilizado por procedimento, porém a ordem de passagem de argumentos deve ser respeitada.
 
 	Os argumentos são como variáveis declaradas entre os parênteses do procedimento, que podem ser utilizadas em seu corpo.

@@ -1,2 +1,4 @@
 \part{Avançado}
+\input{../chapters/dynamicMemory.txt}
 \input{../chapters/class.txt}
+\input{../chapters/moreFunctions.txt}
