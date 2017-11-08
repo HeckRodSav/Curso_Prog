@@ -1,0 +1,131 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{0}
+
+\subtitle{O monstro do armário}
+\usecolortheme[named=slideYellow]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Problemática}
+		\begin{frame}{9999999\dots}
+			\begin{itemize}
+				\presentationPause\item Declarar um vetor de tamanho N
+				\presentationPause\item N é 9\presentationPause9\presentationPause9\presentationPause9\presentationPause9\presentationPause9\presentationPause9\presentationPause9\presentationPause9\dots
+				\presentationPause\item Vocês já tentaram fazer um vetor tão grande?
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-8}]{../../code/dynamicMemory/bigArray.cpp}
+			\begin{itemize}
+				\presentationPause\item Isso \textit{deveria} dar errado \presentationPause(pode ser que não dê)
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Quantos mesmo?}
+			\begin{itemize}
+				\presentationPause\item Declarar um vetor de tamanho N
+				\presentationPause\item É decidido pelo usário em tempo de execução
+				\presentationPause\item \textit{Naonde?}
+				\presentationPause\item Tempo de compilação $\times$ Tempo de execução
+				\presentationPause\item \textit{Não é só colocar o tamanho como variável e fazer o vetor desse tamanho?}
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/dynamicMemory/staticN.cpp}
+			\begin{itemize}
+				\presentationPause\item Então\presentationPause, não deveria ser\dots
+				\presentationPause\item O tamanho do vetor \emph{estático} deve ser uma constante
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Estático}
+			\begin{itemize}
+				\presentationPause\item Quando declaramos um vetor com esta sintaxe, ele é estático
+				\presentationPause\item O vetor estático é declarado na \textit{stack}
+				\presentationPause\item A \textit{stack} é o espaço de memória reservado para o programa
+				\presentationPause\item Ela não é muito grande, então vetores grandes não cabem
+				\presentationPause\item O resto da memória do computador é chamada \textit{heap}
+				\presentationPause\item Podemos utilizar a \textit{heap}?
+				\presentationPause\item Sim! \presentationPause Mas para isso precisamos de um operador\dots
+			\end{itemize}
+		\end{frame}
+
+	\section{Abrindo espaços}
+		\begin{frame}{Dinâmico}
+			\begin{itemize}
+				\presentationPause\item Operador unário
+				\presentationPause\item Recebe o tipo a ser alocado
+				\presentationPause\item Ele retorna um endereço de memória \presentationPause(sim, ponteiros)
+				\presentationPause\item É fácil de usar\presentationPause, diferente do irmão mais velho
+				\presentationPause\item O simbolo é uma palavra-chave: \presentationPause\basicCode{new}
+				\presentationPause\item A sintaxe é amigáve
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/new.sintax.cpp}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/new.example.cpp}
+			\begin{itemize}
+				\presentationPause\item Cuidado com o \basicCode{NULL}
+			\end{itemize}
+		\end{frame}
+
+	\section{Mais problemas}
+		\begin{frame}{Glutão}
+			\begin{itemize}
+				\presentationPause\item Legal, sabemos pegar mais espaço
+				\presentationPause\item Então é possível pegar todo o espaço
+				\presentationPause\item Que tal testar?
+				\presentationPause\item A memória do computador é finita
+				\presentationPause\item Se pegar muito, acaba
+				\presentationPause\item Se acabar acontece um problemas
+				\presentationPause\item Janelas 98 \textregistered\presentationPause, alocava mais memória pra sempre
+				\presentationPause\item Resultado: \presentationPause Ela acabava\presentationPause, ou seja, BSoD!
+				\presentationPause\item Precisamos devolver a memória que pegamos!
+				\presentationPause\item Temos outro operador!
+			\end{itemize}
+		\end{frame}
+
+	\section{!Abrindo espaços}
+		\begin{frame}{Ainda dinâmico}
+			\begin{itemize}
+				\presentationPause\item Operador unários
+				\presentationPause\item Recebe o endereço a ser desalocado
+				\presentationPause\item Não tem retorno
+				\presentationPause\item É fácil de usar\presentationPause, diferente do irmão mais velho
+				\presentationPause\item O simbolo é uma palavra-chamada: \presentationPause\basicCode{delete}
+				\presentationPause\item Sintaxe amigável
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/delete.sintax.cpp}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/delete.example.cpp}
+			\begin{itemize}
+				\presentationPause\item Cuidado para não desalocar o endereço errado
+			\end{itemize}
+		\end{frame}
+
+	\section{Outras situações}
+		\begin{frame}{Alocação de tipos abstratos}
+			\begin{itemize}
+				\presentationPause\item Que tal um tipo abstrato que contenha um ponteiro para ele mesmo?
+				\presentationPause\item \textit{É o que?}
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/dynamicMemory/abstractType.cpp}
+			\begin{itemize}
+				\presentationPause\item Aí que usamos o operador de acesso indireto a membro (\basicCode{->})
+				\presentationPause\item Esse código é a base para \emph{estrutura de dados}
+			\end{itemize}
+		\end{frame}
+		
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+
+	
+\end{document}

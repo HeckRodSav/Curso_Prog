@@ -1,1 +1,2 @@
-\chapter{Memória Dinâmica}\label{cap.dynamicMemory}
+\chapter{*Memória Dinâmica}\label{cap.dynamicMemory}
+
