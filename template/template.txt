@@ -11,5 +11,6 @@
 \usepackage{wasysym}
 \usepackage{float}
 \usepackage{multicol}
+\usepackage{siunitx}
 
 \usepackage{ifthen}
