@@ -58,7 +58,7 @@
 	\definecolor{slideTurquoise}{rgb}{0,.6,.3}
 	\definecolor{slideGreen}{rgb}{.3,.6,0}
 	\definecolor{slideYellow}{rgb}{.7,.6,0}
-	\definecolor{slideOrange}{rgb}{0.8,.2,0}
+	\definecolor{slideOrange}{rgb}{0.8,.3,0}
 	\definecolor{slideRed}{rgb}{.6,0,0}
 	\definecolor{slidePurple}{rgb}{.6,0,.3}
 

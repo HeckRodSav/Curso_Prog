@@ -1,0 +1,85 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{1}
+
+\subtitle{Nasce e morre}
+\usecolortheme[named=slideOrange]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Construindo}
+	\begin{frame}{Inicializando}
+		\begin{itemize}
+			\presentationPause\item Precisamos inicializar atributos
+			\presentationPause\item Precisamos alocar memória
+			\presentationPause\item Exibir informação sobre estado de inicialização
+			\presentationPause\item Fazer cálculos préviamente de valor fixos
+			\presentationPause\item Em alguns casos, \emph{casting} \presentationPause(outra aula)
+		\end{itemize}
+	\end{frame}
+
+
+	\begin{frame}{Construtor}
+		\begin{itemize}
+			\presentationPause\item Recebe o nome da classe
+			\presentationPause\item Não tem tipo\presentationPause, nem mesmo \basicCode{void}
+			\presentationPause\item Pode receber argumentos
+			\presentationPause\item É invocado automaticamente
+			\presentationPause\item Deve ser \basicCode{public}
+		\end{itemize}
+		\presentationPause\lstinputlisting[numbers=none,linerange={2-11}]{../../code/class/constructor.cpp}
+	\end{frame}
+
+	\section{Destruindo}
+	\begin{frame}{Encerrando}
+		\begin{itemize}
+			\presentationPause\item \textit{Encerrar atributos\presentationPause ???}
+			\presentationPause\item E se os atributo forem objetos?
+			\presentationPause\item Desalocar memória
+			\presentationPause\item Exibir informações sobre estado de encerramento
+			\presentationPause\item \textit{Desfazer cálculos\presentationPause ???}
+			\presentationPause\item A ideia de \emph{desfazer cálculos} é semelhante à ideia de limpar memória para desalocar
+			\presentationPause\item É padrão tratar a memória quando se aloca, por esperar ela suja
+			\presentationPause\item Pra que limpar\dots
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Destrutor}
+		\begin{itemize}
+			\presentationPause\item Recebe o nome da classe \presentationPause com um til (\basicCode{\~})
+			\presentationPause\item Não tem tipo\presentationPause, nem mesmo \basicCode{void}
+			\presentationPause\item Não pode receber argumentos
+			\presentationPause\item É invocado automaticamente
+			\presentationPause\item Deve ser \basicCode{public}
+		\end{itemize}
+		\presentationPause\lstinputlisting[numbers=none,linerange={2-11}]{../../code/class/destructor.cpp}
+	\end{frame}
+
+	\begin{frame}{Compara}
+		\only<1>{\lstinputlisting[numbers=none,linerange={2-11}]{../../code/class/constructor.cpp}}
+		\only<2>{\lstinputlisting[numbers=none,linerange={2-11}]{../../code/class/destructor.cpp}}
+	\end{frame}
+
+	\section{Um exemplo completo}
+	\begin{frame}{Nasce e morre}
+		\presentationPause\lstinputlisting{../../code/class/structor.example.cpp}
+	\end{frame}
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+	
+\end{document}
