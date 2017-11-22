@@ -1,0 +1,137 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{1}
+
+\subtitle{Sim, você já usou}
+\usecolortheme[named=slideOrange]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Onde usamos}
+		\begin{frame}{Usando aqui}
+			\begin{itemize}
+				\presentationPause\item Você se lembra dos irmãos \textit{console}? \presentationPause \basicCode{cin} e \basicCode{cout}
+				\presentationPause\item Já se perguntou como os operadores de deslocamento fazem isso? \presentationPause \basicCode{>>,<<}
+				\presentationPause\item Lembra do desafio de somar $\overrightarrow{\mathsf{v}}$?
+				\presentationPause\item Imagina poder fazer algo como \basicCode{v1 + v2} com uma \basicCode{struct}
+				\presentationPause\item Tudo isso é possíve com sobrecarregarga de operadores
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/minimal/basic.example.HW.cin.cpp}
+			% \hline
+			\presentationPause\lstinputlisting[numbers=none]{../../code/minimal/basic.example.HW.cout.cpp}
+		\end{frame}
+
+		\begin{frame}{E ainda\dots}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/class/overload.console.cpp}
+		\end{frame}
+
+	\section{Sobrecarregando}
+		\begin{frame}
+			\begin{itemize}
+				\presentationPause\item Consiste em alterar a operação do operador
+				\presentationPause\item A sintaxe de sobrecarga é padrão
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/class/overload.sintax.cpp}
+			\begin{itemize}
+				\presentationPause\item Chatices:
+				\begin{itemize}
+					\presentationPause\item Nem todos os operadores são sobrecarregáveis
+					\presentationPause\item Não pode ser apenas em tipos primitivos
+					\presentationPause\item Ordem de precedência não pode ser alterada
+					\presentationPause\item Ordem de agrupamento não pode ser alterada \presentationPause \textit{É o que?}
+					\presentationPause\item Novos operadores não podem ser criados
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Inteiro}
+			\presentationPause
+			\begin{columns}
+				\begin{column}{.5\textwidth}
+					\lstinputlisting[linerange={1-18}]{../../code/class/overload.example.1.cpp}
+				\end{column}
+				\begin{column}{.4\textwidth}
+					\lstinputlisting[firstnumber=last,linerange={20}]{../../code/class/overload.example.1.cpp}
+				\end{column}
+			\end{columns}
+		\end{frame}
+
+	\section{Metacarregando}
+		\begin{frame}{Retornos estrambólicos}
+			\begin{itemize}
+				\presentationPause\item \textit{Ah, mas eu lembro que os \textbf{consoles} aceitavam mais de um\dots}
+				\presentationPause\item \textit{E eu testei aqui e deu errado...}
+				\presentationPause\item \textit{Tem uma forma de fazer isso?}
+				\presentationPause\item Sim!
+				\presentationPause\item Você pode retornar o próprio objeto!
+				\presentationPause\item \textit{É o que?}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{\textit{Mind blow}}
+			\begin{itemize}
+				\presentationPause\item Podemos retornar variáveis de funções
+				\presentationPause\item Também podemos retornar tipos abstratos com funções
+				\presentationPause\item E podemos retornar objetos com funções do tipo de sua classe
+				\presentationPause\item O código anterior pode ficar mais interessante\dots
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}{Interessantemente}
+			\presentationPause
+			\begin{columns}
+				\begin{column}{.5\textwidth}
+					\lstinputlisting[linerange={1-18}]{../../code/class/overload.example.2.cpp}
+				\end{column}
+				\begin{column}{.4\textwidth}
+					\lstinputlisting[firstnumber=last,linerange={20}]{../../code/class/overload.example.2.cpp}
+				\end{column}
+			\end{columns}
+		\end{frame}
+
+		
+	\section{Este ponteiro}
+		\begin{frame}{Mas\dots}
+			\begin{itemize}
+				\presentationPause\item Ficou meio ambíguo\dots
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none,linerange={14-17}]{../../code/class/overload.example.1.cpp}
+			\presentationPause\lstinputlisting[numbers=none,linerange={14-17}]{../../code/class/overload.example.2.cpp}
+			\begin{itemize}
+				\presentationPause\item Qual \basicCode{getValue()} é de quem?
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Este}
+			\begin{itemize}
+				\presentationPause\item Para evitar isso existe um ponteiro especial
+				\presentationPause\item Além de evitar isso, pode fazer mais coisas
+				\presentationPause\item Este ponteiro aponta para o objeto em questão \presentationPause\textit{Em questão?}
+				\presentationPause\item É denotado pela paravra-chave \basicCode{this}
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none,linerange={2-7}]{../../code/class/this.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}{Novamente\dots}
+			\presentationPause\lstinputlisting[linerange={1-18}]{../../code/class/overload.example.3.cpp}
+		\end{frame}
+	
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+	
+\end{document}
