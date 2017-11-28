@@ -1,0 +1,173 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{0}
+
+\subtitle{Plante árvores}
+\usecolortheme[named=slideOrange]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{O que são estruturas de dados}
+		\begin{frame}{Estruturas de dados}
+			\begin{itemize}
+				\presentationPause\item Armazenar quantidade indefinida
+				\presentationPause\item Localizar
+				\presentationPause\item Ordenar
+				\presentationPause\item Qualquer tipo de item pode ser armazenado
+				\presentationPause\item É possível criar várias versões de estruturas de dados
+				\presentationPause\item Podem ter vários tipos de regras
+				\presentationPause\item São muito versáteis
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Células}
+			\presentationPause Antes de começar, precisamos conhecer o formato de uma célula:
+
+			\begin{columns}
+				\begin{column}{.6\textwidth}
+					\begin{itemize}
+						\presentationPause\item Deve ser capaz de armazenar elemento \presentationPause\textit{ou elementos}
+						\presentationPause\item Deve ser capaz de conectar-se a outra célula \presentationPause\textit{ou células}
+						\presentationPause\item Normalmente é armazenada na \textit{heap}
+						\presentationPause\item É recomendada a presença de uma célula sentinela \presentationPause (não será eliminado)
+						\presentationPause\item Da forma que analizaremos:
+						\begin{itemize}
+							\presentationPause\item Elemento único
+							\presentationPause\item Conecta-se a duas células
+							\presentationPause\item Armazenado na \textit{heap}
+						\end{itemize}
+					\end{itemize}
+				\end{column}
+				\begin{column}{.35\textwidth}
+					\presentationPause\lstinputlisting[numbers=none]{../../code/dataStructure/cell.cpp}
+				\end{column}
+			\end{columns}
+		\end{frame}
+
+		\begin{frame}{Célula}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/cell.txt}
+				% \caption{Célula}
+				\label{fig.cell}
+			\end{figure}
+		\end{frame}
+
+	\section{Estruturas lineares}
+		\begin{frame}{Um depois do outro}
+			\begin{itemize}
+				\presentationPause\item Podemos colocar essas células em sequência
+				\presentationPause\item Elas ficam ligadas umas às outras \presentationPause \emph{encadeada}
+				\presentationPause\item A forma que elas são ligadas pode determinar a estrutura de dados
+				\begin{itemize}
+					\presentationPause\item Simplesmente encadeada
+					\presentationPause\item Duplamente encadeada
+					\presentationPause\item Árvore
+				\end{itemize}
+				\presentationPause\item A forma que os dados são acessados determina a estrutura de dados
+				\begin{itemize}
+					\presentationPause\item Fila
+					\presentationPause\item Pilha
+					\presentationPause\item Lista
+					\presentationPause\item Árvore
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{A linha}
+			\begin{itemize}
+				\presentationPause\item A diferença entre os encadeamentos é que um é simples e outro duplo
+				\presentationPause\item \textit{Dã?}
+				\presentationPause\item Em outras palavas\dots \presentationPause Um só vai, outro vai e volta
+			\end{itemize}
+			\presentationPause\begin{figure}[H]
+				\centering
+				\input{../../flowchart/dataStructure.open.txt}
+				% \caption{Célula}
+				\label{fig.dataStructure.open}
+			\end{figure}
+			\begin{itemize}
+				\presentationPause\item Olhar para só em cima ou só em baixo, é simplesmente encadeada
+				\presentationPause\item Olhar a estrutura completa, é duplamente encadeada?
+				\presentationPause\item \textit{Mas\dots As pontas estão abertas\dots}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{A linha?}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/dataStructure.close.txt}
+				% \caption{Célula}
+				\label{fig.dataStructure.close}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}{Detalhes de processamento}
+			\begin{itemize}
+				\presentationPause\item Deve existir um ao menos ponteiro para uma célula da estrutura
+				\presentationPause\item É útil fazer duplamente encadeado, mas mais trabalhoso
+				\presentationPause\item Tudo é trabalhado com ponteiros
+				\presentationPause\item É prático utilizar recursão\presentationPause, mas cuidado com o encadeamento
+				\presentationPause\item É mais seguro utilizar estrutura de repetição\dots
+				\presentationPause\item Vale a pena criar uma classe para gerenciar as estruturas
+				\begin{itemize}
+					\presentationPause\item \basicCode{insere} e \basicCode{remove}?
+					\presentationPause\item \basicCode{insere}, \basicCode{desempilha} e \basicCode{desenfila}?
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Filas e pilhas (e listas)}
+			\begin{itemize}
+				\presentationPause\item São estruturas irmãs
+				\presentationPause\item O processamento é extremamente semelhante
+				\presentationPause\item Grande diferença: \presentationPause \basicCode{FIFO} e \basicCode{LIFO}
+				\presentationPause\item Filas são \basicCode{FIFO}, enquanto pilhas são \basicCode{LIFO}
+				\presentationPause\item \basicCode{FIFO}: \basicCode{First In, First Out}
+				\presentationPause\item \basicCode{LIFO}: \basicCode{Last In, First Out}
+				\presentationPause\item Ou seja, a diferença é qual item removemos
+				\presentationPause\item \textit{E as listas?}
+				\presentationPause\item A característica da lista é acessar por índice
+				\presentationPause\item Além escolher onde inserir e onde remover
+			\end{itemize}
+		\end{frame}
+
+	\section{Árvores}
+		\begin{frame}{Algumas folhas}
+			\begin{itemize}
+				\presentationPause\item Cada célula é ligada a duas diferentes
+				\presentationPause\item Nenuma célula é ligada a outra
+				\presentationPause\item Não é possível existir cíclos
+				\presentationPause\item O processamento, normalmente, é recursivo
+				\presentationPause\item Amplamente utilizada na computação
+				\presentationPause\item \emph{Infelizmente eu não consegui desenhar\dots}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{A árvore}
+			\begin{figure}[H]
+				\centering
+				\input{../../flowchart/tree.txt}
+				% \caption{Célula}
+				\label{fig.tree}
+			\end{figure}
+		\end{frame}
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+	
+\end{document}

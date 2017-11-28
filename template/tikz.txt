@@ -66,9 +66,10 @@
 	%--------------------------------------------------
 	line/.style={line width = .4mm},
 	% -------------------------------------------------
-	base/.style={draw, on chain, on grid, align=center, minimum height=3ex, minimum width=12ex, text width=12ex, line, inner sep=-.2ex, font={\small}},
 	hide/.style={on chain, on grid, minimum height=3ex, minimum width=12ex, text width=12ex},
+	base/.style={draw, align=center, hide, line, inner sep=-.2ex, font={\small}},
 	proc/.style={base, rectangle},
+	cell/.style={base, rectangle},
 	dotx/.style={proc, dotted},
 	test/.style={base, diamond, aspect=2},
 	term/.style={proc, rounded corners},% coord node style is used for placing corners of connecting lines

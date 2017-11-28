@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+	\node [cell] (p1){\basicCode{elemento}};
+	\node [cell, left=of p1] (l1) {\basicCode{...}};
+	\node [coord, left=of l1] (l2) {};
+	\node [cell, right=of p1] (r1) {\basicCode{...}};
+	\node [coord, right=of r1] (r2) {};
+
+	% \draw [->, norm] (l2.north east) to [out=45, in=135] (l1.north west);
+	\draw [->, norm] (l1.north east) to [out=45, in=135] (p1.north west);
+	\draw [->, norm] (p1.north east) to [out=45, in=135] (r1.north west);
+	\draw [->, norm] (r1.north east) to [out=45, in=135] (l1.north west);
+
+	% \draw [->, norm] (r2.south west) to [out=-135, in=-45](r1.south east);
+	\draw [->, norm] (r1.south west) to [out=-135, in=-45](p1.south east);
+	\draw [->, norm] (p1.south west) to [out=-135, in=-45](l1.south east);
+	\draw [->, norm] (l1.south west) to [out=-135, in=-45](r1.south east);
+	
+	% \path (p1.north east) to node [midway, above, sloped, out=45, in=135] {\basicCode{direita}} (c1.north west);
+	% \path (p1.south west) to node [midway, below, sloped, out=-135, in=-45] {\basicCode{esquerda}} (c2.south east);
+\end{tikzpicture}

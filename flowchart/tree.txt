@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+	\node [base, circle] (p){\basicCode{raiz}};
+
+	\node [coord, left=of p] (cl1){};
+	% \node [coord, left=of cl1] (cl2){};
+	\node [base, circle, below=of cl1] (l) {\basicCode{galho}};
+	\node [coord, below=of l] (cl3) {};
+
+	\node [base, circle, right=of cl3] (lr) {\basicCode{folha}};
+	\node [base, circle, left=of cl3] (ll) {\basicCode{folha}};
+
+	\node [coord, right=of p] (cr1){};
+	% \node [coord, right=of cr1] (cr2){};
+	\node [base, circle, below=of cr1] (r1) {\basicCode{galho}};
+	\node [coord, below=of r1] (cr3) {};
+	
+	\node [base, circle, right=of cr3] (rr) {\basicCode{folha}};
+	\node [base, circle, left=of cr3] (rl) {\basicCode{folha}};
+	
+	% \draw [->, norm] (p.south west) to [out=-135, in=-45](l);
+	% \draw [->, norm] (p.north east) to [out=45, in=135] (r);
+
+	% % \draw [->, norm] (l2.north east) to [out=45, in=135] (l1.north west);
+	% \draw [->, norm] (l1.north east) to [out=45, in=135] (p.north west);
+	% \draw [->, norm] (r1.north east) to [out=45, in=135] (r2.north west);
+
+	% % \draw [->, norm] (r2.south west) to [out=-135, in=-45](r1.south east);
+	% \draw [->, norm] (r1.south west) to [out=-135, in=-45](p.south east);
+	% \draw [->, norm] (l1.south west) to [out=-135, in=-45](l2.south east);
+	
+	% \path (p.north east) to node [midway, above, sloped, out=45, in=135] {\basicCode{direita}} (c1.north west);
+	% \path (p.south west) to node [midway, below, sloped, out=-135, in=-45] {\basicCode{esquerda}} (c2.south east);
+\end{tikzpicture}
