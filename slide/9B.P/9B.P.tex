@@ -1,0 +1,203 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{1}
+
+\subtitle{Constante}
+\usecolortheme[named=slideOrange]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+	
+	\section{Outro conceitos}
+		\begin{frame}{Modificando mais}
+			\begin{itemize}
+				\presentationPause\item Vocês ainda lembram os modificadores?
+				\begin{enumerate}
+					\presentationPause\item \basicCode{signed}
+					\presentationPause\item \basicCode{unsigned}
+					\presentationPause\item \basicCode{short}
+					\presentationPause\item \basicCode{long}
+				\end{enumerate}
+				\presentationPause\item Vocês ainda lembram o que cada um faz?
+				\begin{enumerate}
+					\presentationPause\item Números com sinal
+					\presentationPause\item Números sem sinal
+					\presentationPause\item Diminui a faixa de valores
+					\presentationPause\item Aumenta a faixa de valores
+				\end{enumerate}
+				\presentationPause\item Lembram de mais algum?
+				\presentationPause\item Prontos para mais modificadores?
+			\end{itemize}
+		\end{frame}
+
+	\section{Estático}
+		\begin{frame}{Para todo ($\forall$)}
+			\begin{itemize}
+				\presentationPause\item Qual o problema de utilizar uma variável global?
+				\presentationPause\item \textit{Qualquer um pode alterar seu valor}
+				\presentationPause\item E se ela fosse emcapsulada?
+				\presentationPause\item Podemos definir variáveis com comportamento global, porém são locais
+				\presentationPause\item \textit{Isso não faz sentido\dots}
+				\presentationPause\item Vamos pensar numa função que tenha um contador (variável)
+				\presentationPause\item E é chamada várias vezes
+				\presentationPause\item Seu contador não pode ser alterado entre chamadas
+				\presentationPause\item A variável tem que ser \emph{invariável} entre chamadas
+				\presentationPause\item Deve ser a mesma variável para toda chamada da função
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Uma solução possível}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/static/non.cpp}
+			\begin{itemize}
+				\presentationPause\item Mas variável global é ruim\dots
+				\presentationPause\item O novo modificador faz com que a variável não seja redefinida em toda chamada
+				\presentationPause\item Sua palavra-chave é \basicCode{static}
+				\presentationPause\item Sua função é manter a variável armazenada mesmo depois da saída do escopo
+				\presentationPause\item Não é necessário desalocar memória
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Com \basicCode{static}}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/static/foo.cpp}
+			\begin{itemize}
+				\presentationPause\item \textit{Só isso?}
+				\presentationPause\item Sim, ela é bem direta
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Em classes}
+			\begin{itemize}
+				\presentationPause\item Para classes, todo os membros podem receber este argumento, inclusive métodos
+				\presentationPause\item O que acontece com membros \basicCode{static} em classes?
+				\presentationPause\item \textit{Atributos são comuns à todas as instâncias da classe}
+				\presentationPause\item Ou seja, você tem um valor que se comporta como global para qualquer objeto da classe
+				\presentationPause\item \textit{Isso faz sentido?}
+				\presentationPause\item Pensa na gravidade, para todos nós é a mesma
+				\presentationPause\item Se muda pra um, muda pra todos
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Outro operador}
+			\begin{itemize}
+				\presentationPause\item Utilizaramos um novo operador para acessar membros estáticos
+				\presentationPause\item O operador de acesso a membro estático\presentationPause, ou operador de escopo
+				\presentationPause\item Utiliza um par de dois-pontos (\basicCode{::})
+				\presentationPause\item É binário e de consulta
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-2}]{../../code/operators/scope.sintax.cpp}
+			\begin{itemize}
+				\presentationPause\item E para o caso das classes, não é necessária a utilização de um objeto
+				\presentationPause\item Para atributos, é necessária a inicialização externa
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Vários detalhes}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/scope.example.cpp}
+			\begin{itemize}
+				\presentationPause\item \textit{Ah, então aquele \basicCode{std::} é isso?}
+				\presentationPause\item Não\dots \presentationPause Mas é quase
+			\end{itemize}
+		\end{frame}
+
+	\section{Constantes}
+		\begin{frame}{Não é literal}
+			\begin{itemize}
+				\presentationPause\item Qual a utilidade de uma variável que não varia?
+				\presentationPause\item \textit{Nenhuma}
+				\presentationPause\item E se o valor dela for passado pelo usuário e não puder ser alterado?
+				\presentationPause\item \textit{Aí eu simplesmente não altero ele\dots}
+				\presentationPause\item Quem te garante?
+				\presentationPause\item E se existisse uma varável que você não pode alterar o valor, apenas inicializar?
+				\presentationPause\item \textit{E aquele \basicCode{\#define}, não é isso?}
+				\presentationPause\item Não\presentationPause, nele você define uma palavra que será substiituída por um literal
+				\presentationPause\item Aqui inicializamos uma variável utilizando um valor do programa
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Constante}
+			\begin{itemize}
+				\presentationPause\item Existe um modificador especial para estes casos
+				\presentationPause\item O modificador \basicCode{const} impede que o valor de uma variável seja alterado
+				\presentationPause\item \textit{Mas qual a utilidade de uma variável que não varia?}
+				\presentationPause\item Não variar!
+				\presentationPause\item \textit{Dã?}
+				\presentationPause\item Em geral, utilizamos esse modificador em classes que declaram vetores
+				\presentationPause\item Os objetos dessas classes precisam saber o tamanho do vetor, e este tamanho não pode variar
+				\presentationPause\item Também é possível utilizar este modificador para evitar cópias de variáveis, e garantir integridade de dados
+				\presentationPause\item \textit{É o que?}
+				\presentationPause\item Vamos lá\dots
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Para funções}
+			\begin{itemize}
+				\presentationPause\item Lembra do operador de endereço? \presentationPause \&
+				\presentationPause\item Lembra que eu fiz um breve comentário sobre ele fazer outra coisa?
+				\presentationPause\item Ele consegue criar variáveis com comportamnto fantasmal!
+				\presentationPause\item \textit{Agora esse cara endoidou de vez\dots}
+				\presentationPause\item Com ele, você pode declarar uma variável que é apenas um símbolo novo para uma variável existente
+				\presentationPause\item Ou seja, um ponteiro para o mesmo endereço de meória, porém sem precisar de operadores especiais
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{O fantasma}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/reference.ghost.cpp}
+			\begin{itemize}
+				\presentationPause\item \textit{Legal, e pra que isso serve?}
+				\presentationPause\item Com essa sintaxe, criamos funções que recebem a variável real
+				\presentationPause\item Estas funções podem alterar o valor da variável original, não é só uma cópia
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Função fantasma}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/reference.foo.cpp}
+			\begin{itemize}
+				\presentationPause\item Há algo errado aqui?
+				\presentationPause\item O valor da variável é destruído
+				\presentationPause\item Por isso é normal colocar uma coisinha a mais nesse código, para proteger a variável
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Protegendo}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/operators/reference.const.cpp}
+			\begin{itemize}
+				\presentationPause\item \textbf{Esse código tem um erro}
+				\presentationPause\item Se você tentar compilá-lo, ele apontará tentativa de alteração em Constante
+				\presentationPause\item Além deste caso, temos o caso de objetos constantes
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Objeto constante}
+			\begin{itemize}
+				\presentationPause\item Não pode sofrar alteração
+				\presentationPause\item Não pode acessar métodos, pois eles poderiam fazer alterações
+				\presentationPause\item \textit{Mas e os \basicCode{get}? Eles não alteram}
+				\presentationPause\item Para estes casos, temos novidade\dots
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Constante acessível}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/class/const.cpp}
+			\begin{itemize}
+				\presentationPause\item Colocamos a palavra-chave \basicCode{const} após a assinatura, antes da declaração
+				\presentationPause\item Ela informa ao compilador que este método não altera os atributos do objeto
+			\end{itemize}
+		\end{frame}
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+	
+\end{document}
