@@ -1,0 +1,9 @@
+//...
+inicio:
+{
+	<comand1>;
+	//...
+	<comandN>;
+}
+if(<cond>) goto inicio;
+//...

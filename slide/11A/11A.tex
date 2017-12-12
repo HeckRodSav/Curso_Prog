@@ -1,0 +1,137 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{0}
+
+\subtitle{Faça o que eu digo}
+\usecolortheme[named=slidePurple]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Pulando}
+		\begin{frame}{Dificuldade}
+			\begin{itemize}
+				\presentationPause\item Algum fluxos são muito complexos
+				\presentationPause\item Poucos são os casos onde as estruturas básicas não são suficientes
+				\presentationPause\item \textit{Vocês lembram das estruturas básicas?}
+				\presentationPause\item \basicCode{if...else} e \basicCode{while}
+				\presentationPause\item Vamos pensar num caso onde fica complicado\dots\presentationPause na lousa
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Indo direto}
+			\begin{itemize}
+				\presentationPause\item Existe um controle de fluxo especial
+				\presentationPause\item Tão antigo quanto a própria programação
+				\presentationPause\item Criado pela mãe da programação
+				\presentationPause\item Utilizado em \textit{Assembly}
+				\presentationPause\item Serve para \emph{pular} para outras partes do código
+				\presentationPause\item Normalmente é associado a um \basicCode{if}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Vá para}
+			\begin{itemize}
+				\presentationPause\item Sua sintaxe é herdada do \textit{Assembly}
+				\presentationPause\item A palavra-chave é \basicCode{goto}
+				\presentationPause\item É necessário definir uma \emph{etiqueta} (\textit{label})
+				\begin{itemize}
+					\presentationPause\item Para definir uma \emph{etiqueta}, utilizamos dois pontos (\basicCode{:})
+				\end{itemize}
+				\presentationPause\item Pode ser utilizado antes da definição da \emph{etiqueta}
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/flow/goto.sintax.cpp}
+			\begin{itemize}
+				\presentationPause\item Não faz sentido usar sem \basicCode{if}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Dois casos}
+			\presentationPause
+			\begin{columns}
+				\begin{column}{.5\textwidth}
+					\only<1>{\lstinputlisting[numbers=none]{../../code/flow/goto.example.while.cpp}}
+					\only<2>{\lstinputlisting[numbers=none]{../../code/flow/while.block.sintax.cpp}}
+				\end{column}
+				\begin{column}{.5\textwidth}
+					\only<1>{\lstinputlisting[numbers=none]{../../code/flow/goto.example.dowhile.cpp}}
+					\only<2>{\lstinputlisting[numbers=none]{../../code/flow/dowhile.block.sintax.cpp}}
+				\end{column}
+			\end{columns}
+		\end{frame}
+
+	\section{Automatizando}
+		\begin{frame}{Criando problemas}
+			\begin{itemize}
+				\presentationPause\item Existe uma palavra-chave especial que generaliza tipos
+				\presentationPause\item Com ela, não é mais necessário escolher o tipo da variável
+				\presentationPause\item O compilador analisará o uso da variável no programa e escohará seu tipo
+				\presentationPause\item E isso nos dá uma lista de problemas:
+				\begin{itemize}
+					\presentationPause\item Inconsistência de tipo
+					\presentationPause\item Exige definição do uso para escolha
+					\presentationPause\item \textit{Casting} implícito desnecessário
+					\presentationPause\item O compilador pode escolher um \basicCode{double} onde um \basicCode{float} era suficientes
+				\end{itemize}
+				\presentationPause\item É recomendado quando:
+				\begin{itemize}
+					\presentationPause\item Tem experiência com tipos
+					\presentationPause\item Não se conhece o tipo de retorno de uma função
+					\presentationPause\item Apenas interessa utilizar uma varável auxiliar
+				\end{itemize}
+				\presentationPause\item A palavra-chave é \basicCode{auto}, que substitui o tipo na sintaxe padrão
+			\end{itemize}
+		\end{frame}
+
+	\section{Modelos}
+		\begin{frame}{Generalizando}
+			\begin{itemize}
+				\presentationPause\item Uma função que soma dois valores depende de um tipo
+				\presentationPause\item Este tipo define o retorno da função e os argumentos de entrada
+				\presentationPause\item Nem sempre um \basicCode{auto} serve
+				\presentationPause\item Um exemplo é uma variável que somente é declarada
+				\presentationPause\item É possivel declarar uma função que é generaliza
+				\presentationPause\item Servindo até para tipos abstratos
+				\presentationPause\item Especialmente \textbf{eu} prefiro criar classes genericas\presentationPause, ou classes \textit{template}
+				\presentationPause\item A sintaxe é igual para classes ou funções/procedimentos
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Colocando templates}
+			\only<1>{\lstinputlisting[numbers=none, linerange={1-15}]{../../code/class/structor.example.cpp}}
+			\only<2>{\lstinputlisting[numbers=none, linerange={1-15}]{../../code/class/template.example.cpp}}
+		\end{frame}
+
+		\begin{frame}{Funções/procedimentos}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/class/template.foo.cpp}
+		\end{frame}
+			
+		\begin{frame}{Declarando}
+			\begin{itemize}
+				\presentationPause\item A alteração fica na instanciação do objeto da classe
+				\presentationPause\item Ela recebe o tipo selecionado
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/class/template.declaration.cpp}
+			\begin{itemize}
+				\presentationPause\item Quando a função/procedimento não é membro de classe, não é necessário definir o tipo
+				\presentationPause\item Mais de um \textit{template} pode ser utilizado simutaneamente
+			\end{itemize}
+		\end{frame}
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+	
+\end{document}

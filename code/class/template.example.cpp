@@ -1,21 +1,16 @@
-class alpha
+template <class T> class alpha
 {
 private:
 	int N;
-	int *P;
+	T *P;
 public:
 	alpha(int n)
 	{
 		N = n;
-		P = new int[N];
+		P = new T[N];
 	}
 	~alpha()
 	{
 		delete[] P;
 	}
 };
-
-int main()
-{
-	alpha A(10);
-}
