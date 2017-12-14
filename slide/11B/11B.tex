@@ -1,0 +1,88 @@
+\documentclass[14pt]{beamer}
+	
+\input{../../template/slideTemplate.txt}
+\renewcommand{\DEBUG}{0}
+\renewcommand{\PRESENTATION}{0}
+
+\subtitle{Todos, exceto alguns}
+\usecolortheme[named=slidePurple]{structure}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+
+	\section{Problemas}
+		\begin{frame}{Vamos fazer umas diviões}
+			\begin{itemize}
+				\presentationPause\item Vocês já dividiram por zero hoje?
+				\presentationPause\item O que acontece se a gente divide por zero?
+				\presentationPause\item E no programa, o que acontece?
+				\presentationPause\item Já tentaram imprimir o que sai?
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/exception/zero.nonexcept.cpp}
+		\end{frame}
+
+	\section{Burlando problemas}
+		\begin{frame}
+			\begin{itemize}
+				\presentationPause\item \textit{Ah, mas eu resolvi problemas de divisão por \basicCode{0} com um \basicCode{if}}
+				\presentationPause\item Ok, mas esse é o único erro que acontece?
+				\presentationPause\item Vamos lembrar dos momentos do programa:
+					\begin{itemize}
+						\presentationPause\item Tempo de compilação
+						\presentationPause\item Tempo de execução
+					\end{itemize}
+				\presentationPause\item Mas isso evita o erro, não o corrige ou trata
+				\presentationPause\item Toda vez que um erro acontece é lançada uma exceção
+				\presentationPause\item Exceções devem ser capturadas e tratadas
+				\presentationPause\item Para isso, existe um controle de fluxo especial que coleta exceções e permite tratamento
+			\end{itemize}
+		\end{frame}
+
+	\section{Solucionando problemas}
+		\begin{frame}
+			\begin{itemize}
+				\presentationPause\item Primeiro precisamos de uma estrutura que comporte comandos que possam gerar erros
+				\presentationPause\item Esta estrutura utiliza as palavras-chave \basicCode{try} e \basicCode{catch}
+				\presentationPause\item O \basicCode{try} contém o bloco onde as exceções podem ser lançadas
+				\presentationPause\item O \basicCode{catch} recebe como argumento a declaração de um objeto classe de exceção\presentationPause, além de conter o boco de tratamento
+				\presentationPause\item É possível que um bloco lance mais de uma exceção\presentationPause, então é possível utilizar mais de um \basicCode{catch}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Sintaxe}
+			\presentationPause\lstinputlisting[numbers=none]{../../code/exception/tryCatch.sintax.cpp}
+		\end{frame}
+
+	\section{Informando problemas}
+		\begin{frame}{Lançando exceções}
+			\begin{itemize}
+				\presentationPause\item É possível lançar exceções próprias
+				\presentationPause\item O caso da divisão por zero é um bom exemplo\presentationPause, não é uma exceção padrão
+				\presentationPause\item Para lançar uma exceção utiliza-se a palavra-chave \basicCode{throw}
+				\presentationPause\item É semelhante ao \basicCode{return}\presentationPause, mas o \textit{retorno} é capturado pelo \basicCode{try}
+				\presentationPause\item O item lançado é um objeto\presentationPause, herdeiro da classe \basicCode{exception}
+			\end{itemize}
+			\presentationPause\lstinputlisting[numbers=none, linerange={2-2}]{../../code/exception/throw.sintax.cpp}
+		\end{frame}
+
+		\begin{frame}{Contextualizando}
+			\begin{multicols}{2}
+				\presentationPause\lstinputlisting[numbers=none]{../../code/exception/zero.except.cpp}
+			\end{multicols}
+		\end{frame}
+
+	\section{Hora de brincar}
+		\begin{frame}
+			\begin{center}\Huge
+				Vamos testar!
+			\end{center}
+		\end{frame}
+	
+\end{document}
